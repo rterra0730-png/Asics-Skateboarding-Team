@@ -23,6 +23,22 @@
   --halftone: radial-gradient(circle, rgba(20,20,20,.28) 1px, transparent 1.6px);
 }
 *{margin:0;padding:0;box-sizing:border-box}
+/* ── スケートボードカーソル ── */
+:root{
+  --cur:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='24' viewBox='0 0 34 24'%3E%3Cpath d='M3 11 Q5 6 9 7 L25 7 Q29 6 31 11' fill='none' stroke='%23141414' stroke-width='4.5' stroke-linecap='round'/%3E%3Cpath d='M4.2 10.2 Q6 6.8 9 7.6 L25 7.6 Q28 6.8 29.8 10.2' fill='none' stroke='%23FFCE00' stroke-width='1.6' stroke-linecap='round'/%3E%3Ccircle cx='11' cy='17' r='4' fill='%23FFCE00' stroke='%23141414' stroke-width='2.2'/%3E%3Ccircle cx='23' cy='17' r='4' fill='%23FFCE00' stroke='%23141414' stroke-width='2.2'/%3E%3C/svg%3E");
+}
+html,body{cursor:var(--cur) 6 4, auto}
+button,a,select,label,.sticker,.vhs,.ticket,.tally,.cluster,.chip,tr[tabindex]{cursor:var(--cur) 6 4, pointer}
+input[type=search]{cursor:text}
+/* クリック時のキックフリップ演出 */
+.flipfx{position:fixed;z-index:9999;pointer-events:none;width:44px;height:32px;margin:-16px 0 0 -22px;
+  animation:kickflip .55s cubic-bezier(.3,.9,.4,1) forwards}
+@keyframes kickflip{
+  0%{transform:translateY(0) rotate(0);opacity:1}
+  45%{transform:translateY(-34px) rotate(200deg)}
+  100%{transform:translateY(-6px) rotate(360deg);opacity:0}
+}
+@media(prefers-reduced-motion:reduce){.flipfx{display:none}}
 html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;overflow-x:hidden}
 ::selection{background:var(--yellow);color:var(--ink)}
@@ -156,7 +172,7 @@ section{padding:60px 20px;max-width:1200px;margin:0 auto}
 #calSec .monthhead{font-family:'Anton',sans-serif;font-size:22px;text-transform:uppercase;margin:30px 0 12px;
   display:flex;align-items:center;gap:12px}
 #calSec .monthhead::after{content:"";flex:1;height:3px;background:repeating-linear-gradient(90deg,var(--ink) 0 12px,transparent 12px 20px)}
-.ticket{display:flex;align-items:stretch;background:#fff;border:2px solid var(--ink);margin-bottom:14px;
+.ticket{display:flex;flex-wrap:wrap;align-items:stretch;background:#fff;border:2px solid var(--ink);margin-bottom:14px;
   box-shadow:4px 4px 0 var(--ink);position:relative;transition:transform .1s}
 .ticket:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
 .ticket .stub{flex:none;width:86px;background:var(--yellow);border-right:2px dashed var(--ink);
@@ -179,6 +195,17 @@ section{padding:60px 20px;max-width:1200px;margin:0 auto}
 .ticket .who .none{font-family:'Space Mono',monospace;font-size:10px;opacity:.6;align-self:center}
 .ticket .days{position:absolute;top:-10px;right:12px;font-family:'Anton',sans-serif;font-size:13px;
   background:var(--ink);color:var(--yellow);padding:2px 10px;transform:rotate(2deg)}
+.ticket{cursor:pointer}
+.ticket .tdetail{display:none;padding:12px 16px 14px;border-top:2px dashed rgba(20,20,20,.35);
+  font-family:'Space Mono',monospace;font-size:11px;line-height:1.7;width:100%}
+.ticket.open .tdetail{display:block}
+.ticket .tdetail .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.ticket .tdetail a.evbtn{display:inline-block;background:var(--yellow);color:var(--ink);text-decoration:none;
+  font-family:'Anton',sans-serif;font-size:13px;letter-spacing:.04em;padding:7px 14px;border:2px solid var(--ink);
+  box-shadow:3px 3px 0 var(--ink)}
+.ticket .tdetail a.evbtn:hover{background:var(--orange);color:#fff}
+.ticket .tdetail a.evbtn.ghost{background:#fff}
+.ticket .hint{font-family:'Space Mono',monospace;font-size:9px;opacity:.5;margin-top:4px;display:block}
 @media(max-width:700px){.ticket{flex-wrap:wrap}.ticket .who{max-width:100%;width:100%;border-left:none;border-top:2px solid var(--ink)}}
 
 /* ============ RIDER DETAIL — ZINE SPREAD ============ */
@@ -309,8 +336,10 @@ tr.cutline td span{display:block;font-family:'Anton',sans-serif;font-size:11px;b
 .watchcard .watchbtn:hover{transform:rotate(0deg) scale(1.05);background:var(--orange);color:#fff}
 .watchcard .watchnote{position:absolute;bottom:12px;left:0;right:0;text-align:center;z-index:2;
   font-family:'Space Mono',monospace;font-size:10px;color:var(--paper);text-shadow:0 1px 3px rgba(0,0,0,.8)}
-.portrait .autotag,.bigportrait .autotag{position:absolute;bottom:6px;right:6px;z-index:2;font-family:'Space Mono',monospace;font-size:7px;
-  background:rgba(20,20,20,.75);color:var(--yellow);padding:2px 5px;letter-spacing:.08em}
+.portrait .autotag,.bigportrait .autotag{display:none;position:absolute;bottom:6px;right:6px;z-index:2;
+  font-family:'Space Mono',monospace;font-size:7px;background:rgba(20,20,20,.75);color:var(--yellow);
+  padding:2px 5px;letter-spacing:.08em}
+.is-still .autotag{display:block}
 .imgfail .autotag{display:none}
 
 /* ============ FOOTER ============ */
@@ -319,6 +348,44 @@ footer{border-top:3px solid var(--ink);padding:34px 20px;font-family:'Space Mono
 footer .stripes{width:44px;height:26px;background:var(--blue);clip-path:polygon(0 0,100% 0,78% 100%,0 100%);position:relative}
 footer .stripes::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 6px,var(--yellow) 6px 11px)}
 footer .fine{opacity:.6}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tablewrap table{min-width:560px}
+@media(max-width:620px){
+  section{padding:42px 14px}
+  header.hero{padding:40px 14px 50px}
+  .hero .sub{gap:10px}
+  .tag{font-size:11px;padding:6px 10px}
+  .tag b{font-size:18px}
+  #rosterGrid{grid-template-columns:repeat(2,1fr);gap:26px 16px}
+  .sticker{padding:8px 8px 11px}
+  .sticker h3{font-size:15px}
+  .sticker .meta{font-size:9px;gap:5px}
+  .sticker .nextev{font-size:8.5px;padding:5px 6px}
+  .sticker .nextev .ne-d{font-size:10px}
+  .portrait .initials{font-size:40px}
+  #vidWall{grid-template-columns:repeat(2,1fr);gap:12px}
+  .vhs .lab{font-size:10px;padding:7px 8px 6px}
+  #countdown .cd{min-width:64px;padding:8px 10px}
+  #countdown .cd b{font-size:28px}
+  .ticket .stub{width:64px}
+  .ticket .stub .dd{font-size:26px}
+  .ticket .body .evname{font-size:15px}
+  .ticket .days{font-size:11px;right:8px}
+  .ticket .who{padding:9px 12px}
+  .sec-head .ts{margin-left:0;width:100%}
+  table.board{font-size:11px}
+  table.board td{padding:9px 8px}
+  table.board td.rk{font-size:19px}
+  .z-left{padding:18px 14px}
+  .z-right{padding:18px 14px 30px}
+  .z-left h2{font-size:28px}
+  .tracker .rank{font-size:38px}
+  #liveStrip{font-size:11px}
+  nav{height:50px}
+  #refreshBtn{font-size:13px;padding:7px 12px}
+  #mapWrap{box-shadow:5px 5px 0 var(--ink)}
+  .vidgrid{grid-template-columns:repeat(2,1fr)}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -433,10 +500,10 @@ footer .fine{opacity:.6}
       <button class="chip bf" data-bf="M">MEN</button>
       <button class="chip bf" data-bf="W">WOMEN</button>
     </div>
-    <table class="board" id="boardTable">
+    <div class="tablewrap"><table class="board" id="boardTable">
       <thead><tr><th>OWSR</th><th>Rider</th><th>Country</th><th>Disc.</th><th>Points</th><th>Move</th></tr></thead>
       <tbody id="boardBody"></tbody>
-    </table>
+    </table></div>
     <p class="quota-note">※ Olympic qualification runs on the Olympic World Skateboarding Rankings with a per-country quota (max 3 per nation per event at Paris 2024 — LA 2028 rules TBC). Japan's depth means ASICS riders may be competing with each other for national slots. Ranks marked <b>PLACEHOLDER</b> are unverified — hit REFRESH to pull current numbers.</p>
     <p class="street-note">RIDERS SHOWN AS "—" LIVE OUTSIDE THE OLYMPIC CIRCUIT: video parts, core contests, culture. Different lane, same impact — that's most of this team, by design.</p>
   </div>
@@ -492,7 +559,7 @@ footer .fine{opacity:.6}
    ▸ rank:null shows "—" (off Olympic circuit). rankPH:true shows
      PLACEHOLDER until REFRESH verifies a real number.
    ═══════════════════════════════════════════════════════════════ */
-const DATA_VERSION = 10;
+const DATA_VERSION = 11;
 const COLORS=["#0F2AA8","#FF4D00","#141414","#7A1FA0","#0A7A2F"];
 let _ci=0;
 function R(id,name,country,flag,city,disc,gender,o={}){
@@ -504,12 +571,12 @@ function R(id,name,country,flag,city,disc,gender,o={}){
     ranking:{owsrRank:o.rank??null,points:o.pts??null,change:o.chg??0,rankPlaceholder:!!o.rankPH,updatedAt:"2026-07-25"},
     results:o.results||[],videos:o.videos||[],timeline:o.timeline||[{year:o.joined||2023,title:"Joins ASICS Skateboarding",note:"TODO: add career milestones"}]};
 }
-const V_TAC={title:"TOTAL ACTUAL COMFORT",youtubeId:"",year:2023,type:"Team video"};       // TODO: add YouTube ID
-const V_TID={title:"Tidbit",youtubeId:"",year:2025,type:"Japan team edit"};                // TODO: add YouTube ID
+const V_TAC={title:"TOTAL ACTUAL COMFORT",youtubeId:"8EKtCKbm-L4",year:2023,type:"Team video"}; // verified
+const V_TID={title:"Tidbit",youtubeId:"50tu1iSo3DI",year:2025,type:"Japan team edit"}; // verified
 const V_AGT={title:"A Guided Tour",youtubeId:"qkCyq5d1_68",year:2025,type:"Full-length (26 min)"}; // verified — Thrasher channel
 const V_WWV={title:"Week in Wooville",youtubeId:"",year:2024,type:"Minneapolis edit"};     // TODO: add YouTube ID
 const V_MIN={title:"miniasics",youtubeId:"",year:2023,type:"Minneapolis edit"};            // TODO: add YouTube ID
-const V_FUX={title:"f [ U _ X",youtubeId:"",year:2025,type:"Promo"};                       // TODO: add YouTube ID
+const V_FUX={title:"f [ U _ X",youtubeId:"8FUYYCmvPjs",year:2025,type:"Promo"}; // verified
 
 const RIDERS=[
  /* ——— JAPAN (14) — all cities/DOBs TODO unless noted ——— */
@@ -601,7 +668,7 @@ const RIDERS=[
  R("murilo","Murilo Guimarães Romão","Brazil","🇧🇷","São Paulo","STREET","M",{igF:20000}),
  R("edgard","Edgard Junior de Lima","Brazil","🇧🇷","Rio de Janeiro","STREET","M",{igF:18000}),
  /* ——— EUROPE (9) ——— */
- R("shay","Shay Sandiford","UK","🇬🇧","London","STREET","M",{igF:55000,videos:[V_AGT,V_TAC,{title:"Night In the Life",youtubeId:"",year:2024,type:"Solo part"},V_WWV],
+ R("shay","Shay Sandiford","Canada"/*theboardrで確認*/,"🇨🇦","Los Angeles"/*TODO verify base*/,"STREET","M",{igF:55000,videos:[V_AGT,V_TAC,{title:"Night In the Life",youtubeId:"04aoOravwhE",year:2024,type:"Solo part"},V_WWV],
    timeline:[{year:2023,title:"ASICS launch roster",note:""},{year:2024,title:"'Night In the Life' solo part",note:"Dir. Jacob Elliott Harris"}]}),
  R("justin","Justin Dreyson","UK"/*TODO verify country*/,"🇬🇧","London","STREET","M",{igF:15000}),
  R("emile","Emile Laurent","France","🇫🇷","Paris","STREET","M",{nick:"Pocket rocket",sponsors:["Polar Skate Co."],igF:70000,videos:[V_TAC,V_TID]}),
@@ -625,7 +692,7 @@ const RIDERS=[
 let CALENDAR={
   updatedAt:"2026-07-25",
   events:[
-   {name:"TODO: World Skate Street World Cup",date:"2026-08-14",city:"TBC",country:"TBC",type:"Olympic qualifier",qual:true,riders:["liz","ibuki","kairi","monica","andrea","luca","kyonosuke"]},
+   {name:"TODO: World Skate Street World Cup",date:"2026-08-14",city:"TBC",country:"TBC",type:"Olympic qualifier",qual:true,link:"",riders:["liz","ibuki","kairi","monica","andrea","luca","kyonosuke"]},
    {name:"TODO: X Games Park",date:"2026-08-29",city:"TBC",country:"USA",type:"Invitational",qual:false,riders:["kieran","brent"]},
    {name:"TODO: SLS Tour Stop",date:"2026-09-12",city:"TBC",country:"USA",type:"Pro tour",qual:false,riders:["liz","kairi","monica"]},
    {name:"TODO: JSF Japan National Championships",date:"2026-09-26",city:"Kasama",country:"Japan",type:"National championships",qual:true,riders:["ibuki","kairi","asahi","luca","sena","toa","niko"]},
@@ -742,7 +809,7 @@ const tilt=id=>((id.charCodeAt(0)+id.length)%5-2)*1.1+"deg";
 const byId=id=>RIDERS.find(r=>r.id===id);
 /* Windowsは国旗絵文字を「JP」等の生文字で表示してしまうため、
    全OSで同じ見た目になるデザイン済み国コードバッジを使う */
-const CC={Japan:"JP",USA:"US",Brazil:"BR",UK:"GB",France:"FR",Finland:"FI",Spain:"ES",Australia:"AU","New Zealand":"NZ",Netherlands:"NL"};
+const CC={Japan:"JP",USA:"US",Brazil:"BR",UK:"GB",France:"FR",Finland:"FI",Spain:"ES",Australia:"AU","New Zealand":"NZ",Netherlands:"NL",Canada:"CA"};
 const ccBadge=c=>`<span class="cc">${CC[c]||"—"}</span>`;
 /* Claudeのアーティファクト内では外部iframe(YouTube埋め込み)がCSPでブロックされる。
    その場合は「サムネ+YouTubeで開く」カードに自動で切り替える。
@@ -769,20 +836,43 @@ function applyVidId(title,id){
    2. 自動: その選手「本人の名前が入った」ASICS関連クリップのYouTubeサムネイル
       (STILL FROM FOOTAGEタグ付き。チーム動画のサムネは全員同じ絵になるので使わない)
    3. イニシャルのカラーブロック */
-function autoPhoto(r){
-  if(r.photo)return{src:r.photo,auto:false};
+/* 写真の優先順位(上から順に試し、失敗したら次へ自動フォールバック):
+   1. photo:"..." で明示指定されたもの
+   2. photos/<選手ID>.jpg — ★ファイルを置くだけで反映。コード編集不要★
+      (例: photos/liz.jpg を photos フォルダにアップロードするだけ)
+   3. 本人名入りクリップのYouTubeサムネイル(STILL FROM FOOTAGEタグ付き)
+   4. イニシャルのカラーブロック */
+function photoCandidates(r){
+  const c=[];
+  if(r.photo)c.push({src:r.photo,still:false});
+  c.push({src:`photos/${r.id}.jpg`,still:false});
   const pool=[...r.videos,...EXTRA_VIDEOS.filter(v=>(v.riderIds||[]).includes(r.id))].filter(v=>v.youtubeId);
   const first=r.name.split(" ")[0].toLowerCase();
   const named=pool.find(v=>v.title.toLowerCase().includes(first));
-  return named?{src:ytThumb(named.youtubeId),auto:true}:null;
+  if(named)c.push({src:ytThumb(named.youtubeId),still:true});
+  return c;
 }
+window.__imgErr=function(el){
+  try{
+    const alts=JSON.parse(el.dataset.alts||"[]");
+    const i=(+el.dataset.i||0)+1;
+    if(i<alts.length){
+      el.dataset.i=i;el.src=alts[i].src;
+      el.closest(".portrait,.bigportrait")?.classList.toggle("is-still",!!alts[i].still);
+    }else{
+      el.closest(".portrait,.bigportrait")?.classList.add("imgfail");
+      el.remove();
+    }
+  }catch(e){el.remove();}
+};
 function portraitHTML(r,big){
-  const p=autoPhoto(r);
+  const cands=photoCandidates(r);
   const base=`<span class="initials">${esc(initials(r.name))}</span>`;
-  const img=p?`<img src="${esc(p.src)}" alt="${esc(r.name)}" loading="lazy" onerror="this.closest('.portrait,.bigportrait')?.classList.add('imgfail');this.remove()">`:"";
-  const tag=p&&p.auto?'<span class="autotag">STILL FROM FOOTAGE</span>':"";
-  const note=p?"":'<span class="nophoto">ADD PHOTO — see data block</span>';
-  return base+img+tag+note+'<span class="ht"></span>';
+  const stillCls=cands.length&&cands[0].still?" is-still":"";
+  const img=cands.length?`<img src="${esc(cands[0].src)}" alt="${esc(r.name)}" loading="lazy"
+    data-i="0" data-alts='${esc(JSON.stringify(cands))}' onerror="window.__imgErr(this)">`:"";
+  const tag='<span class="autotag">STILL FROM FOOTAGE</span>';
+  return base+img+tag+'<span class="ht"></span>';
 }
 
 /* ═══════════════ CITY → MAP COORDS (precomputed, Natural Earth 1000×480) ═══════════════ */
@@ -871,7 +961,7 @@ function renderRoster(){
     const a=age(r.dob);
     const nextEv=riderSchedule(r.id)[0];
     b.innerHTML=`
-      <div class="portrait" style="background:${r.color}">${rk}${portraitHTML(r)}</div>
+      <div class="portrait${photoCandidates(r)[0]?.still?" is-still":""}" style="background:${r.color}">${rk}${portraitHTML(r)}</div>
       <h3 class="anton">${esc(r.name)}</h3>
       <div class="meta">${ccBadge(r.country)}<span>${esc(r.discipline)}</span>${a?`<span>AGE ${a}</span>`:""}<span>${esc(r.city.split(",")[0].split(" →")[0])}</span></div>
       ${nextEv?`<div class="nextev"><span class="ne-d">${daysUntil(nextEv.date)}D</span> ${esc(nextEv.name.replace(/^TODO: /,""))} · ${esc(nextEv.city)}</div>`:""}`;
@@ -896,19 +986,37 @@ function renderCalendar(){
     if(month!==lastMonth){el.insertAdjacentHTML("beforeend",`<div class="monthhead anton">${month}</div>`);lastMonth=month;}
     const chips=(ev.riders||[]).map(id=>{const r=byId(id);return r?`<button class="rc" data-id="${r.id}">${esc(r.name.split(" ").slice(-1)[0]==="Iannucci"?"Gino":r.name)}</button>`:""}).join("")
       ||`<span class="none">Entry list TBC — REFRESH to check</span>`;
+    const fullDate=d.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+    const riderNames=(ev.riders||[]).map(id=>byId(id)?.name).filter(Boolean);
+    const searchUrl=`https://www.google.com/search?q=${encodeURIComponent(ev.name.replace(/^TODO: /,"")+" skateboarding "+(ev.city||""))}`;
     el.insertAdjacentHTML("beforeend",`
-      <div class="ticket ${ev.qual?"qual":""}">
+      <div class="ticket ${ev.qual?"qual":""}" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for ${esc(ev.name)}">
         <div class="stub"><span class="dd">${d.getDate()}</span><span class="mo">${d.toLocaleDateString("en-GB",{month:"short"}).toUpperCase()}</span></div>
         <div class="body">
           <div class="evname">${esc(ev.name)}</div>
           <div class="evmeta">${esc(ev.city)}, ${esc(ev.country)}</div>
           <span class="evtype">${esc(ev.type)}</span>
+          <span class="hint">TAP FOR DETAILS ▾</span>
         </div>
         <div class="who">${chips}</div>
         <span class="days">${daysUntil(ev.date)}D OUT</span>
+        <div class="tdetail">
+          <b>${esc(fullDate)}</b> — ${daysUntil(ev.date)} days out · ${esc(ev.city)}, ${esc(ev.country)} · ${esc(ev.type)}${ev.qual?" · <b>OLYMPIC QUALIFIER</b>":""}<br>
+          ASICS riders entered (${riderNames.length}): ${esc(riderNames.join(", ")||"TBC — REFRESH to check")}
+          <div class="btns">
+            ${ev.link?`<a class="evbtn" href="${esc(ev.link)}" target="_blank" rel="noopener">OFFICIAL SITE ↗</a>`:""}
+            <a class="evbtn ghost" href="${searchUrl}" target="_blank" rel="noopener">SEARCH THIS EVENT ↗</a>
+          </div>
+        </div>
       </div>`);
   });
   $$("#calList .rc").forEach(c=>c.addEventListener("click",e=>{e.stopPropagation();openSpread(c.dataset.id);}));
+  $$("#calList .tdetail a").forEach(a=>a.addEventListener("click",e=>e.stopPropagation()));
+  $$("#calList .ticket").forEach(t=>{
+    const toggle=()=>{t.classList.toggle("open");t.setAttribute("aria-expanded",t.classList.contains("open"));};
+    t.addEventListener("click",toggle);
+    t.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle();}});
+  });
   $("#calTs").textContent=timeAgo(CALENDAR.updatedAt);
   $("#calTs").className="ts "+staleClass(CALENDAR.updatedAt);
 }
@@ -944,7 +1052,7 @@ function openSpread(id){
   $("#zineContent").innerHTML=`
     <button id="closeSpread" aria-label="Close">✕ CLOSE</button>
     <div class="z-left">
-      <div class="bigportrait" style="background:${r.color}">${portraitHTML(r,true)}</div>
+      <div class="bigportrait${photoCandidates(r)[0]?.still?" is-still":""}" style="background:${r.color}">${portraitHTML(r,true)}</div>
       <h2 class="anton">${esc(r.name)}</h2>
       ${r.nickname?`<div class="mono" style="font-size:12px;margin-top:4px">“${esc(r.nickname)}”</div>`:""}
       <dl class="vitals">
@@ -1272,6 +1380,25 @@ $("#refreshBtn").addEventListener("click",async()=>{
 function maybeAutoRefresh(){
   const last=+localStorage.getItem("asicsHubLastRefresh")||0;
   if(Date.now()-last>24*36e5)refreshAll(false);
+}
+
+/* ═══════════════ 遊び心: クリックでキックフリップ ═══════════════ */
+const FLIP_SVG=`<svg xmlns="http://www.w3.org/2000/svg" width="44" height="32" viewBox="0 0 34 24">
+  <path d="M3 11 Q5 6 9 7 L25 7 Q29 6 31 11" fill="none" stroke="#141414" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M4.2 10.2 Q6 6.8 9 7.6 L25 7.6 Q28 6.8 29.8 10.2" fill="none" stroke="#FFCE00" stroke-width="1.6" stroke-linecap="round"/>
+  <circle cx="11" cy="17" r="4" fill="#FFCE00" stroke="#141414" stroke-width="2.2"/>
+  <circle cx="23" cy="17" r="4" fill="#FFCE00" stroke="#141414" stroke-width="2.2"/></svg>`;
+const reduceMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(!reduceMotion){
+  document.addEventListener("pointerdown",e=>{
+    if(e.target.closest("iframe,input,select"))return;
+    const b=document.createElement("div");
+    b.className="flipfx";b.innerHTML=FLIP_SVG;
+    b.style.left=e.clientX+"px";b.style.top=e.clientY+"px";
+    document.body.appendChild(b);
+    b.addEventListener("animationend",()=>b.remove());
+    setTimeout(()=>b.remove(),900); // 保険
+  },{passive:true});
 }
 
 /* ═══════════════ WIRING ═══════════════ */
