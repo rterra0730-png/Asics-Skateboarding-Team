@@ -147,8 +147,8 @@ section{padding:60px 20px;max-width:1200px;margin:0 auto}
 .sticker .meta{font-family:'Space Mono',monospace;font-size:11px;margin-top:6px;display:flex;gap:8px;flex-wrap:wrap;opacity:.85}
 .cc{display:inline-block;font-family:'Space Mono',monospace;font-weight:700;font-size:10px;letter-spacing:.08em;
   background:var(--ink);color:var(--yellow);padding:1px 6px;vertical-align:middle}
-.sticker .nextev{margin-top:8px;font-family:'Space Mono',monospace;font-size:10px;line-height:1.5;
-  background:var(--paper);border:1.5px dashed var(--ink);padding:5px 8px}
+.sticker .nextev{margin-top:8px;font-family:'Space Mono',monospace;font-size:10px;line-height:1.55;
+  background:var(--paper);border:1.5px dashed var(--ink);padding:6px 8px;overflow-wrap:anywhere}
 .sticker .nextev .ne-d{font-family:'Anton',sans-serif;font-size:12px;background:var(--yellow);padding:1px 6px;
   border:1.5px solid var(--ink);margin-right:4px;display:inline-block;transform:rotate(-2deg)}
 
@@ -226,14 +226,19 @@ table.results th{text-align:left;border-bottom:2px solid var(--ink);padding:6px 
 table.results td{padding:7px 8px;border-bottom:1px dashed rgba(20,20,20,.25)}
 table.results td.place{font-family:'Anton',sans-serif;font-size:17px}
 .formline{margin-top:12px}
-.vidgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+.vidgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;align-items:stretch}
 .vhs{border:2px solid var(--ink);background:#fff;cursor:pointer;text-align:left;padding:0;box-shadow:3px 3px 0 var(--ink)}
 .vhs:hover{background:var(--yellow)}
 .vhs .thumb{aspect-ratio:16/9;background:var(--ink);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .vhs .thumb img{width:100%;height:100%;object-fit:cover}
 .vhs .thumb .play{position:absolute;width:38px;height:38px;background:var(--yellow);clip-path:polygon(25% 15%,85% 50%,25% 85%)}
-.vhs .lab{padding:8px;font-family:'Space Mono',monospace;font-size:11px;border-top:2px solid var(--ink)}
-.vhs .lab .yr{opacity:.6}
+.vhs{display:flex;flex-direction:column}
+.vhs .thumb{flex:none}
+.vhs .lab{padding:9px 10px 8px;font-family:'Space Mono',monospace;font-size:11px;border-top:2px solid var(--ink);
+  display:block;line-height:1.45;flex:1 1 auto}
+.vhs .lab .vt{display:block;font-weight:700;line-height:1.4;margin-bottom:5px;
+  overflow-wrap:anywhere;hyphens:auto}
+.vhs .lab .yr{display:block;opacity:.6;font-size:10px;line-height:1.4}
 .vhs.todo .thumb{background:repeating-linear-gradient(45deg,var(--paper-dark) 0 8px,#fff 8px 16px)}
 .vhs.todo .thumb::after{content:"ADD CLIP →";font-family:'Anton',sans-serif;color:var(--ink);font-size:14px}
 .vidplayer{margin-top:14px}
@@ -292,8 +297,9 @@ tr.cutline td span{display:block;font-family:'Anton',sans-serif;font-size:11px;b
   padding:8px 14px;font-family:'Space Mono',monospace;font-size:12px}
 #videoSec .deck .np .rec{width:10px;height:10px;border-radius:50%;background:var(--orange);animation:blink 1s steps(2) infinite;flex:none}
 #videoSec .deck .np b{font-family:'Anton',sans-serif;font-size:15px;letter-spacing:.03em}
-#vidWall{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
-#vidWall .vhs .who{padding:6px 8px;border-top:1.5px dashed rgba(20,20,20,.35);font-family:'Space Mono',monospace;font-size:9px;opacity:.75;line-height:1.5}
+#vidWall{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;align-items:stretch}
+#vidWall .vhs .who{display:block;padding:6px 10px 7px;border-top:1.5px dashed rgba(20,20,20,.35);
+  font-family:'Space Mono',monospace;font-size:9px;opacity:.75;line-height:1.55;overflow-wrap:anywhere}
 #vidWall .vhs.playing{background:var(--yellow);outline:3px solid var(--ink)}
 .watchcard{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
 .watchcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
@@ -691,6 +697,7 @@ let state={country:"ALL",disc:"ALL",q:"",sort:"rank",boardFilter:"STREET"};
    写真候補にマージする。GitHub Pagesではこれが「自動更新」の実体。
    ローカルでファイルを直接開いた場合(file://)は取得できないため静かにスキップする。 */
 async function loadDailyData(bust){
+  if(typeof fetch!=="function")return null;
   try{
     const res=await fetch("./data.json"+(bust?`?t=${Date.now()}`:""),{cache:bust?"no-store":"default"});
     if(!res.ok)return null;
@@ -993,7 +1000,7 @@ function openSpread(id){
         <div class="vidgrid">${r.videos.length?r.videos.map((v,i)=>`
           <button class="vhs ${v.youtubeId?"":"todo"}" data-rid="${r.id}" data-vi="${i}" ${v.youtubeId?"":'title="TODO: add YouTube ID in the data block"'}>
             <span class="thumb">${v.youtubeId?`<img src="https://i.ytimg.com/vi/${esc(v.youtubeId)}/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span>`:""}</span>
-            <span class="lab">${esc(v.title)}<br><span class="yr">${v.year} · ${esc(v.type)}</span></span>
+            <span class="lab"><span class="vt">${esc(v.title)}</span><span class="yr">${v.year} · ${esc(v.type)}</span></span>
           </button>`).join(""):'<p class="mono" style="font-size:12px">TODO: add clips for this rider in the data block.</p>'}
         </div>
         <div class="vidplayer" id="vidplayer"></div>
@@ -1065,7 +1072,7 @@ function renderFootage(){
     const more=(v.riderIds||[]).length>5?` +${v.riderIds.length-5}`:"";
     btn.innerHTML=`
       <span class="thumb">${v.youtubeId?`<img src="https://i.ytimg.com/vi/${esc(v.youtubeId)}/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span>`:""}</span>
-      <span class="lab">${esc(v.title)}<br><span class="yr">${v.year} · ${esc(v.type)}</span></span>
+      <span class="lab"><span class="vt">${esc(v.title)}</span><span class="yr">${v.year} · ${esc(v.type)}</span></span>
       ${who?`<span class="who">${esc(who)}${more}</span>`:""}`;
     btn.addEventListener("click",()=>{
       if(!v.youtubeId)return;
@@ -1275,9 +1282,15 @@ $$(".chip.bf").forEach(c=>c.addEventListener("click",()=>{$$(".chip.bf").forEach
 function renderAll(){renderHero();renderMap();renderRoster();renderCalendar();renderBoard();renderFootage();renderLiveStrip();
   $("#footUpdated").textContent="Last data pass: "+new Date(+localStorage.getItem("asicsHubLastRefresh")||Date.now()).toLocaleString();}
 (async()=>{
-  await loadDailyData(false); // GitHub Actionsが更新した最新データを取り込む(あれば)
+  // まず先に描画する — データ取得が失敗しても必ずサイトは表示される
   renderAll();renderCountdown();
-  if(IN_SANDBOX)maybeAutoRefresh(); // Claude内プレビューのみブラウザ内フォールバックを使う
+  try{
+    if(typeof fetch==="function"){
+      const ts=await loadDailyData(false); // GitHub Actionsが更新した最新データ(あれば)
+      if(ts)renderAll(); // 取り込めたら再描画
+    }
+  }catch(e){console.warn("daily data load skipped",e);}
+  try{if(IN_SANDBOX)maybeAutoRefresh();}catch(e){console.warn("auto refresh skipped",e);}
 })();
 /* 外部画像が読み込める環境かを1枚のテスト画像で診断し、
    ブロックされていれば案内バナーを表示する */
