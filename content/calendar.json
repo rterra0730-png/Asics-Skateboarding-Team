@@ -1,0 +1,107 @@
+{
+  "updatedAt": "2026-07-25",
+  "events": [
+    {
+      "name": "TODO: World Skate Street World Cup",
+      "date": "2026-08-14",
+      "city": "TBC",
+      "country": "TBC",
+      "type": "Olympic qualifier",
+      "qual": true,
+      "link": "",
+      "riders": [
+        "liz",
+        "ibuki",
+        "kairi",
+        "monica",
+        "andrea",
+        "luca",
+        "kyonosuke"
+      ]
+    },
+    {
+      "name": "TODO: X Games Park",
+      "date": "2026-08-29",
+      "city": "TBC",
+      "country": "USA",
+      "type": "Invitational",
+      "qual": false,
+      "riders": [
+        "kieran",
+        "brent"
+      ]
+    },
+    {
+      "name": "TODO: SLS Tour Stop",
+      "date": "2026-09-12",
+      "city": "TBC",
+      "country": "USA",
+      "type": "Pro tour",
+      "qual": false,
+      "riders": [
+        "liz",
+        "kairi",
+        "monica"
+      ]
+    },
+    {
+      "name": "TODO: JSF Japan National Championships",
+      "date": "2026-09-26",
+      "city": "Kasama",
+      "country": "Japan",
+      "type": "National championships",
+      "qual": true,
+      "riders": [
+        "ibuki",
+        "kairi",
+        "asahi",
+        "luca",
+        "sena",
+        "toa",
+        "niko"
+      ]
+    },
+    {
+      "name": "TODO: ASICS team video premiere",
+      "date": "2026-10-09",
+      "city": "Tokyo",
+      "country": "Japan",
+      "type": "Brand event",
+      "qual": false,
+      "riders": [
+        "takuya",
+        "ichiro",
+        "ginpei",
+        "masamitsu",
+        "tatsuya"
+      ]
+    },
+    {
+      "name": "TODO: World Skate Park World Cup",
+      "date": "2026-10-24",
+      "city": "TBC",
+      "country": "TBC",
+      "type": "Olympic qualifier",
+      "qual": true,
+      "riders": [
+        "kieran"
+      ]
+    },
+    {
+      "name": "TODO: Tampa Am / Pro window",
+      "date": "2026-11-07",
+      "city": "Tampa",
+      "country": "USA",
+      "type": "Core contest",
+      "qual": false,
+      "riders": [
+        "zander",
+        "dougie",
+        "evan",
+        "dylan",
+        "kyonosuke"
+      ]
+    }
+  ],
+  "live": null
+}

@@ -1,0 +1,342 @@
+{
+  "videos": [
+    {
+      "id": "tidbit",
+      "title": "Tidbit",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=50tu1iSo3DI",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2025,
+      "type": "Japan team edit",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "liz",
+        "ibuki",
+        "kairi",
+        "kyonosuke",
+        "luca",
+        "sena",
+        "ginpei",
+        "toa",
+        "niko",
+        "masamitsu",
+        "tatsuya",
+        "takuya",
+        "ichiro",
+        "evan",
+        "emile"
+      ]
+    },
+    {
+      "id": "a-guided-tour",
+      "title": "A Guided Tour",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=qkCyq5d1_68",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2025,
+      "type": "Full-length (26 min)",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "kyonosuke",
+        "evan",
+        "shay",
+        "jaakko",
+        "kieran"
+      ]
+    },
+    {
+      "id": "total-actual-comfort",
+      "title": "TOTAL ACTUAL COMFORT",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=8EKtCKbm-L4",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2023,
+      "type": "Team video",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "takuya",
+        "gino",
+        "evan",
+        "akwasi",
+        "brent",
+        "monica",
+        "shay",
+        "emile",
+        "victor",
+        "kieran"
+      ]
+    },
+    {
+      "id": "week-in-wooville",
+      "title": "Week in Wooville",
+      "visible": false,
+      "sourceType": "youtube",
+      "youtubeUrl": "",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2024,
+      "type": "Minneapolis edit",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "zander",
+        "dougie",
+        "alan",
+        "shay",
+        "jaakko"
+      ]
+    },
+    {
+      "id": "miniasics",
+      "title": "miniasics",
+      "visible": false,
+      "sourceType": "youtube",
+      "youtubeUrl": "",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2023,
+      "type": "Minneapolis edit",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "akwasi",
+        "mark",
+        "trung",
+        "alan"
+      ]
+    },
+    {
+      "id": "night-in-the-life",
+      "title": "Night In the Life",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=04aoOravwhE",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2024,
+      "type": "Solo part",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "shay"
+      ]
+    },
+    {
+      "id": "f-u-x",
+      "title": "f [ U _ X",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=8FUYYCmvPjs",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2025,
+      "type": "Promo",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "kieran"
+      ]
+    },
+    {
+      "id": "shay-sandiford-a-guided-tour-highlight",
+      "title": "Shay Sandiford — A Guided Tour highlight",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=OScc0hC6VEQ",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2025,
+      "type": "Short edit",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "shay"
+      ]
+    },
+    {
+      "id": "jaakko-ojanen-a-guided-tour-highlight",
+      "title": "Jaakko Ojanen — A Guided Tour highlight",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=WNrrdHmJDS4",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2025,
+      "type": "Short edit",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "jaakko"
+      ]
+    },
+    {
+      "id": "victor-campillo-a-guided-tour-highlight",
+      "title": "Victor Campillo — A Guided Tour highlight",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=45L5DUQfOjs",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2025,
+      "type": "Short edit",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "victor"
+      ]
+    },
+    {
+      "id": "kyonosuke-yamashita-a-guided-tour-highlight",
+      "title": "Kyonosuke Yamashita — A Guided Tour highlight",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=8GaDxcteJvc",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2025,
+      "type": "Short edit",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "kyonosuke"
+      ]
+    },
+    {
+      "id": "kieran-woolley-a-guided-tour-highlight",
+      "title": "Kieran Woolley — A Guided Tour highlight",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=0YFeaahNpMI",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2025,
+      "type": "Short edit",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "kieran"
+      ]
+    },
+    {
+      "id": "liz-akama-silver-medal-run-x-games-ventura",
+      "title": "Liz Akama — silver medal run, X Games Ventura",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=eWG3Yh2UR6o",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2024,
+      "type": "Contest run",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "liz"
+      ]
+    },
+    {
+      "id": "ibuki-matsumoto-bronze-x-games-osaka",
+      "title": "Ibuki Matsumoto — bronze, X Games Osaka",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=_hfMXNYHDdM",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2025,
+      "type": "Contest run",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "ibuki"
+      ]
+    },
+    {
+      "id": "kairi-netsuke-gold-x-games-osaka-street",
+      "title": "Kairi Netsuke — GOLD, X Games Osaka Street",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=OsNcIeyzfc8",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2025,
+      "type": "Contest run",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "kairi"
+      ]
+    },
+    {
+      "id": "asahi-kaihara-silver-x-games-osaka-vert",
+      "title": "Asahi Kaihara — silver, X Games Osaka Vert",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=l9-OZlXggmE",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2025,
+      "type": "Contest run",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "asahi"
+      ]
+    },
+    {
+      "id": "sena-watanabe-street-part-feature",
+      "title": "Sena Watanabe — street part feature",
+      "visible": true,
+      "sourceType": "youtube",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Jpde0cZ7x4w",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2022,
+      "type": "Street clip",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "sena"
+      ]
+    },
+    {
+      "id": "nyc-promo",
+      "title": "NYC Promo",
+      "visible": false,
+      "sourceType": "youtube",
+      "youtubeUrl": "",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2024,
+      "type": "City edit",
+      "category": "",
+      "description": "",
+      "riderIds": [
+        "gino",
+        "victor",
+        "mark"
+      ]
+    },
+    {
+      "id": "asics-skateboarding-team-introduction",
+      "title": "ASICS Skateboarding — team introduction",
+      "visible": false,
+      "sourceType": "youtube",
+      "youtubeUrl": "",
+      "videoFile": "",
+      "thumbnail": "",
+      "year": 2023,
+      "type": "Team video",
+      "category": "",
+      "description": "",
+      "riderIds": []
+    }
+  ]
+}

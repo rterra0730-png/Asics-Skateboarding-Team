@@ -1,0 +1,2031 @@
+{
+  "riders": [
+    {
+      "id": "liz",
+      "name": "Liz Akama",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "city": "Miyagi (b. Aomori)",
+      "discipline": "STREET",
+      "gender": "W",
+      "stance": "Regular",
+      "dob": "2009-01-08",
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [
+        "Flip Skateboards",
+        "Monster Energy",
+        "Jessup",
+        "Thunder Trucks",
+        "Bones Wheels",
+        "Avenir",
+        "Ninja Bearings"
+      ],
+      "photo": "",
+      "color": "#0F2AA8",
+      "nickname": "",
+      "socials": {
+        "instagram": "liz_akama",
+        "igFollowers": 180000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": 2,
+        "points": 88000,
+        "change": 0,
+        "rankPlaceholder": true,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [
+        {
+          "event": "SLS Sydney — podium",
+          "date": "2026-02-15",
+          "location": "Sydney, Australia",
+          "placement": 3
+        },
+        {
+          "event": "WST World Cup Kitakyushu Street",
+          "date": "2025-11-30",
+          "location": "Kitakyushu, Japan",
+          "placement": 5
+        },
+        {
+          "event": "X Games Ventura — Women's Street",
+          "date": "2024-06-30",
+          "location": "Ventura, USA",
+          "placement": 2
+        }
+      ],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2024,
+          "title": "SILVER — Paris 2024 Olympics, Women's Street",
+          "note": "257.99pts, behind teammate Coco Yoshizawa — a Japan 1-2"
+        },
+        {
+          "year": 2024,
+          "title": "5 X Games medals and counting",
+          "note": "3 silver, 2 bronze"
+        },
+        {
+          "year": 2025,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: verify year"
+        }
+      ],
+      "visible": true,
+      "mapX": 871,
+      "mapY": 133
+    },
+    {
+      "id": "ibuki",
+      "name": "Ibuki Matsumoto",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "city": "Kumamoto",
+      "discipline": "STREET",
+      "gender": "W",
+      "stance": "TBC",
+      "dob": "2012-01-01",
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#FF4D00",
+      "nickname": "",
+      "socials": {
+        "instagram": "ibuki___matsumoto",
+        "igFollowers": 120000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": 1,
+        "points": 90000,
+        "change": 0,
+        "rankPlaceholder": true,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [
+        {
+          "event": "World Skateboarding Championship (Street)",
+          "date": "2026-03-09",
+          "location": "São Paulo, Brazil",
+          "placement": 1
+        },
+        {
+          "event": "X Games Sacramento — Street Best Trick",
+          "date": "2026-06-27",
+          "location": "Sacramento, USA",
+          "placement": 3
+        },
+        {
+          "event": "WST World Cup Kitakyushu Street",
+          "date": "2025-11-30",
+          "location": "Kitakyushu, Japan",
+          "placement": 1
+        },
+        {
+          "event": "X Games Osaka — Women's Street",
+          "date": "2025-06-20",
+          "location": "Osaka, Japan",
+          "placement": 3
+        }
+      ],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2025,
+          "title": "First WST title at 13 — World Cup Kitakyushu",
+          "note": "Beat Yumeka Oda by 0.22 points in her home contest"
+        },
+        {
+          "year": 2026,
+          "title": "WORLD CHAMPION — Women's Street",
+          "note": "Gold at the World Skateboarding Championship, São Paulo"
+        },
+        {
+          "year": 2026,
+          "title": "Back-to-back X Games medals",
+          "note": "Bronze in Osaka 2025 and Sacramento 2026"
+        }
+      ],
+      "visible": true,
+      "mapX": 852,
+      "mapY": 147
+    },
+    {
+      "id": "kairi",
+      "name": "Kairi Netsuke",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "city": "Shimada, Shizuoka",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "Goofy",
+      "dob": "2003-08-19",
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#141414",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 75000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": 8,
+        "points": 52000,
+        "change": -1,
+        "rankPlaceholder": true,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [
+        {
+          "event": "Rockstar Energy Open — Men's Street Final",
+          "date": "2025-12-01",
+          "location": "USA",
+          "placement": 1
+        },
+        {
+          "event": "X Games Osaka — Men's Street",
+          "date": "2025-06-22",
+          "location": "Osaka, Japan",
+          "placement": 1
+        },
+        {
+          "event": "World Skateboarding Championship (Street)",
+          "date": "2023-12-15",
+          "location": "Tokyo, Japan",
+          "placement": 2
+        }
+      ],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "WORLD CHAMPIONSHIP SILVER — Men's Street",
+          "note": "Finished ahead of Olympic champion Yuto Horigome; topped the quarterfinals at 80.37"
+        },
+        {
+          "year": 2024,
+          "title": "World #5 — but missed Paris 2024",
+          "note": "Japan had already filled its 3-skater quota. THE textbook Japan quota story."
+        },
+        {
+          "year": 2025,
+          "title": "GOLD — X Games Osaka, Men's Street",
+          "note": "Home-soil X Games title"
+        },
+        {
+          "year": 2025,
+          "title": "Wins RSEO Men's Street Final",
+          "note": "Dominant closing performance"
+        }
+      ],
+      "visible": true,
+      "mapX": 865,
+      "mapY": 141
+    },
+    {
+      "id": "kyonosuke",
+      "name": "Kyonosuke Yamashita",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "city": "Tokyo (Shinagawa)",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "Regular",
+      "dob": "2004-05-23",
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [
+        "Primitive",
+        "Spitfire",
+        "Carhartt WIP",
+        "Ace Trucks",
+        "MOB Grip",
+        "5050 Skateshop",
+        "Kento Hardware"
+      ],
+      "photo": "",
+      "color": "#7A1FA0",
+      "nickname": "Japanese Ninja",
+      "socials": {
+        "instagram": "_kyonosuke_",
+        "igFollowers": 369000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": 14,
+        "points": 41200,
+        "change": 2,
+        "rankPlaceholder": true,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [
+        {
+          "event": "Tampa Pro — Semi-Final",
+          "date": "2026-04-12",
+          "location": "Tampa, USA",
+          "placement": 17
+        }
+      ],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2021,
+          "title": "Joins Primitive Skateboarding",
+          "note": "Welcomed personally by Paul Rodriguez"
+        },
+        {
+          "year": 2025,
+          "title": "Leads 'A Guided Tour'",
+          "note": "ASICS' first full-length video, dir. Jacob Elliott Harris"
+        }
+      ],
+      "visible": true,
+      "mapX": 869,
+      "mapY": 139
+    },
+    {
+      "id": "asahi",
+      "name": "Asahi Kaihara",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "city": "Osaka",
+      "discipline": "PARK",
+      "gender": "W",
+      "stance": "Regular",
+      "dob": "2007-01-01",
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [
+        "Blood Wizard",
+        "Independent",
+        "Monster Army",
+        "Bronson Speed Co.",
+        "Spitfire"
+      ],
+      "photo": "",
+      "color": "#0A7A2F",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 30000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [
+        {
+          "event": "X Games Osaka — Women's Vert",
+          "date": "2025-06-21",
+          "location": "Osaka, Japan",
+          "placement": 2
+        },
+        {
+          "event": "Japan Open (Park)",
+          "date": "2025-04-15",
+          "location": "Japan",
+          "placement": 3
+        },
+        {
+          "event": "World Skate Park — Ostia",
+          "date": "2024-09-01",
+          "location": "Ostia, Italy",
+          "placement": 3
+        },
+        {
+          "event": "X Games California — Women's Vert",
+          "date": "2023-08-12",
+          "location": "California, USA",
+          "placement": 3
+        }
+      ],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "First X Games Vert medal at 16",
+          "note": "1 silver + 3 bronze in her first 4 X Games Vert starts"
+        },
+        {
+          "year": 2024,
+          "title": "Blood Wizard video part",
+          "note": "Filmed on Elliot Sloan and Bob Burnquist's backyard ramps"
+        },
+        {
+          "year": 2026,
+          "title": "Turns pro for Blood Wizard",
+          "note": "After her part in the team video 'Sorcery' — out of Osaka's 'Simple City' scene alongside Moto Shibata"
+        }
+      ],
+      "visible": true,
+      "mapX": 859,
+      "mapY": 143
+    },
+    {
+      "id": "luca",
+      "name": "Luca Hirata",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "city": "Tokyo",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2024,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#0F2AA8",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 25000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": 38,
+        "points": 18200,
+        "change": 4,
+        "rankPlaceholder": true,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2024,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 869,
+      "mapY": 139
+    },
+    {
+      "id": "sena",
+      "name": "Sena Watanabe",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "city": "Tokyo",
+      "discipline": "STREET",
+      "gender": "W",
+      "stance": "Goofy",
+      "dob": "2006-06-01",
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [
+        "Hibrid Skateboards",
+        "Bones Wheels",
+        "5050 Skateshop",
+        "Slappy Trucks"
+      ],
+      "photo": "",
+      "color": "#FF4D00",
+      "nickname": "",
+      "socials": {
+        "instagram": "senawatanabe__",
+        "igFollowers": 25000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [
+        {
+          "event": "Tampa Am — Semi-Finals",
+          "date": "2025-10-19",
+          "location": "Tampa, USA",
+          "placement": 28
+        },
+        {
+          "event": "Damn Am Buffalo — Finals",
+          "date": "2025-08-02",
+          "location": "Buffalo, USA",
+          "placement": 1
+        }
+      ],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2025,
+          "title": "Wins Damn Am Buffalo",
+          "note": "First place in the finals, August 2025"
+        }
+      ],
+      "visible": true,
+      "mapX": 869,
+      "mapY": 139
+    },
+    {
+      "id": "ginpei",
+      "name": "Ginpei Saito",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "city": "Nagoya",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#141414",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 15000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 862,
+      "mapY": 141
+    },
+    {
+      "id": "toa",
+      "name": "Toa Kanazawa",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "city": "Tokyo",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#7A1FA0",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 22000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 869,
+      "mapY": 139
+    },
+    {
+      "id": "niko",
+      "name": "Niko Sugimoto",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "city": "Chiba",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#0A7A2F",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 14000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 870,
+      "mapY": 140
+    },
+    {
+      "id": "masamitsu",
+      "name": "Masamitsu Akachi",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "city": "Osaka",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#0F2AA8",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 16000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 859,
+      "mapY": 143
+    },
+    {
+      "id": "tatsuya",
+      "name": "Tatsuya Nogami",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "city": "Kobe",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#FF4D00",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 17000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 858,
+      "mapY": 143
+    },
+    {
+      "id": "takuya",
+      "name": "Takuya Ishizuka",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "city": "Tokyo",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#141414",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 35000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "ASICS launch roster",
+          "note": "Original Japan crew"
+        },
+        {
+          "year": 2025,
+          "title": "Tidbit part",
+          "note": ""
+        }
+      ],
+      "visible": true,
+      "mapX": 869,
+      "mapY": 139
+    },
+    {
+      "id": "ichiro",
+      "name": "Ichiro Tuzuki",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "city": "Tokyo",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#7A1FA0",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 12000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 869,
+      "mapY": 139
+    },
+    {
+      "id": "gino",
+      "name": "Gino Iannucci",
+      "country": "USA",
+      "flag": "🇺🇸",
+      "city": "Long Island, NY",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": "1974-06-21",
+      "turnedPro": 1993,
+      "joinedAsics": 2022,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#0A7A2F",
+      "nickname": "The GOAT of style",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 150000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 1993,
+          "title": "Turns pro",
+          "note": "101 → Chocolate — one of the most stylish careers in street skating"
+        },
+        {
+          "year": 2022,
+          "title": "ASICS Skateboarding's FIRST rider",
+          "note": "The signing that made the industry pay attention"
+        },
+        {
+          "year": 2023,
+          "title": "Opens TOTAL ACTUAL COMFORT",
+          "note": ""
+        }
+      ],
+      "visible": true,
+      "mapX": 312,
+      "mapY": 123
+    },
+    {
+      "id": "zander",
+      "name": "Alexander \"Zander\" Mitchell",
+      "country": "USA",
+      "flag": "🇺🇸",
+      "city": "Los Angeles",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#0F2AA8",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 30000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 186,
+      "mapY": 145
+    },
+    {
+      "id": "evan",
+      "name": "Evan Wasser",
+      "country": "USA",
+      "flag": "🇺🇸",
+      "city": "New York",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#FF4D00",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 25000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 309,
+      "mapY": 123
+    },
+    {
+      "id": "secret",
+      "name": "Secret Lynn",
+      "country": "USA",
+      "flag": "🇺🇸",
+      "city": "Los Angeles",
+      "discipline": "STREET",
+      "gender": "W",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#141414",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 40000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 186,
+      "mapY": 145
+    },
+    {
+      "id": "dougie",
+      "name": "Dougie George",
+      "country": "USA",
+      "flag": "🇺🇸",
+      "city": "Los Angeles",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#7A1FA0",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 35000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 186,
+      "mapY": 145
+    },
+    {
+      "id": "akwasi",
+      "name": "Akwasi Owusu",
+      "country": "USA",
+      "flag": "🇺🇸",
+      "city": "Los Angeles",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [
+        "Sci-Fi Fantasy"
+      ],
+      "photo": "",
+      "color": "#0A7A2F",
+      "nickname": "Slappy king",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 65000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 186,
+      "mapY": 145
+    },
+    {
+      "id": "brent",
+      "name": "Brent Atchley",
+      "country": "USA",
+      "flag": "🇺🇸",
+      "city": "Portland",
+      "discipline": "PARK",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#0F2AA8",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 45000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS",
+          "note": "PNW transition legend — pools, parks, flow"
+        }
+      ],
+      "visible": true,
+      "mapX": 190,
+      "mapY": 108
+    },
+    {
+      "id": "monica",
+      "name": "Monica Torres",
+      "country": "USA",
+      "flag": "🇺🇸",
+      "city": "Los Angeles",
+      "discipline": "STREET",
+      "gender": "W",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#FF4D00",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 80000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": 26,
+        "points": 24800,
+        "change": 3,
+        "rankPlaceholder": true,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 186,
+      "mapY": 145
+    },
+    {
+      "id": "simon",
+      "name": "Simon Bannerot",
+      "country": "USA",
+      "flag": "🇺🇸",
+      "city": "Seattle",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [
+        "Girl"
+      ],
+      "photo": "",
+      "color": "#141414",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 70000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 188,
+      "mapY": 103
+    },
+    {
+      "id": "mark",
+      "name": "Mark Humienik",
+      "country": "USA",
+      "flag": "🇺🇸",
+      "city": "New York",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#7A1FA0",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 28000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 309,
+      "mapY": 123
+    },
+    {
+      "id": "trung",
+      "name": "Trung Nguyen",
+      "country": "USA",
+      "flag": "🇺🇸",
+      "city": "Minneapolis",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#0A7A2F",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 20000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 264,
+      "mapY": 109
+    },
+    {
+      "id": "alan",
+      "name": "Alan Bell",
+      "country": "USA",
+      "flag": "🇺🇸",
+      "city": "Minneapolis",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#0F2AA8",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 22000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 264,
+      "mapY": 109
+    },
+    {
+      "id": "dylan",
+      "name": "Dylan Clark",
+      "country": "USA",
+      "flag": "🇺🇸",
+      "city": "Los Angeles",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#FF4D00",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 26000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 186,
+      "mapY": 145
+    },
+    {
+      "id": "nicholas",
+      "name": "Nicholas Lourenço Dias Reis",
+      "country": "Brazil",
+      "flag": "🇧🇷",
+      "city": "São Paulo",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#141414",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 30000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 372,
+      "mapY": 333
+    },
+    {
+      "id": "kayna",
+      "name": "Kayna Regina Abel",
+      "country": "Brazil",
+      "flag": "🇧🇷",
+      "city": "Curitiba",
+      "discipline": "STREET",
+      "gender": "W",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#7A1FA0",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 25000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 366,
+      "mapY": 339
+    },
+    {
+      "id": "murilo",
+      "name": "Murilo Guimarães Romão",
+      "country": "Brazil",
+      "flag": "🇧🇷",
+      "city": "São Paulo",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#0A7A2F",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 20000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 372,
+      "mapY": 333
+    },
+    {
+      "id": "edgard",
+      "name": "Edgard Junior de Lima",
+      "country": "Brazil",
+      "flag": "🇧🇷",
+      "city": "Rio de Janeiro",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#0F2AA8",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 18000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 382,
+      "mapY": 331
+    },
+    {
+      "id": "shay",
+      "name": "Shay Sandiford",
+      "country": "Canada",
+      "flag": "🇨🇦",
+      "city": "Los Angeles",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#FF4D00",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 55000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "ASICS launch roster",
+          "note": ""
+        },
+        {
+          "year": 2024,
+          "title": "'Night In the Life' solo part",
+          "note": "Dir. Jacob Elliott Harris"
+        }
+      ],
+      "visible": true,
+      "mapX": 186,
+      "mapY": 145
+    },
+    {
+      "id": "justin",
+      "name": "Justin Dreyson",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "city": "London",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#141414",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 15000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 500,
+      "mapY": 89
+    },
+    {
+      "id": "emile",
+      "name": "Emile Laurent",
+      "country": "France",
+      "flag": "🇫🇷",
+      "city": "Paris",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [
+        "Polar Skate Co."
+      ],
+      "photo": "",
+      "color": "#7A1FA0",
+      "nickname": "Pocket rocket",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 70000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 506,
+      "mapY": 97
+    },
+    {
+      "id": "marca",
+      "name": "Marca Barbier",
+      "country": "France",
+      "flag": "🇫🇷",
+      "city": "Paris",
+      "discipline": "STREET",
+      "gender": "W",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#0A7A2F",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 12000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 506,
+      "mapY": 97
+    },
+    {
+      "id": "victor",
+      "name": "Victor Campillo",
+      "country": "Spain",
+      "flag": "🇪🇸",
+      "city": "Barcelona",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#0F2AA8",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 60000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 506,
+      "mapY": 121
+    },
+    {
+      "id": "andrea",
+      "name": "Andrea Benítez",
+      "country": "Spain",
+      "flag": "🇪🇸",
+      "city": "Madrid",
+      "discipline": "STREET",
+      "gender": "W",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#FF4D00",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 90000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": 22,
+        "points": 27500,
+        "change": 1,
+        "rankPlaceholder": true,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2021,
+          "title": "Tokyo 2020 Olympian — Women's Street",
+          "note": "TODO: verify"
+        },
+        {
+          "year": 2023,
+          "title": "Joins ASICS",
+          "note": ""
+        }
+      ],
+      "visible": true,
+      "mapX": 490,
+      "mapY": 124
+    },
+    {
+      "id": "jaakko",
+      "name": "Jaakko Ojanen",
+      "country": "Finland",
+      "flag": "🇫🇮",
+      "city": "Helsinki",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2024,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#141414",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 110000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2024,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 557,
+      "mapY": 62
+    },
+    {
+      "id": "unna",
+      "name": "Unna Peltotalo",
+      "country": "Finland",
+      "flag": "🇫🇮",
+      "city": "Helsinki",
+      "discipline": "STREET",
+      "gender": "W",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#7A1FA0",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 14000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 557,
+      "mapY": 62
+    },
+    {
+      "id": "heili",
+      "name": "Heili Sirvilo",
+      "country": "Finland",
+      "flag": "🇫🇮",
+      "city": "Helsinki",
+      "discipline": "STREET",
+      "gender": "W",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#0A7A2F",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 10000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 557,
+      "mapY": 62
+    },
+    {
+      "id": "liv",
+      "name": "Liv Nelemans",
+      "country": "Netherlands",
+      "flag": "🇳🇱",
+      "city": "Amsterdam",
+      "discipline": "STREET",
+      "gender": "W",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#0F2AA8",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 13000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": null,
+      "mapY": null
+    },
+    {
+      "id": "kieran",
+      "name": "Kieran Woolley",
+      "country": "Australia",
+      "flag": "🇦🇺",
+      "city": "Wollongong",
+      "discipline": "PARK",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": "2003-11-01",
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#FF4D00",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 90000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": 9,
+        "points": 56400,
+        "change": -1,
+        "rankPlaceholder": true,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2021,
+          "title": "Tokyo 2020 Olympian (Park)",
+          "note": "Also famously took out a TV camera mid-run"
+        },
+        {
+          "year": 2023,
+          "title": "Joins ASICS",
+          "note": ""
+        }
+      ],
+      "visible": true,
+      "mapX": 900,
+      "mapY": 368
+    },
+    {
+      "id": "tai",
+      "name": "Tai Wepa",
+      "country": "New Zealand",
+      "flag": "🇳🇿",
+      "city": "Auckland",
+      "discipline": "STREET",
+      "gender": "M",
+      "stance": "TBC",
+      "dob": null,
+      "turnedPro": null,
+      "joinedAsics": 2023,
+      "signatureShoe": null,
+      "otherSponsors": [],
+      "photo": "",
+      "color": "#141414",
+      "nickname": "",
+      "socials": {
+        "instagram": "",
+        "igFollowers": 12000,
+        "igAsOf": "2026-07-01"
+      },
+      "ranking": {
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
+        "rankPlaceholder": false,
+        "updatedAt": "2026-07-25"
+      },
+      "results": [],
+      "videos": [],
+      "timeline": [
+        {
+          "year": 2023,
+          "title": "Joins ASICS Skateboarding",
+          "note": "TODO: add career milestones"
+        }
+      ],
+      "visible": true,
+      "mapX": 959,
+      "mapY": 376
+    }
+  ]
+}

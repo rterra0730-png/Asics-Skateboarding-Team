@@ -1,0 +1,295 @@
+# IMPORTANT: replace the repo value before publishing.
+backend:
+  name: github
+  repo: rterra0730-png/Asics-Skateboarding-Team
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+local_backend: true
+publish_mode: simple
+media_folder: assets/uploads
+public_folder: assets/uploads
+media_library:
+  config:
+    max_file_size: 25000000
+
+collections:
+  - label: Site Text & Sections
+    name: site_settings
+    format: json
+    files:
+      - label: Site Settings
+        name: site
+        file: content/site.json
+        format: json
+        fields:
+          - {label: Browser title, name: siteTitle, widget: string}
+          - label: Navigation
+            name: nav
+            widget: object
+            collapsed: true
+            fields:
+              - {label: Logo text, name: logo, widget: string}
+              - {label: Map label, name: map, widget: string}
+              - {label: Calendar label, name: calendar, widget: string}
+              - {label: Roster label, name: roster, widget: string}
+              - {label: LA28 label, name: la28, widget: string}
+              - {label: Footage label, name: footage, widget: string}
+              - {label: Refresh label, name: refresh, widget: string}
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - {label: Show section, name: enabled, widget: boolean, default: true}
+              - {label: Line 1, name: line1, widget: string}
+              - {label: Line 2, name: line2, widget: string}
+              - {label: Line 3, name: line3, widget: string}
+              - {label: Rider count label, name: riderLabel, widget: string}
+              - {label: Country count label, name: countryLabel, widget: string}
+              - {label: Japan count label, name: japanLabel, widget: string}
+              - {label: Internal notice, name: stamp, widget: string}
+          - label: Map section
+            name: map
+            widget: object
+            fields:
+              - {label: Show section, name: enabled, widget: boolean, default: true}
+              - {label: Kicker, name: kicker, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Map note, name: note, widget: string}
+          - label: Calendar section
+            name: calendar
+            widget: object
+            fields:
+              - {label: Show section, name: enabled, widget: boolean, default: true}
+              - {label: Kicker, name: kicker, widget: string}
+              - {label: Title, name: title, widget: string}
+          - label: Roster section
+            name: roster
+            widget: object
+            fields:
+              - {label: Show section, name: enabled, widget: boolean, default: true}
+              - {label: Kicker, name: kicker, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Empty message, name: empty, widget: string}
+          - label: LA 2028 section
+            name: la28
+            widget: object
+            fields:
+              - {label: Show section, name: enabled, widget: boolean, default: true}
+              - {label: Kicker, name: kicker, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Opening date, name: openingDate, widget: datetime, format: "YYYY-MM-DDTHH:mm:ss"}
+              - {label: Qualification cut line, name: cutLine, widget: number, value_type: int, min: 1}
+              - {label: Quota note, name: quotaNote, widget: text}
+              - {label: Off-circuit note, name: streetNote, widget: text}
+          - label: Footage section
+            name: footage
+            widget: object
+            fields:
+              - {label: Show section, name: enabled, widget: boolean, default: true}
+              - {label: Kicker, name: kicker, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Status note, name: status, widget: string}
+              - {label: Empty player title, name: idleTitle, widget: string}
+              - {label: Empty player subtitle, name: idleSubtitle, widget: string}
+              - {label: No results message, name: empty, widget: string}
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - {label: Footer title, name: title, widget: string}
+              - {label: Footer note, name: note, widget: text}
+
+  - label: Riders
+    name: riders
+    format: json
+    files:
+      - label: Rider Roster
+        name: roster
+        file: content/riders.json
+        format: json
+        fields:
+          - label: Riders
+            label_singular: Rider
+            name: riders
+            widget: list
+            collapsed: true
+            minimize_collapsed: true
+            summary: '{{fields.name}} · {{fields.country}} · {{fields.discipline}}'
+            add_to_top: true
+            fields:
+              - {label: Show rider, name: visible, widget: boolean, default: true}
+              - {label: Rider ID, name: id, widget: string, hint: 'Unique lower-case ID. Do not change after linking footage or events.'}
+              - {label: Name, name: name, widget: string}
+              - {label: Country, name: country, widget: string}
+              - {label: Flag emoji, name: flag, widget: string, required: false}
+              - {label: Base / City, name: city, widget: string}
+              - {label: Discipline, name: discipline, widget: select, options: [STREET, PARK]}
+              - {label: Gender, name: gender, widget: select, options: [{label: Men, value: M}, {label: Women, value: W}]}
+              - {label: Stance, name: stance, widget: select, options: [Regular, Goofy, TBC], required: false}
+              - {label: Date of birth, name: dob, widget: string, required: false, hint: 'YYYY-MM-DD'}
+              - {label: Turned pro, name: turnedPro, widget: number, value_type: int, required: false}
+              - {label: On ASICS since, name: joinedAsics, widget: number, value_type: int}
+              - {label: Signature shoe, name: signatureShoe, widget: string, required: false}
+              - {label: Other sponsors, name: otherSponsors, widget: list, required: false}
+              - {label: Profile photo, name: photo, widget: image, required: false, choose_url: true}
+              - {label: Card color, name: color, widget: color, required: false}
+              - {label: Nickname, name: nickname, widget: string, required: false}
+              - label: Instagram
+                name: socials
+                widget: object
+                collapsed: true
+                fields:
+                  - {label: Handle without @, name: instagram, widget: string, required: false}
+                  - {label: Followers, name: igFollowers, widget: number, value_type: int, required: false}
+                  - {label: Count as of, name: igAsOf, widget: string, required: false, hint: 'YYYY-MM-DD'}
+              - label: LA28 Ranking
+                name: ranking
+                widget: object
+                collapsed: true
+                fields:
+                  - {label: OWSR rank, name: owsrRank, widget: number, value_type: int, required: false}
+                  - {label: Points, name: points, widget: number, value_type: int, required: false}
+                  - {label: Change, name: change, widget: number, value_type: int, default: 0}
+                  - {label: Placeholder, name: rankPlaceholder, widget: boolean, default: false}
+                  - {label: Updated at, name: updatedAt, widget: string, required: false, hint: 'YYYY-MM-DD'}
+              - label: Recent results
+                label_singular: Result
+                name: results
+                widget: list
+                collapsed: true
+                required: false
+                summary: '#{{fields.placement}} · {{fields.event}}'
+                fields:
+                  - {label: Event, name: event, widget: string}
+                  - {label: Date, name: date, widget: string, hint: 'YYYY-MM-DD'}
+                  - {label: Location, name: location, widget: string}
+                  - {label: Placement, name: placement, widget: number, value_type: int}
+              - label: History
+                label_singular: Milestone
+                name: timeline
+                widget: list
+                collapsed: true
+                required: false
+                summary: '{{fields.year}} · {{fields.title}}'
+                fields:
+                  - {label: Year, name: year, widget: number, value_type: int}
+                  - {label: Title, name: title, widget: string}
+                  - {label: Note, name: note, widget: text, required: false}
+              - label: Map position (advanced)
+                name: mapPosition
+                widget: object
+                collapsed: true
+                required: false
+                fields:
+                  - {label: Map X, name: x, widget: number, value_type: float, required: false}
+                  - {label: Map Y, name: y, widget: number, value_type: float, required: false}
+              - {label: Map X legacy, name: mapX, widget: number, value_type: float, required: false}
+              - {label: Map Y legacy, name: mapY, widget: number, value_type: float, required: false}
+              - {label: Videos legacy, name: videos, widget: hidden, default: []}
+
+  - label: Footage
+    name: footage
+    format: json
+    files:
+      - label: Video Archive
+        name: archive
+        file: content/footage.json
+        format: json
+        fields:
+          - label: Videos
+            label_singular: Video
+            name: videos
+            widget: list
+            collapsed: true
+            minimize_collapsed: true
+            add_to_top: true
+            summary: '{{fields.title}} · {{fields.year}} · {{fields.type}}'
+            fields:
+              - {label: Publish / show, name: visible, widget: boolean, default: true}
+              - {label: Video ID, name: id, widget: string, hint: 'Unique ID. Lowercase and hyphens are recommended.'}
+              - {label: Title, name: title, widget: string}
+              - {label: Source, name: sourceType, widget: select, options: [{label: YouTube link, value: youtube}, {label: Uploaded video, value: upload}]}
+              - {label: YouTube URL, name: youtubeUrl, widget: string, required: false}
+              - label: Upload video file
+                name: videoFile
+                widget: file
+                required: false
+                choose_url: true
+                media_library:
+                  config:
+                    max_file_size: 25000000
+              - {label: Custom thumbnail, name: thumbnail, widget: image, required: false, choose_url: true}
+              - {label: Year, name: year, widget: number, value_type: int}
+              - {label: Type label, name: type, widget: string, hint: 'Example: Team video, Solo part, Contest run'}
+              - {label: Filter category, name: category, widget: select, required: false, options: [{label: Automatic, value: ''}, TEAM, SOLO, EDIT]}
+              - {label: Description, name: description, widget: text, required: false}
+              - label: Linked riders
+                name: riderIds
+                widget: relation
+                collection: riders
+                file: roster
+                value_field: riders.*.id
+                search_fields: [riders.*.name, riders.*.id]
+                display_fields: [riders.*.name]
+                multiple: true
+                required: false
+                options_length: 60
+
+  - label: Calendar & Live Radar
+    name: calendar
+    format: json
+    files:
+      - label: Events
+        name: events
+        file: content/calendar.json
+        format: json
+        fields:
+          - {label: Updated at, name: updatedAt, widget: string, hint: 'YYYY-MM-DD'}
+          - label: Live event
+            name: live
+            widget: object
+            required: false
+            collapsed: true
+            fields:
+              - {label: Name, name: name, widget: string, required: false}
+              - {label: Location, name: location, widget: string, required: false}
+              - {label: Watch link, name: link, widget: string, required: false}
+              - label: Rider IDs
+                name: riders
+                widget: relation
+                collection: riders
+                file: roster
+                value_field: riders.*.id
+                search_fields: [riders.*.name, riders.*.id]
+                display_fields: [riders.*.name]
+                multiple: true
+                required: false
+                options_length: 60
+          - label: Events
+            label_singular: Event
+            name: events
+            widget: list
+            collapsed: true
+            add_to_top: true
+            summary: '{{fields.date}} · {{fields.name}}'
+            fields:
+              - {label: Event name, name: name, widget: string}
+              - {label: Date, name: date, widget: string, hint: 'YYYY-MM-DD'}
+              - {label: City, name: city, widget: string}
+              - {label: Country, name: country, widget: string}
+              - {label: Type, name: type, widget: string}
+              - {label: Olympic qualifier, name: qual, widget: boolean, default: false}
+              - {label: Official link, name: link, widget: string, required: false}
+              - label: Entered riders
+                name: riders
+                widget: relation
+                collection: riders
+                file: roster
+                value_field: riders.*.id
+                search_fields: [riders.*.name, riders.*.id]
+                display_fields: [riders.*.name]
+                multiple: true
+                required: false
+                options_length: 60

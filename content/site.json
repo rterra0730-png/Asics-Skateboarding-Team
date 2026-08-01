@@ -1,0 +1,61 @@
+{
+  "siteTitle": "ASICS SKATEBOARDING — TEAM SHEET",
+  "nav": {
+    "logo": "TEAM SHEET",
+    "map": "MAP",
+    "calendar": "CALENDAR",
+    "roster": "ROSTER",
+    "la28": "LA 2028",
+    "footage": "FOOTAGE",
+    "refresh": "REFRESH"
+  },
+  "hero": {
+    "enabled": true,
+    "line1": "ASICS",
+    "line2": "SKATEBOARDING",
+    "line3": "TEAM SHEET",
+    "riderLabel": "CONTRACTED RIDERS",
+    "countryLabel": "COUNTRIES",
+    "japanLabel": "BASED IN JAPAN",
+    "stamp": "INTERNAL MARKETING · NOT FOR EXTERNAL DISTRIBUTION"
+  },
+  "map": {
+    "enabled": true,
+    "kicker": "01 / GLOBAL FOOTPRINT",
+    "title": "Where They Roll",
+    "note": "RIDER BASES BY COUNTRY — TAP A PIN TO FILTER"
+  },
+  "calendar": {
+    "enabled": true,
+    "kicker": "02 / EVENT RADAR",
+    "title": "Contest Calendar"
+  },
+  "roster": {
+    "enabled": true,
+    "kicker": "03 / THE STICKER SHEET",
+    "title": "The Roster",
+    "empty": "No riders match. Peel back a filter and try again."
+  },
+  "la28": {
+    "enabled": true,
+    "kicker": "04 / OLYMPIC TRACK",
+    "title": "Road to LA 2028",
+    "openingDate": "2028-07-14T00:00:00",
+    "cutLine": 20,
+    "quotaNote": "※ Olympic qualification runs on the Olympic World Skateboarding Rankings with a per-country quota (max 3 per nation per event at Paris 2024 — LA 2028 rules TBC). Japan's depth means ASICS riders may be competing with each other for national slots. Ranks marked PLACEHOLDER are unverified — hit REFRESH to pull current numbers.",
+    "streetNote": "RIDERS SHOWN AS ‘—’ LIVE OUTSIDE THE OLYMPIC CIRCUIT: video parts, core contests, culture. Different lane, same impact — that's most of this team, by design."
+  },
+  "footage": {
+    "enabled": true,
+    "kicker": "05 / VIDEO CLUB",
+    "title": "Footage",
+    "status": "YouTube or uploaded video · nothing plays until you press it",
+    "idleTitle": "PICK A TAPE FROM THE SHELF ▼",
+    "idleSubtitle": "ASICS SKATEBOARDING VIDEO ARCHIVE",
+    "empty": "No tapes match — try another search."
+  },
+  "footer": {
+    "title": "ASICS SKATEBOARDING — INTERNAL TEAM SHEET",
+    "note": "Content is editable from /admin/ · rankings may also sync automatically · photos and follower counts are managed in the CMS."
+  }
+}
