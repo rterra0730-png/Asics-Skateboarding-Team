@@ -10,10 +10,6 @@ local_backend: true
 publish_mode: simple
 media_folder: assets/uploads
 public_folder: assets/uploads
-media_library:
-  config:
-    max_file_size: 25000000
-
 collections:
   - label: Site Text & Sections
     name: site_settings
@@ -217,9 +213,6 @@ collections:
                 widget: file
                 required: false
                 choose_url: true
-                media_library:
-                  config:
-                    max_file_size: 25000000
               - {label: Custom thumbnail, name: thumbnail, widget: image, required: false, choose_url: true}
               - {label: Year, name: year, widget: number, value_type: int}
               - {label: Type label, name: type, widget: string, hint: 'Example: Team video, Solo part, Contest run'}
