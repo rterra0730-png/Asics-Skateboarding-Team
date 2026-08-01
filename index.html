@@ -43,11 +43,20 @@
 .skate-cursor.interactive .glow{opacity:1}
 .skate-cursor.pressed .board{transform:translateY(1px) rotate(7deg) scale(.97)}
 .skate-cursor.ollie .board{animation:cursorOllie .38s cubic-bezier(.24,.86,.36,1) both}
+.skate-cursor.trick .board{animation:cursorMegaFlip .92s cubic-bezier(.22,.9,.3,1) both}
 @keyframes cursorOllie{
   0%{transform:translateY(0) rotate(-8deg)}
   38%{transform:translateY(-10px) rotate(-2deg) scale(1.04)}
   65%{transform:translateY(-6px) rotate(5deg)}
   100%{transform:translateY(0) rotate(0deg)}
+}
+@keyframes cursorMegaFlip{
+  0%{transform:translateY(0) rotate(-8deg) scale(1)}
+  18%{transform:translateY(-8px) rotate(35deg) scale(1.03)}
+  42%{transform:translateY(-20px) rotate(210deg) scale(.94,1.07)}
+  68%{transform:translateY(-12px) rotate(405deg) scale(1.02,.96)}
+  84%{transform:translateY(-4px) rotate(520deg) scale(.98,1.01)}
+  100%{transform:translateY(0) rotate(720deg) scale(1)}
 }
 .skate-track{position:fixed;left:0;top:0;width:22px;height:10px;z-index:10040;pointer-events:none;
   transform:translate(-50%,-50%) rotate(var(--rot,0deg));animation:trackFade .46s linear forwards}
@@ -61,11 +70,20 @@
 /* クリック時のオーリー演出 */
 .flipfx{position:fixed;z-index:10045;pointer-events:none;width:48px;height:34px;margin:-17px 0 0 -24px;
   animation:olliePop .46s cubic-bezier(.24,.86,.36,1) forwards}
+.flipfx.trick{animation:megaFlipPop .95s cubic-bezier(.22,.9,.3,1) forwards}
 @keyframes olliePop{
   0%{transform:translateY(0) rotate(-8deg) scale(1);opacity:1}
   38%{transform:translateY(-22px) rotate(-2deg) scale(1.05)}
   68%{transform:translateY(-10px) rotate(8deg) scale(1.02)}
   100%{transform:translateY(0) rotate(0) scale(.96);opacity:0}
+}
+@keyframes megaFlipPop{
+  0%{transform:translateY(0) rotate(-8deg) scale(1);opacity:1}
+  16%{transform:translateY(-10px) rotate(28deg) scale(1.04)}
+  40%{transform:translateY(-32px) rotate(220deg) scale(.92,1.08)}
+  66%{transform:translateY(-18px) rotate(435deg) scale(1.04,.95)}
+  84%{transform:translateY(-6px) rotate(560deg) scale(.98,1.02)}
+  100%{transform:translateY(0) rotate(720deg) scale(.96);opacity:0}
 }
 @media(prefers-reduced-motion:reduce){.flipfx,.skate-track{display:none}}
 @media(pointer:coarse){.skate-cursor,.skate-track{display:none}.has-skate-cursor,.has-skate-cursor *{cursor:auto !important}}
@@ -1437,6 +1455,7 @@ const OLLIE_SVG=`<svg xmlns="http://www.w3.org/2000/svg" width="48" height="34" 
 const reduceMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const finePointer=window.matchMedia&&window.matchMedia("(pointer:fine)").matches;
 const CURSOR_INTERACTIVE='a,button,select,label,input,textarea,summary,[role="button"],[tabindex]:not([tabindex="-1"]),.sticker,.vhs,.ticket,.tally,.cluster,.chip,tr[tabindex]';
+const SPECIAL_TRICK_ODDS=15;
 let skateCursor=null, cursorX=window.innerWidth/2, cursorY=window.innerHeight/2, targetX=cursorX, targetY=cursorY;
 let lastTrailX=targetX, lastTrailY=targetY, lastTrailTs=0, lastAngle=0;
 function isCursorInteractiveTarget(el){return !!(el&&el.closest&&el.closest(CURSOR_INTERACTIVE));}
@@ -1455,15 +1474,15 @@ function spawnTrail(x,y,angle){
   t.addEventListener("animationend",()=>t.remove());
   setTimeout(()=>t.remove(),700);
 }
-function spawnOllie(x,y){
+function spawnOllie(x,y,isSpecial=false){
   const b=document.createElement("div");
-  b.className="flipfx";
+  b.className="flipfx"+(isSpecial?" trick":"");
   b.innerHTML=OLLIE_SVG;
   b.style.left=x+"px";
   b.style.top=y+"px";
   document.body.appendChild(b);
   b.addEventListener("animationend",()=>b.remove());
-  setTimeout(()=>b.remove(),700);
+  setTimeout(()=>b.remove(),isSpecial?1200:700);
 }
 function animateCursor(){
   if(!skateCursor)return;
@@ -1500,14 +1519,15 @@ function initSkateCursor(){
   document.addEventListener("pointerover",e=>{if(!(e.pointerType&&e.pointerType!=="mouse"))setCursorMode(e.target);},true);
   document.addEventListener("pointerdown",e=>{
     if(e.pointerType&&e.pointerType!=="mouse")return;
+    const isSpecial=Math.floor(Math.random()*SPECIAL_TRICK_ODDS)===0;
     setCursorMode(e.target,true);
     if(skateCursor){
-      skateCursor.classList.remove("ollie");
+      skateCursor.classList.remove("ollie","trick");
       void skateCursor.offsetWidth;
-      skateCursor.classList.add("ollie");
-      setTimeout(()=>skateCursor&&skateCursor.classList.remove("ollie"),420);
+      skateCursor.classList.add(isSpecial?"trick":"ollie");
+      setTimeout(()=>skateCursor&&skateCursor.classList.remove("ollie","trick"),isSpecial?980:420);
     }
-    if(!reduceMotion)spawnOllie(e.clientX,e.clientY);
+    if(!reduceMotion)spawnOllie(e.clientX,e.clientY,isSpecial);
   },{passive:true});
   document.addEventListener("pointerup",()=>{if(skateCursor)skateCursor.classList.remove("pressed");},{passive:true});
   window.addEventListener("blur",()=>{if(skateCursor)skateCursor.classList.add("hidden");});
