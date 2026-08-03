@@ -1348,7 +1348,7 @@ function openSpread(id){
         <h4>Up Next</h4>
         <div class="sched">${sched.length?sched.map(s=>`
           <div class="ev"><span class="days">${daysUntil(s.date)}d</span>
-          <span><span class="evname">${esc(s.name)}</span><br>${esc(s.date)} · ${esc(s.city)}, ${esc(s.country)} · ${esc(s.type)}</span></div>`).join("")
+          <span><span class="evname">${esc(String(s.name||"").replace(/^TODO:\s*/i,"").trim())}</span><br>${esc(s.date)} · ${esc(s.city)}, ${esc(s.country)} · ${esc(s.type)}</span></div>`).join("")
         :'<p class="mono" style="font-size:12px">Not on any confirmed entry list — review AI UPDATE, or add them to an event in the Content Manager.</p>'}
         </div>
       </div>
