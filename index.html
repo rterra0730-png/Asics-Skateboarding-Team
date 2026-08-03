@@ -1020,6 +1020,22 @@ const CITY_XY={"Tokyo":[869,139],"Osaka":[859,143],"Kyoto":[859,142],"Yokohama":
 "London":[500,89],"Amsterdam":[514,84],"Paris":[506,97],"Helsinki":[557,62],"Barcelona":[506,121],"Madrid":[490,124],
 "São Paulo":[372,333],"Rio de Janeiro":[382,331],"Curitiba":[366,339],"Wollongong":[900,368],"Auckland":[959,376]};
 
+/* Pin anchors are deliberately placed around each country's visual centre.
+   The pin circle is drawn above this point so the bottom of its stem lands on land. */
+const COUNTRY_ANCHOR={
+  "Canada":[244,91],
+  "USA":[245,143],
+  "Brazil":[366,316],
+  "UK":[493,88],
+  "Netherlands":[516,88],
+  "France":[507,101],
+  "Spain":[496,121],
+  "Finland":[553,68],
+  "Japan":[869,143],
+  "Australia":[895,360],
+  "New Zealand":[955,379]
+};
+
 
 function setText(id,value){const el=document.getElementById(id);if(el&&value!=null)el.textContent=value;}
 function setSection(id,navId,enabled){const el=document.getElementById(id),nav=document.getElementById(navId);if(el)el.hidden=enabled===false;if(nav)nav.hidden=enabled===false;}
@@ -1090,11 +1106,17 @@ function renderMap(){
   const byCountry={};
   RIDERS.forEach(r=>{(byCountry[r.country]=byCountry[r.country]||[]).push(r);});
   Object.entries(byCountry).forEach(([country,rs])=>{
-    // cluster position = average of member city coords
-    let sx=0,sy=0,n=0;
-    rs.forEach(r=>{const hasCustom=r.mapX!==null&&r.mapX!==undefined&&r.mapX!==""&&r.mapY!==null&&r.mapY!==undefined&&r.mapY!==""&&Number.isFinite(Number(r.mapX))&&Number.isFinite(Number(r.mapY));const c=hasCustom?[Number(r.mapX),Number(r.mapY)]:(CITY_XY[r.city]||CITY_XY[String(r.city||"").split(",")[0].trim()]);if(c){sx+=c[0];sy+=c[1];n++;}});
-    if(!n)return;
-    const x=sx/n,y=sy/n,big=rs.length>5,mobile=window.matchMedia("(max-width:620px)").matches,rad=mobile?(big?40:32):(big?26:19),hitRad=mobile?58:Math.max(rad+10,32);
+    const big=rs.length>5,mobile=window.matchMedia("(max-width:620px)").matches,rad=mobile?(big?40:32):(big?26:19),hitRad=mobile?58:Math.max(rad+10,32);
+    // Prefer a stable country-centre anchor. Unknown countries fall back to the
+    // average of their rider city coordinates or manually supplied map values.
+    let anchor=COUNTRY_ANCHOR[country]||null;
+    if(!anchor){
+      let sx=0,sy=0,n=0;
+      rs.forEach(r=>{const hasCustom=r.mapX!==null&&r.mapX!==undefined&&r.mapX!==""&&r.mapY!==null&&r.mapY!==undefined&&r.mapY!==""&&Number.isFinite(Number(r.mapX))&&Number.isFinite(Number(r.mapY));const c=hasCustom?[Number(r.mapX),Number(r.mapY)]:(CITY_XY[r.city]||CITY_XY[String(r.city||"").split(",")[0].trim()]);if(c){sx+=c[0];sy+=c[1];n++;}});
+      if(!n)return;
+      anchor=[sx/n,sy/n];
+    }
+    const x=anchor[0],y=anchor[1]-(rad+10);
     const g=document.createElementNS("http://www.w3.org/2000/svg","g");
     g.setAttribute("class","cluster"+(state.country===country?" active":""));
     g.setAttribute("transform",`translate(${x},${y})`);
