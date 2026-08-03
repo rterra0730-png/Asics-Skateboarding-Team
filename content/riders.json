@@ -31,8 +31,8 @@
         "igAsOf": "2026-07-01"
       },
       "ranking": {
-        "owsrRank": 2,
-        "points": 88000,
+        "owsrRank": null,
+        "points": null,
         "change": 0,
         "rankPlaceholder": true,
         "updatedAt": "2026-07-25"
@@ -102,8 +102,8 @@
         "igAsOf": "2026-07-01"
       },
       "ranking": {
-        "owsrRank": 1,
-        "points": 90000,
+        "owsrRank": null,
+        "points": null,
         "change": 0,
         "rankPlaceholder": true,
         "updatedAt": "2026-07-25"
@@ -179,9 +179,9 @@
         "igAsOf": "2026-07-01"
       },
       "ranking": {
-        "owsrRank": 8,
-        "points": 52000,
-        "change": -1,
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
         "rankPlaceholder": true,
         "updatedAt": "2026-07-25"
       },
@@ -263,9 +263,9 @@
         "igAsOf": "2026-07-01"
       },
       "ranking": {
-        "owsrRank": 14,
-        "points": 41200,
-        "change": 2,
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
         "rankPlaceholder": true,
         "updatedAt": "2026-07-25"
       },
@@ -400,9 +400,9 @@
         "igAsOf": "2026-07-01"
       },
       "ranking": {
-        "owsrRank": 38,
-        "points": 18200,
-        "change": 4,
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
         "rankPlaceholder": true,
         "updatedAt": "2026-07-25"
       },
@@ -1107,9 +1107,9 @@
         "igAsOf": "2026-07-01"
       },
       "ranking": {
-        "owsrRank": 26,
-        "points": 24800,
-        "change": 3,
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
         "rankPlaceholder": true,
         "updatedAt": "2026-07-25"
       },
@@ -1746,9 +1746,9 @@
         "igAsOf": "2026-07-01"
       },
       "ranking": {
-        "owsrRank": 22,
-        "points": 27500,
-        "change": 1,
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
         "rankPlaceholder": true,
         "updatedAt": "2026-07-25"
       },
@@ -1961,9 +1961,9 @@
         "igAsOf": "2026-07-01"
       },
       "ranking": {
-        "owsrRank": 9,
-        "points": 56400,
-        "change": -1,
+        "owsrRank": null,
+        "points": null,
+        "change": 0,
         "rankPlaceholder": true,
         "updatedAt": "2026-07-25"
       },
