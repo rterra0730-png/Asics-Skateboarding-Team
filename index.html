@@ -364,34 +364,33 @@ table.results td.place{font-family:'Anton',sans-serif;font-size:17px}
   #closeSpread{top:10px;right:10px}
 }
 
-/* ============ LA 2028 SCOREBOARD ============ */
-#la28{background:var(--ink);color:var(--paper);max-width:none;padding:70px 20px}
-#la28 .inner{max-width:1200px;margin:0 auto}
-#la28 h2{color:var(--yellow)}
-#la28 .kicker{color:var(--paper);opacity:.7}
-#countdown{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 36px}
-#countdown .cd{background:var(--paper);color:var(--ink);border:3px solid var(--yellow);padding:12px 18px;text-align:center;min-width:92px}
-#countdown .cd b{display:block;font-family:'Anton',sans-serif;font-size:44px;line-height:1}
-#countdown .cd span{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em}
+/* ============ LA28 COUNTDOWN + OFFICIAL WSR ============ */
+#la28CountdownSec{max-width:none;padding:28px 20px;background:var(--yellow);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+#la28CountdownSec .inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+#la28CountdownLabel{font-family:'Anton',sans-serif;font-size:clamp(24px,4vw,42px);letter-spacing:.03em;white-space:nowrap}
+#countdown{display:flex;gap:9px;flex-wrap:wrap;margin:0}
+#countdown .cd{background:var(--paper);color:var(--ink);border:2px solid var(--ink);padding:8px 12px;text-align:center;min-width:70px;box-shadow:3px 3px 0 var(--ink)}
+#countdown .cd b{display:block;font-family:'Anton',sans-serif;font-size:30px;line-height:1}
+#countdown .cd span{font-family:'Space Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.12em}
+#wsr{background:var(--ink);color:var(--paper);max-width:none;padding:70px 20px}
+#wsr .inner{max-width:1200px;margin:0 auto}
+#wsr h2{color:var(--yellow)}
+#wsr .kicker{color:var(--paper);opacity:.7}
+#wsrIntro{font-family:'Space Mono',monospace;font-size:12px;line-height:1.7;max-width:780px;margin:-12px 0 24px;opacity:.8}
 #boardFilters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
 #boardFilters .chip{background:transparent;color:var(--paper);border-color:var(--paper)}
 #boardFilters .chip.active{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
 table.board{width:100%;border-collapse:collapse;font-family:'Space Mono',monospace;font-size:13px}
-table.board th{text-align:left;padding:10px 12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
-  border-bottom:3px solid var(--yellow);color:var(--yellow)}
+table.board th{text-align:left;padding:10px 12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;border-bottom:3px solid var(--yellow);color:var(--yellow)}
 table.board td{padding:12px;border-bottom:1px solid rgba(242,239,232,.18)}
 table.board td.rk{font-family:'Anton',sans-serif;font-size:26px;color:var(--yellow)}
-table.board td.rk .ph{font-size:10px;font-family:'Space Mono',monospace;color:var(--paper);opacity:.5;display:block}
-table.board tr.qual{background:rgba(15,42,168,.35)}
+table.board td.rk .ph{font-size:9px;font-family:'Space Mono',monospace;color:var(--paper);opacity:.55;display:block}
 table.board tr:hover{background:rgba(255,206,0,.12);cursor:pointer}
 table.board .mv.up{color:#6fe08d}
 table.board .mv.down{color:var(--orange)}
-tr.cutline td{padding:0;height:14px;border:none;
-  background:repeating-linear-gradient(45deg,var(--ink) 0 10px,var(--yellow) 10px 20px)}
-tr.cutline td span{display:block;font-family:'Anton',sans-serif;font-size:11px;background:var(--yellow);color:var(--ink);
-  width:max-content;padding:1px 10px;transform:translateY(-4px) rotate(-1deg)}
-#la28 .quota-note{font-family:'Space Mono',monospace;font-size:11px;margin-top:18px;opacity:.75;max-width:640px}
-#la28 .street-note{font-family:'Space Mono',monospace;font-size:12px;margin-top:26px;padding:14px;border:2px dashed var(--yellow);max-width:640px}
+#wsrSource{font-family:'Space Mono',monospace;font-size:11px;margin-top:18px;opacity:.78}
+#wsrSource a{color:var(--yellow)}
+@media(max-width:620px){#la28CountdownSec{padding:22px 14px}#la28CountdownSec .inner{gap:14px}#countdown .cd{min-width:56px;padding:7px 8px}#countdown .cd b{font-size:24px}#wsr{padding:52px 14px}}
 
 /* ============ FOOTAGE / VIDEO CLUB ============ */
 #videoSec .deck{border:3px solid var(--ink);background:var(--ink);box-shadow:8px 8px 0 var(--ink);
@@ -494,7 +493,7 @@ footer .fine{opacity:.6}
   <a class="nl" id="navMap" href="#mapSec">MAP</a>
   <a class="nl" id="navCalendar" href="#calSec">CALENDAR</a>
   <a class="nl" id="navRoster" href="#rosterSec">ROSTER</a>
-  <a class="nl" id="navLa28" href="#la28">LA 2028</a>
+  <a class="nl" id="navWsr" href="#wsr">WSR</a>
   <a class="nl" id="navFootage" href="#videoSec">FOOTAGE</a>
 </nav>
 
@@ -566,7 +565,7 @@ footer .fine{opacity:.6}
       <option value="ALL">COUNTRY: ALL</option>
     </select>
     <select id="sortSel" aria-label="Sort roster">
-      <option value="rank">SORT: WORLD RANKING</option>
+      <option value="rank">SORT: WSR</option>
       <option value="name">SORT: NAME A–Z</option>
       <option value="age">SORT: AGE</option>
       <option value="joined">SORT: NEWEST ON TEAM</option>
@@ -576,27 +575,34 @@ footer .fine{opacity:.6}
 </section>
 
 
-<!-- ═══════════ LA 2028 ═══════════ -->
-<section id="la28">
+<!-- ═══════════ LA28 COUNTDOWN ═══════════ -->
+<section id="la28CountdownSec">
+  <div class="inner">
+    <span id="la28CountdownLabel">LA28 COUNTDOWN</span>
+    <div id="countdown" aria-label="Countdown to the LA28 Olympic Games opening ceremony"></div>
+  </div>
+</section>
+
+<!-- ═══════════ WORLD SKATEBOARDING RANKING ═══════════ -->
+<section id="wsr">
   <div class="inner">
     <div class="sec-head">
-      <span class="kicker" id="la28Kicker">04 / OLYMPIC TRACK</span>
-      <h2 class="anton" id="la28Title">Road to LA 2028</h2>
+      <span class="kicker" id="wsrKicker">04 / OFFICIAL WORLD RANKING</span>
+      <h2 class="anton" id="wsrTitle">World Skateboarding Ranking</h2>
       <span class="ts" id="boardTs"></span>
     </div>
-    <div id="countdown" aria-label="Countdown to LA 2028 opening ceremony"></div>
-    <div id="boardFilters" role="group" aria-label="Filter ranking board">
+    <p id="wsrIntro">The official rolling 18-month World Skateboarding Ranking for Street and Park. Only verified World Skate / Wyldata data is displayed.</p>
+    <div id="boardFilters" role="group" aria-label="Filter World Skateboarding Ranking">
       <button class="chip bf active" data-bf="STREET">STREET</button>
       <button class="chip bf" data-bf="PARK">PARK</button>
       <button class="chip bf" data-bf="M">MEN</button>
       <button class="chip bf" data-bf="W">WOMEN</button>
     </div>
     <div class="tablewrap"><table class="board" id="boardTable">
-      <thead><tr><th>OWSR</th><th>Rider</th><th>Country</th><th>Disc.</th><th>Points</th><th>Move</th></tr></thead>
+      <thead><tr><th>WSR</th><th>Rider</th><th>Country</th><th>Disc.</th><th>Points</th><th>Move</th></tr></thead>
       <tbody id="boardBody"></tbody>
     </table></div>
-    <p class="quota-note" id="la28QuotaNote">※ Olympic qualification runs on the Olympic World Skateboarding Rankings with a per-country quota (max 3 per nation per event at Paris 2024 — LA 2028 rules TBC). Japan's depth means ASICS riders may be competing with each other for national slots. Ranks marked PLACEHOLDER are unverified — review them in AI UPDATE before publishing.</p>
-    <p class="street-note" id="la28StreetNote">RIDERS SHOWN AS "—" LIVE OUTSIDE THE OLYMPIC CIRCUIT: video parts, core contests, culture. Different lane, same impact — that's most of this team, by design.</p>
+    <p id="wsrSource">OFFICIAL SOURCE: <a id="wsrSourceLink" href="https://www.worldskate.org/skateboarding/ranking-wsr.html" target="_blank" rel="noopener">WORLD SKATE / WYLDATA ↗</a></p>
   </div>
 </section>
 
@@ -637,8 +643,13 @@ footer .fine{opacity:.6}
 
 <script>
 /* ═══════════════ DECAP CMS CONTENT LOADER ═══════════════ */
-const DEFAULT_SITE_CONTENT={"siteTitle": "ASICS SKATEBOARDING — TEAM SHEET", "nav": {"logo": "TEAM SHEET", "map": "MAP", "calendar": "CALENDAR", "roster": "ROSTER", "la28": "LA 2028", "footage": "FOOTAGE"}, "hero": {"enabled": true, "line1": "ASICS", "line2": "SKATEBOARDING", "line3": "TEAM SHEET", "riderLabel": "CONTRACTED RIDERS", "countryLabel": "COUNTRIES", "stamp": "INTERNAL MARKETING · NOT FOR EXTERNAL DISTRIBUTION"}, "map": {"enabled": true, "kicker": "01 / GLOBAL FOOTPRINT", "title": "Where They Roll", "note": "RIDER BASES BY COUNTRY — TAP A PIN TO FILTER"}, "calendar": {"enabled": true, "kicker": "02 / EVENT RADAR", "title": "Contest Calendar"}, "roster": {"enabled": true, "kicker": "03 / THE STICKER SHEET", "title": "The Roster", "empty": "No riders match. Peel back a filter and try again."}, "la28": {"enabled": true, "kicker": "04 / OLYMPIC TRACK", "title": "Road to LA 2028", "openingDate": "2028-07-14T00:00:00", "cutLine": 20, "quotaNote": "※ Olympic qualification runs on the Olympic World Skateboarding Rankings with a per-country quota (max 3 per nation per event at Paris 2024 — LA 2028 rules TBC). Japan's depth means ASICS riders may be competing with each other for national slots. Ranks marked PLACEHOLDER are unverified — review them in AI UPDATE before publishing.", "streetNote": "RIDERS SHOWN AS ‘—’ LIVE OUTSIDE THE OLYMPIC CIRCUIT: video parts, core contests, culture. Different lane, same impact — that's most of this team, by design."}, "footage": {"enabled": true, "kicker": "05 / VIDEO CLUB", "title": "Footage", "status": "YouTube or uploaded video · nothing plays until you press it", "idleTitle": "PICK A TAPE FROM THE SHELF ▼", "idleSubtitle": "ASICS SKATEBOARDING VIDEO ARCHIVE", "empty": "No tapes match — try another search."}, "footer": {"title": "ASICS SKATEBOARDING — INTERNAL TEAM SHEET", "note": "Content is editable from /admin/ · rankings may also sync automatically · photos and follower counts are managed in the CMS."}};
+const DEFAULT_SITE_CONTENT={"siteTitle":"ASICS SKATEBOARDING — TEAM SHEET","nav":{"logo":"TEAM SHEET","map":"MAP","calendar":"CALENDAR","roster":"ROSTER","wsr":"WSR","footage":"FOOTAGE"},"hero":{"enabled":true,"line1":"ASICS","line2":"SKATEBOARDING","line3":"TEAM SHEET","riderLabel":"CONTRACTED RIDERS","countryLabel":"COUNTRIES","stamp":"INTERNAL MARKETING · NOT FOR EXTERNAL DISTRIBUTION"},"map":{"enabled":true,"kicker":"01 / GLOBAL FOOTPRINT","title":"Where They Roll","note":"RIDER BASES BY COUNTRY — TAP A PIN TO FILTER"},"calendar":{"enabled":true,"kicker":"02 / EVENT RADAR","title":"Contest Calendar"},"roster":{"enabled":true,"kicker":"03 / THE STICKER SHEET","title":"The Roster","empty":"No riders match. Peel back a filter and try again."},"la28Countdown":{"enabled":true,"label":"LA28 COUNTDOWN","openingDate":"2028-07-14T00:00:00"},"wsr":{"enabled":true,"kicker":"04 / OFFICIAL WORLD RANKING","title":"World Skateboarding Ranking","intro":"The official rolling 18-month World Skateboarding Ranking for Street and Park. Only verified World Skate / Wyldata data is displayed.","sourceLabel":"WORLD SKATE / WYLDATA ↗","sourceUrl":"https://www.worldskate.org/skateboarding/ranking-wsr.html"},"footage":{"enabled":true,"kicker":"05 / VIDEO CLUB","title":"Footage","status":"YouTube or uploaded video · nothing plays until you press it","idleTitle":"PICK A TAPE FROM THE SHELF ▼","idleSubtitle":"ASICS SKATEBOARDING VIDEO ARCHIVE","empty":"No tapes match — try another search."},"footer":{"title":"ASICS SKATEBOARDING — INTERNAL TEAM SHEET","note":"Content is editable from /admin/ · WSR is verified from World Skate / Wyldata through AI UPDATE · photos and follower counts are managed in the CMS."}};
 let SITE_CONTENT=JSON.parse(JSON.stringify(DEFAULT_SITE_CONTENT));
+function mergeSiteContent(base,custom){
+  const out={...base,...(custom||{})};
+  for(const k of Object.keys(base))if(base[k]&&typeof base[k]==="object"&&!Array.isArray(base[k]))out[k]={...base[k],...((custom||{})[k]||{})};
+  return out;
+}
 function youtubeIdFromUrl(value){
   const s=String(value||"").trim();
   if(/^[\w-]{11}$/.test(s))return s;
@@ -674,7 +685,7 @@ async function loadCMSContent(){
   const note=document.createElement("div");note.className="cms-load-note";note.textContent="LOADING CMS CONTENT…";document.body.appendChild(note);
   try{
     const [s,r,f,c]=await Promise.all([fetchJSON("content/site.json"),fetchJSON("content/riders.json"),fetchJSON("content/footage.json"),fetchJSON("content/calendar.json")]);
-    SITE_CONTENT={...DEFAULT_SITE_CONTENT,...s};
+    SITE_CONTENT=mergeSiteContent(DEFAULT_SITE_CONTENT,s);
     if(Array.isArray(r.riders))RIDERS.splice(0,RIDERS.length,...r.riders.filter(x=>x.visible!==false).map(normalizeRider));
     if(Array.isArray(f.videos))EXTRA_VIDEOS.splice(0,EXTRA_VIDEOS.length,...f.videos.map(normalizeVideo));
     if(Array.isArray(c.events))CALENDAR={updatedAt:c.updatedAt||new Date().toISOString().slice(0,10),events:c.events};
@@ -695,8 +706,7 @@ async function loadCMSContent(){
      real DOB, city, stance, Instagram handle, follower counts, etc.
    ▸ igFollowers is MANUAL (no public API): update the number and
      igAsOf together.
-   ▸ rank:null shows "—" (off Olympic circuit). rankPH:true shows
-     PLACEHOLDER until AI UPDATE verifies a real number.
+   ▸ rank:null shows “—”. rankPH:true is hidden until AI UPDATE verifies an official WSR value.
    ═══════════════════════════════════════════════════════════════ */
 const DATA_VERSION = 11;
 const COLORS=["#0F2AA8","#FF4D00","#141414","#7A1FA0","#0A7A2F"];
@@ -883,7 +893,6 @@ async function syncYouTubeChannel(){
   return added;
 }
 let LA28_OPENING=new Date("2028-07-14T00:00:00");
-let CUT_LINE=20; // rough qualification-zone marker; TODO: confirm LA28 quota rules
 
 /* ═══════════════ STATE / CACHE ═══════════════ */
 let state={country:"ALL",disc:"ALL",q:"",sort:"rank",boardFilter:"STREET"};
@@ -937,6 +946,8 @@ function saveCache(){
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const fmtNum=n=>n==null?"—":n>=1e6?(n/1e6).toFixed(1)+"M":n>=1e3?Math.round(n/1e3)+"K":n;
+function officialWsrRank(r){const rk=r?.ranking||{};return rk.rankPlaceholder?null:(Number.isInteger(rk.owsrRank)?rk.owsrRank:null)}
+function officialWsrPoints(r){const rk=r?.ranking||{};return rk.rankPlaceholder?null:(typeof rk.points==="number"?rk.points:null)}
 function age(dob){if(!dob)return null;const d=new Date(dob),t=new Date();let a=t.getFullYear()-d.getFullYear();
   if(t<new Date(t.getFullYear(),d.getMonth(),d.getDate()))a--;return a;}
 function timeAgo(iso){const ms=Date.now()-new Date(iso).getTime(),h=ms/36e5,d=h/24;
@@ -1040,18 +1051,20 @@ const COUNTRY_ANCHOR={
 function setText(id,value){const el=document.getElementById(id);if(el&&value!=null)el.textContent=value;}
 function setSection(id,navId,enabled){const el=document.getElementById(id),nav=document.getElementById(navId);if(el)el.hidden=enabled===false;if(nav)nav.hidden=enabled===false;}
 function applySiteContent(){
-  const s=SITE_CONTENT||DEFAULT_SITE_CONTENT;document.title=s.siteTitle||DEFAULT_SITE_CONTENT.siteTitle;
-  setText("navLogo",s.nav?.logo);setText("navMap",s.nav?.map);setText("navCalendar",s.nav?.calendar);setText("navRoster",s.nav?.roster);setText("navLa28",s.nav?.la28);setText("navFootage",s.nav?.footage);
+  const s=mergeSiteContent(DEFAULT_SITE_CONTENT,SITE_CONTENT||{});document.title=s.siteTitle||DEFAULT_SITE_CONTENT.siteTitle;
+  setText("navLogo",s.nav?.logo);setText("navMap",s.nav?.map);setText("navCalendar",s.nav?.calendar);setText("navRoster",s.nav?.roster);setText("navWsr",s.nav?.wsr);setText("navFootage",s.nav?.footage);
   setText("heroLine1",s.hero?.line1);setText("heroLine2",s.hero?.line2);setText("heroLine3",s.hero?.line3);setText("heroRiderLabel",s.hero?.riderLabel);setText("heroCountryLabel",s.hero?.countryLabel);setText("heroStamp",s.hero?.stamp);
   setText("mapKicker",s.map?.kicker);setText("mapTitle",s.map?.title);setText("mapNote",s.map?.note);
   setText("calendarKicker",s.calendar?.kicker);setText("calendarTitle",s.calendar?.title);
   setText("rosterKicker",s.roster?.kicker);setText("rosterTitle",s.roster?.title);
-  setText("la28Kicker",s.la28?.kicker);setText("la28Title",s.la28?.title);setText("la28QuotaNote",s.la28?.quotaNote);setText("la28StreetNote",s.la28?.streetNote);
+  setText("la28CountdownLabel",s.la28Countdown?.label);setText("wsrKicker",s.wsr?.kicker);setText("wsrTitle",s.wsr?.title);setText("wsrIntro",s.wsr?.intro);setText("wsrSourceLink",s.wsr?.sourceLabel);
+  const sourceLink=document.getElementById("wsrSourceLink");if(sourceLink&&s.wsr?.sourceUrl)sourceLink.href=s.wsr.sourceUrl;
   setText("footageKicker",s.footage?.kicker);setText("footageTitle",s.footage?.title);setText("footageStatus",s.footage?.status);setText("footageIdleTitle",s.footage?.idleTitle);setText("footageIdleSubtitle",s.footage?.idleSubtitle);
   setText("footerTitle",s.footer?.title);setText("footerNote",s.footer?.note);
-  LA28_OPENING=new Date(s.la28?.openingDate||"2028-07-14T00:00:00");CUT_LINE=+s.la28?.cutLine||20;
+  LA28_OPENING=new Date(s.la28Countdown?.openingDate||"2028-07-14T00:00:00");
   const hero=document.querySelector("header.hero");if(hero)hero.hidden=s.hero?.enabled===false;
-  setSection("mapSec","navMap",s.map?.enabled);setSection("calSec","navCalendar",s.calendar?.enabled);setSection("rosterSec","navRoster",s.roster?.enabled);setSection("la28","navLa28",s.la28?.enabled);setSection("videoSec","navFootage",s.footage?.enabled);
+  setSection("mapSec","navMap",s.map?.enabled);setSection("calSec","navCalendar",s.calendar?.enabled);setSection("rosterSec","navRoster",s.roster?.enabled);setSection("wsr","navWsr",s.wsr?.enabled);setSection("videoSec","navFootage",s.footage?.enabled);
+  const cd=document.getElementById("la28CountdownSec");if(cd)cd.hidden=s.la28Countdown?.enabled===false;
 }
 function riderVideos(id){return collectVideos().filter(v=>(v.riderIds||[]).includes(id));}
 function playableVideo(v){return !!(v&&(v.youtubeId||v.videoFile));}
@@ -1198,7 +1211,7 @@ function filteredRiders(){
     r.name.toLowerCase().includes(state.q));
   const s=state.sort;
   list.sort((a,b)=>{
-    if(s==="rank")return(a.ranking.owsrRank??9999)-(b.ranking.owsrRank??9999)||a.name.localeCompare(b.name);
+    if(s==="rank")return(officialWsrRank(a)??9999)-(officialWsrRank(b)??9999)||a.name.localeCompare(b.name);
     if(s==="age")return(age(a.dob)??999)-(age(b.dob)??999);
     if(s==="name")return a.name.localeCompare(b.name);
     if(s==="joined")return b.joinedAsics-a.joinedAsics;});
@@ -1213,7 +1226,7 @@ function renderRoster(){
     const b=document.createElement("button");
     b.className="sticker";b.style.setProperty("--tilt",tilt(r.id));
     b.setAttribute("aria-label","Open detail for "+r.name);
-    const rk=r.ranking.owsrRank?`<span class="rankchip">OWSR #${r.ranking.owsrRank}${r.ranking.rankPlaceholder?"*":""}</span>`:"";
+    const officialRank=officialWsrRank(r);const rk=officialRank?`<span class="rankchip">WSR #${officialRank}</span>`:"";
     const a=age(r.dob);
     const nextEv=riderSchedule(r.id)[0];
     b.innerHTML=`
@@ -1301,9 +1314,8 @@ function openSpread(id){
       ${pts.map((p,i)=>`<circle cx="${20+i*(260/(pts.length-1))}" cy="${10+(p.placement-1)/(max-1)*60}" r="4" fill="var(--yellow)" stroke="var(--ink)" stroke-width="2"/>`).join("")}
     </svg>`;
   }
-  const cutPct=rk.owsrRank?Math.max(4,Math.min(100,(1-(rk.owsrRank-1)/60)*100)):0;
-  const cutPos=(1-(CUT_LINE-1)/60)*100;
-  const jpQuota=r.country==="Japan"&&rk.owsrRank?`<div class="quota">⚠ JAPAN QUOTA BATTLE: max ~3 slots per discipline — the deepest national field on earth</div>`:"";
+  const officialRank=officialWsrRank(r);
+  const officialPoints=officialWsrPoints(r);
   const sched=riderSchedule(r.id);
   const detailVideos=riderVideos(r.id);
   const a=age(r.dob);
@@ -1340,19 +1352,18 @@ function openSpread(id){
         </div>
       </div>
       <div class="zblock">
-        <h4>LA 2028 Tracker</h4><span class="bts ${staleClass(rk.updatedAt)}">${timeAgo(rk.updatedAt)}</span>
+        <h4>World Skateboarding Ranking</h4><span class="bts ${staleClass(rk.updatedAt)}">${timeAgo(rk.updatedAt)}</span>
         <div class="tracker">
-          ${rk.owsrRank?`
+          ${officialRank?`
             <div class="row1">
-              <span class="rank">#${rk.owsrRank}</span>
-              <span>OWSR ${esc(r.discipline)}${rk.rankPlaceholder?' · <b style="color:var(--orange)">PLACEHOLDER — review in AI UPDATE</b>':""}</span>
-              <span>${rk.points?rk.points.toLocaleString()+" pts":""}</span>
+              <span class="rank">#${officialRank}</span>
+              <span>WSR ${esc(r.discipline)} · ${r.gender==="W"?"WOMEN":"MEN"}</span>
+              <span>${officialPoints!=null?officialPoints.toLocaleString()+" pts":""}</span>
               <span class="${rk.change>0?"up":rk.change<0?"down":""}">${rk.change>0?"▲"+rk.change:rk.change<0?"▼"+Math.abs(rk.change):"—"}</span>
             </div>
-            <div class="cutbar"><div class="fill" style="width:${cutPct}%"></div><div class="cut" style="left:${cutPos}%"></div><span class="lbl" style="left:${cutPos}%">QUAL ZONE ≈ TOP ${CUT_LINE}</span></div>
-            ${jpQuota}`
-          :`<div class="row1"><span class="rank" style="font-size:30px">OFF-CIRCUIT</span>
-             <span style="max-width:380px">Building the brand through video parts and core contests, not Olympic points. Different lane, same impact.</span></div>`}
+            <p class="mono" style="font-size:10px;margin-top:12px;opacity:.7">OFFICIAL SOURCE: WORLD SKATE / WYLDATA</p>`
+          :`<div class="row1"><span class="rank" style="font-size:28px">NO CURRENT WSR RANK</span>
+             <span style="max-width:420px">No verified official World Skateboarding Ranking is currently synced for this rider.</span></div>`}
         </div>
       </div>
       <div class="zblock">
@@ -1463,39 +1474,27 @@ function renderBoard(){
   const tb=$("#boardBody");tb.innerHTML="";
   const f=state.boardFilter;
   let list=RIDERS.filter(r=>r.discipline===f||r.gender===f);
-  // ranked riders first, then off-circuit alphabetically
-  list.sort((a,b)=>(a.ranking.owsrRank??9999)-(b.ranking.owsrRank??9999)||a.name.localeCompare(b.name));
-  let cutDrawn=false;
+  list.sort((a,b)=>(officialWsrRank(a)??9999)-(officialWsrRank(b)??9999)||a.name.localeCompare(b.name));
   list.forEach(r=>{
-    const rk=r.ranking;
-    if(!cutDrawn&&(rk.owsrRank==null||rk.owsrRank>CUT_LINE)){
-      tb.insertAdjacentHTML("beforeend",`<tr class="cutline"><td colspan="6"><span>— QUALIFICATION CUT (≈ TOP ${CUT_LINE}) —</span></td></tr>`);
-      cutDrawn=true;}
+    const rk=r.ranking,rank=officialWsrRank(r),points=officialWsrPoints(r);
     const tr=document.createElement("tr");
-    if(rk.owsrRank&&rk.owsrRank<=CUT_LINE)tr.className="qual";
     tr.innerHTML=`
-      <td class="rk">${rk.owsrRank?("#"+rk.owsrRank):"—"}${rk.rankPlaceholder?'<span class="ph">PLACEHOLDER</span>':""}${rk.owsrRank?"":'<span class="ph">OFF-CIRCUIT</span>'}</td>
+      <td class="rk">${rank?("#"+rank):"—"}${rank?"":'<span class="ph">NO VERIFIED WSR</span>'}</td>
       <td><b>${esc(r.name)}</b></td>
-      <td>${ccBadge(r.country)} ${esc(r.country)}</td><td>${esc(r.discipline)} ${r.gender==="W"?"(W)":""}</td>
-      <td>${rk.points?rk.points.toLocaleString():"—"}</td>
-      <td class="mv ${rk.change>0?"up":rk.change<0?"down":""}">${rk.change>0?"▲"+rk.change:rk.change<0?"▼"+Math.abs(rk.change):"—"}</td>`;
-    tr.onclick=()=>openSpread(r.id);
-    tr.tabIndex=0;
-    tr.addEventListener("keydown",e=>{if(e.key==="Enter")openSpread(r.id)});
-    tb.appendChild(tr);
+      <td>${ccBadge(r.country)} ${esc(r.country)}</td><td>${esc(r.discipline)} ${r.gender==="W"?"(W)":"(M)"}</td>
+      <td>${points!=null?points.toLocaleString():"—"}</td>
+      <td class="mv ${rk.change>0?"up":rk.change<0?"down":""}">${rank?(rk.change>0?"▲"+rk.change:rk.change<0?"▼"+Math.abs(rk.change):"—"):"—"}</td>`;
+    tr.onclick=()=>openSpread(r.id);tr.tabIndex=0;tr.addEventListener("keydown",e=>{if(e.key==="Enter")openSpread(r.id)});tb.appendChild(tr);
   });
-  const newest=RIDERS.map(r=>r.ranking.updatedAt).sort().pop();
-  $("#boardTs").textContent=timeAgo(newest);
-  $("#boardTs").className="ts "+staleClass(newest);
+  const dates=RIDERS.filter(r=>officialWsrRank(r)).map(r=>r.ranking.updatedAt).filter(Boolean).sort();
+  const newest=dates.at(-1);$("#boardTs").textContent=newest?timeAgo(newest):"AWAITING OFFICIAL WSR SYNC";$("#boardTs").className="ts "+(newest?staleClass(newest):"");
 }
 function renderCountdown(){
   const el=$("#countdown");
   function tick(){
-    const ms=LA28_OPENING-Date.now();
+    const ms=Math.max(0,LA28_OPENING-Date.now());
     const d=Math.floor(ms/864e5),h=Math.floor(ms/36e5%24),m=Math.floor(ms/6e4%60),s=Math.floor(ms/1e3%60);
-    const openingLabel=LA28_OPENING.toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"}).toUpperCase();
-    el.innerHTML=[["DAYS",d],["HRS",h],["MIN",m],["SEC",s]].map(([l,v])=>`<div class="cd"><b>${v}</b><span>${l}</span></div>`).join("")
-      +`<div class="cd" style="background:var(--yellow)"><b style="font-size:26px;padding-top:8px" class="anton">LA28</b><span>${openingLabel}</span></div>`;}
+    el.innerHTML=[["DAYS",d],["HRS",h],["MIN",m],["SEC",s]].map(([l,v])=>`<div class="cd"><b>${v}</b><span>${l}</span></div>`).join("");}
   tick();setInterval(tick,1000);
 }
 
@@ -1517,7 +1516,7 @@ function renderLiveStrip(){
 
 /* ═══════════════ CUSTOM SKATE CURSOR / TRAIL / OLLIE ═══════════════ */
 const CURSOR_SVG=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 42" aria-hidden="true">
-  <g class="glow"><ellipse cx="32" cy="31" rx="20" ry="5" fill="rgba(122,31,53,.15)"/></g>
+  <g class="glow"><ellipse cx="32" cy="31" rx="20" ry="5" fill="rgba(15,42,168,.15)"/></g>
   <g class="board">
     <path class="deck" d="M6 14 Q9 17 14 17 L50 17 Q55 17 58 14"/>
     <path class="grip" d="M8 14.8 Q10.8 16.2 14.5 16.2 L49.5 16.2 Q53.2 16.2 56 14.8"/>

@@ -29,12 +29,13 @@ button{border:2px solid var(--ink);background:var(--yellow);color:var(--ink);fon
 <section class="panel">
   <h2>1. Choose what to check</h2>
   <div class="grid">
-    <div class="category"><label><input type="checkbox" name="cat" value="rankings" checked> Rankings</label></div>
-    <div class="category"><label><input type="checkbox" name="cat" value="results" checked> Recent results</label></div>
-    <div class="category"><label><input type="checkbox" name="cat" value="events" checked> Upcoming events</label></div>
-    <div class="category"><label><input type="checkbox" name="cat" value="footage" checked> New footage</label></div>
+    <div class="category"><label><input type="checkbox" name="cat" value="rankings" checked> Official WSR ranking</label></div>
+    <div class="category"><label><input type="checkbox" name="cat" value="results"> Recent results</label></div>
+    <div class="category"><label><input type="checkbox" name="cat" value="events"> Upcoming events</label></div>
+    <div class="category"><label><input type="checkbox" name="cat" value="footage"> New footage</label></div>
   </div>
   <button class="primary" id="research">SEARCH LATEST UPDATES</button>
+  <p style="font-size:12px;margin:12px 0 0;color:#555">Ranking source: official World Skateboarding Ranking only. The current table is supplied by World Skate through Wyldata and is checked separately by Men/Women and Street/Park. <a href="https://www.worldskate.org/skateboarding/ranking-wsr.html" target="_blank" rel="noopener">Open official WSR ↗</a></p>
   <div class="status hidden" id="status"></div>
 </section>
 <section class="panel hidden" id="reviewPanel">

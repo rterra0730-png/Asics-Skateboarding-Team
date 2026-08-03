@@ -5,9 +5,8 @@
     "map": "MAP",
     "calendar": "CALENDAR",
     "roster": "ROSTER",
-    "la28": "LA 2028",
-    "footage": "FOOTAGE",
-    "refresh": "REFRESH"
+    "wsr": "WSR",
+    "footage": "FOOTAGE"
   },
   "hero": {
     "enabled": true,
@@ -16,7 +15,6 @@
     "line3": "TEAM SHEET",
     "riderLabel": "CONTRACTED RIDERS",
     "countryLabel": "COUNTRIES",
-    "japanLabel": "BASED IN JAPAN",
     "stamp": "INTERNAL MARKETING · NOT FOR EXTERNAL DISTRIBUTION"
   },
   "map": {
@@ -36,14 +34,18 @@
     "title": "The Roster",
     "empty": "No riders match. Peel back a filter and try again."
   },
-  "la28": {
+  "la28Countdown": {
     "enabled": true,
-    "kicker": "04 / OLYMPIC TRACK",
-    "title": "Road to LA 2028",
-    "openingDate": "2028-07-14T00:00:00",
-    "cutLine": 20,
-    "quotaNote": "※ Olympic qualification runs on the Olympic World Skateboarding Rankings with a per-country quota (max 3 per nation per event at Paris 2024 — LA 2028 rules TBC). Japan's depth means ASICS riders may be competing with each other for national slots. Ranks marked PLACEHOLDER are unverified — hit REFRESH to pull current numbers.",
-    "streetNote": "RIDERS SHOWN AS ‘—’ LIVE OUTSIDE THE OLYMPIC CIRCUIT: video parts, core contests, culture. Different lane, same impact — that's most of this team, by design."
+    "label": "LA28 COUNTDOWN",
+    "openingDate": "2028-07-14T00:00:00"
+  },
+  "wsr": {
+    "enabled": true,
+    "kicker": "04 / OFFICIAL WORLD RANKING",
+    "title": "World Skateboarding Ranking",
+    "intro": "The official rolling 18-month World Skateboarding Ranking for Street and Park. Only verified World Skate / Wyldata data is displayed.",
+    "sourceLabel": "WORLD SKATE / WYLDATA ↗",
+    "sourceUrl": "https://www.worldskate.org/skateboarding/ranking-wsr.html"
   },
   "footage": {
     "enabled": true,
@@ -56,6 +58,6 @@
   },
   "footer": {
     "title": "ASICS SKATEBOARDING — INTERNAL TEAM SHEET",
-    "note": "Content is editable from /admin/ · rankings may also sync automatically · photos and follower counts are managed in the CMS."
+    "note": "Content is editable from /admin/ · WSR is verified from World Skate / Wyldata through AI UPDATE · photos and follower counts are managed in the CMS."
   }
 }
