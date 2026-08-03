@@ -35,7 +35,7 @@ button{border:2px solid var(--ink);background:var(--yellow);color:var(--ink);fon
     <div class="category"><label><input type="checkbox" name="cat" value="footage"> New footage</label></div>
   </div>
   <button class="primary" id="research">SEARCH LATEST UPDATES</button>
-  <p style="font-size:12px;margin:12px 0 0;color:#555">Ranking source: the official Wyldata WSR table supplied for World Skate. Ranking checks run in the background and are verified separately by Men/Women and Street/Park. <a href="https://www.worldskate.org/skateboarding/ranking-wsr.html" target="_blank" rel="noopener">Open official WSR ↗</a></p>
+  <p style="font-size:12px;margin:12px 0 0;color:#555">Ranking source: the official Wyldata WSR tables supplied for World Skate. The four Men/Women × Street/Park tables are read directly and compared with the dashboard data. AI is not used to invent rank or points. <a href="https://www.worldskate.org/skateboarding/ranking-wsr.html" target="_blank" rel="noopener">Open official WSR ↗</a></p>
   <div class="status hidden" id="status"></div>
 </section>
 <section class="panel hidden" id="reviewPanel">
@@ -64,10 +64,10 @@ async function researchWsrInBackground(){
   await api("wsr-research-background",{jobId});
   for(let attempt=0;attempt<170;attempt++){
     const elapsed=Math.round((Date.now()-start)/1000);
-    showStatus(`Official WSR research is running in the background... ${elapsed}s\nChecking Wyldata by Men/Women and Street/Park. You can keep this tab open.`);
+    showStatus(`Official WSR tables are being read in the background... ${elapsed}s\nChecking Men/Women and Street/Park separately. You can keep this tab open.`);
     await sleep(attempt<3?2500:5000);
     const job=await api("wsr-research-status",{jobId});
-    if(job.status==="completed") return job;
+    if(job.status==="completed"){window.__lastWsrDiagnostics=job.diagnostics||[];return job;}
     if(job.status==="error") throw new Error(job.message||"WSR background research failed.");
   }
   throw new Error("WSR research is still running after 14 minutes. Please try the status again later.");
@@ -96,7 +96,10 @@ $("#research").onclick=async()=>{
     const unique=[...new Map(citations.map(x=>[x.url,x])).values()];
     $("#citations").innerHTML=unique.map(x=>`<li><a target="_blank" rel="noopener" href="${esc(x.url)}">${esc(x.title||x.url)}</a></li>`).join("");
     $("#citationsWrap").classList.toggle("hidden",!unique.length);
-    showStatus(`Research complete. ${allProposals.length} candidate(s) ready for review.`);
+    const diag=(cats.length===1&&cats[0]==="rankings"&&window.__lastWsrDiagnostics)||[];
+    const matched=diag.reduce((n,x)=>n+(x.ridersMatched||0),0), checked=diag.reduce((n,x)=>n+(x.ridersChecked||0),0);
+    const extra=diag.length?`\nOfficial WSR match check: ${matched}/${checked} dashboard riders found.`:"";
+    showStatus(`Research complete. ${allProposals.length} candidate(s) ready for review.${extra}`);
   }catch(e){showStatus(e.message,true)}finally{btn.disabled=false}
 };
 $("#selectAll").onclick=()=>$$('.pick').forEach(x=>x.checked=true);$("#clearAll").onclick=()=>$$('.pick').forEach(x=>x.checked=false);
