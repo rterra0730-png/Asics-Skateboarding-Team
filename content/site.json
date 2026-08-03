@@ -25,12 +25,12 @@
   },
   "calendar": {
     "enabled": true,
-    "kicker": "02 / EVENT RADAR",
+    "kicker": "03 / EVENT RADAR",
     "title": "Contest Calendar"
   },
   "roster": {
     "enabled": true,
-    "kicker": "03 / THE STICKER SHEET",
+    "kicker": "02 / THE STICKER SHEET",
     "title": "The Roster",
     "empty": "No riders match. Peel back a filter and try again."
   },

@@ -491,8 +491,8 @@ footer .fine{opacity:.6}
 <nav aria-label="Main">
   <a class="logo anton" href="#top"><span class="stripes" aria-hidden="true"></span><span id="navLogo">TEAM SHEET</span></a>
   <a class="nl" id="navMap" href="#mapSec">MAP</a>
-  <a class="nl" id="navCalendar" href="#calSec">CALENDAR</a>
   <a class="nl" id="navRoster" href="#rosterSec">ROSTER</a>
+  <a class="nl" id="navCalendar" href="#calSec">CALENDAR</a>
   <a class="nl" id="navWsr" href="#wsr">WSR</a>
   <a class="nl" id="navFootage" href="#videoSec">FOOTAGE</a>
 </nav>
@@ -535,20 +535,10 @@ footer .fine{opacity:.6}
   <div id="countryTallies" role="group" aria-label="Filter roster by country"></div>
 </section>
 
-<!-- ═══════════ CONTEST CALENDAR ═══════════ -->
-<section id="calSec">
-  <div class="sec-head">
-    <span class="kicker" id="calendarKicker">02 / EVENT RADAR</span>
-    <h2 class="anton" id="calendarTitle">Contest Calendar</h2>
-    <span class="ts" id="calTs"></span>
-  </div>
-  <div id="calList"></div>
-</section>
-
 <!-- ═══════════ ROSTER ═══════════ -->
 <section id="rosterSec">
   <div class="sec-head">
-    <span class="kicker" id="rosterKicker">03 / THE STICKER SHEET</span>
+    <span class="kicker" id="rosterKicker">02 / THE STICKER SHEET</span>
     <h2 class="anton" id="rosterTitle">The Roster</h2>
     <span class="ts" id="rosterTs"></span>
   </div>
@@ -574,6 +564,17 @@ footer .fine{opacity:.6}
   <div id="rosterGrid"></div>
 </section>
 
+
+
+<!-- ═══════════ CONTEST CALENDAR ═══════════ -->
+<section id="calSec">
+  <div class="sec-head">
+    <span class="kicker" id="calendarKicker">03 / EVENT RADAR</span>
+    <h2 class="anton" id="calendarTitle">Contest Calendar</h2>
+    <span class="ts" id="calTs"></span>
+  </div>
+  <div id="calList"></div>
+</section>
 
 <!-- ═══════════ LA28 COUNTDOWN ═══════════ -->
 <section id="la28CountdownSec">
@@ -643,7 +644,7 @@ footer .fine{opacity:.6}
 
 <script>
 /* ═══════════════ DECAP CMS CONTENT LOADER ═══════════════ */
-const DEFAULT_SITE_CONTENT={"siteTitle":"ASICS SKATEBOARDING — TEAM SHEET","nav":{"logo":"TEAM SHEET","map":"MAP","calendar":"CALENDAR","roster":"ROSTER","wsr":"WSR","footage":"FOOTAGE"},"hero":{"enabled":true,"line1":"ASICS","line2":"SKATEBOARDING","line3":"TEAM SHEET","riderLabel":"CONTRACTED RIDERS","countryLabel":"COUNTRIES","stamp":"INTERNAL MARKETING · NOT FOR EXTERNAL DISTRIBUTION"},"map":{"enabled":true,"kicker":"01 / GLOBAL FOOTPRINT","title":"Where They Roll","note":"RIDER BASES BY COUNTRY — TAP A PIN TO FILTER"},"calendar":{"enabled":true,"kicker":"02 / EVENT RADAR","title":"Contest Calendar"},"roster":{"enabled":true,"kicker":"03 / THE STICKER SHEET","title":"The Roster","empty":"No riders match. Peel back a filter and try again."},"la28Countdown":{"enabled":true,"label":"LA28 COUNTDOWN","openingDate":"2028-07-14T00:00:00"},"wsr":{"enabled":true,"kicker":"04 / OFFICIAL WORLD RANKING","title":"World Skateboarding Ranking","intro":"The official rolling 18-month World Skateboarding Ranking for Street and Park. Only verified World Skate / Wyldata data is displayed.","sourceLabel":"WORLD SKATE / WYLDATA ↗","sourceUrl":"https://www.worldskate.org/skateboarding/ranking-wsr.html"},"footage":{"enabled":true,"kicker":"05 / VIDEO CLUB","title":"Footage","status":"YouTube or uploaded video · nothing plays until you press it","idleTitle":"PICK A TAPE FROM THE SHELF ▼","idleSubtitle":"ASICS SKATEBOARDING VIDEO ARCHIVE","empty":"No tapes match — try another search."},"footer":{"title":"ASICS SKATEBOARDING — INTERNAL TEAM SHEET","note":"Content is editable from /admin/ · WSR is verified from World Skate / Wyldata through AI UPDATE · photos and follower counts are managed in the CMS."}};
+const DEFAULT_SITE_CONTENT={"siteTitle":"ASICS SKATEBOARDING — TEAM SHEET","nav":{"logo":"TEAM SHEET","map":"MAP","calendar":"CALENDAR","roster":"ROSTER","wsr":"WSR","footage":"FOOTAGE"},"hero":{"enabled":true,"line1":"ASICS","line2":"SKATEBOARDING","line3":"TEAM SHEET","riderLabel":"CONTRACTED RIDERS","countryLabel":"COUNTRIES","stamp":"INTERNAL MARKETING · NOT FOR EXTERNAL DISTRIBUTION"},"map":{"enabled":true,"kicker":"01 / GLOBAL FOOTPRINT","title":"Where They Roll","note":"RIDER BASES BY COUNTRY — TAP A PIN TO FILTER"},"calendar":{"enabled":true,"kicker":"03 / EVENT RADAR","title":"Contest Calendar"},"roster":{"enabled":true,"kicker":"02 / THE STICKER SHEET","title":"The Roster","empty":"No riders match. Peel back a filter and try again."},"la28Countdown":{"enabled":true,"label":"LA28 COUNTDOWN","openingDate":"2028-07-14T00:00:00"},"wsr":{"enabled":true,"kicker":"04 / OFFICIAL WORLD RANKING","title":"World Skateboarding Ranking","intro":"The official rolling 18-month World Skateboarding Ranking for Street and Park. Only verified World Skate / Wyldata data is displayed.","sourceLabel":"WORLD SKATE / WYLDATA ↗","sourceUrl":"https://www.worldskate.org/skateboarding/ranking-wsr.html"},"footage":{"enabled":true,"kicker":"05 / VIDEO CLUB","title":"Footage","status":"YouTube or uploaded video · nothing plays until you press it","idleTitle":"PICK A TAPE FROM THE SHELF ▼","idleSubtitle":"ASICS SKATEBOARDING VIDEO ARCHIVE","empty":"No tapes match — try another search."},"footer":{"title":"ASICS SKATEBOARDING — INTERNAL TEAM SHEET","note":"Content is editable from /admin/ · WSR is verified from World Skate / Wyldata through AI UPDATE · photos and follower counts are managed in the CMS."}};
 let SITE_CONTENT=JSON.parse(JSON.stringify(DEFAULT_SITE_CONTENT));
 function mergeSiteContent(base,custom){
   const out={...base,...(custom||{})};
