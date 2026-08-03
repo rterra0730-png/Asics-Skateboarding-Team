@@ -43,12 +43,29 @@
 .skate-cursor.interactive .glow{opacity:1}
 .skate-cursor.pressed .board{transform:translateY(1px) rotate(7deg) scale(.97)}
 .skate-cursor.ollie .board{animation:cursorOllie .38s cubic-bezier(.24,.86,.36,1) both}
+.skate-cursor.shuvit .board{animation:cursorShuvit .56s cubic-bezier(.22,.86,.36,1) both}
+.skate-cursor.kickflip .board{animation:cursorKickflip .62s cubic-bezier(.2,.88,.32,1) both}
 .skate-cursor.trick .board{animation:cursorMegaFlip .92s cubic-bezier(.22,.9,.3,1) both}
 @keyframes cursorOllie{
   0%{transform:translateY(0) rotate(-8deg)}
   38%{transform:translateY(-10px) rotate(-2deg) scale(1.04)}
   65%{transform:translateY(-6px) rotate(5deg)}
   100%{transform:translateY(0) rotate(0deg)}
+}
+@keyframes cursorShuvit{
+  0%{transform:translateY(0) rotate(-8deg) scaleX(1)}
+  24%{transform:translateY(-9px) rotate(20deg) scaleX(.72)}
+  50%{transform:translateY(-13px) rotate(180deg) scaleX(.22)}
+  76%{transform:translateY(-7px) rotate(300deg) scaleX(.72)}
+  100%{transform:translateY(0) rotate(360deg) scaleX(1)}
+}
+@keyframes cursorKickflip{
+  0%{transform:translateY(0) rotate(-8deg) scaleY(1)}
+  22%{transform:translateY(-9px) rotate(-2deg) scaleY(.7)}
+  46%{transform:translateY(-18px) rotate(8deg) scaleY(.08)}
+  70%{transform:translateY(-10px) rotate(4deg) scaleY(-.72)}
+  88%{transform:translateY(-3px) rotate(-2deg) scaleY(-.96)}
+  100%{transform:translateY(0) rotate(0deg) scaleY(1)}
 }
 @keyframes cursorMegaFlip{
   0%{transform:translateY(0) rotate(-8deg) scale(1)}
@@ -70,12 +87,29 @@
 /* クリック時のオーリー演出 */
 .flipfx{position:fixed;z-index:10045;pointer-events:none;width:48px;height:34px;margin:-17px 0 0 -24px;
   animation:olliePop .46s cubic-bezier(.24,.86,.36,1) forwards}
+.flipfx.shuvit{animation:shuvitPop .62s cubic-bezier(.22,.86,.36,1) forwards}
+.flipfx.kickflip{animation:kickflipPop .68s cubic-bezier(.2,.88,.32,1) forwards}
 .flipfx.trick{animation:megaFlipPop .95s cubic-bezier(.22,.9,.3,1) forwards}
 @keyframes olliePop{
   0%{transform:translateY(0) rotate(-8deg) scale(1);opacity:1}
   38%{transform:translateY(-22px) rotate(-2deg) scale(1.05)}
   68%{transform:translateY(-10px) rotate(8deg) scale(1.02)}
   100%{transform:translateY(0) rotate(0) scale(.96);opacity:0}
+}
+@keyframes shuvitPop{
+  0%{transform:translateY(0) rotate(-8deg) scaleX(1);opacity:1}
+  22%{transform:translateY(-12px) rotate(24deg) scaleX(.72)}
+  50%{transform:translateY(-25px) rotate(180deg) scaleX(.18)}
+  76%{transform:translateY(-10px) rotate(302deg) scaleX(.72)}
+  100%{transform:translateY(0) rotate(360deg) scaleX(.96);opacity:0}
+}
+@keyframes kickflipPop{
+  0%{transform:translateY(0) rotate(-8deg) scaleY(1);opacity:1}
+  20%{transform:translateY(-11px) rotate(-2deg) scaleY(.72)}
+  45%{transform:translateY(-30px) rotate(8deg) scaleY(.06)}
+  68%{transform:translateY(-17px) rotate(4deg) scaleY(-.72)}
+  88%{transform:translateY(-5px) rotate(-2deg) scaleY(-.96)}
+  100%{transform:translateY(0) rotate(0deg) scaleY(1);opacity:0}
 }
 @keyframes megaFlipPop{
   0%{transform:translateY(0) rotate(-8deg) scale(1);opacity:1}
@@ -118,15 +152,6 @@ nav .logo .stripes{width:34px;height:22px;position:relative;background:var(--blu
 nav .logo .stripes::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 5px,var(--yellow) 5px 9px)}
 nav a.nl{color:var(--ink);text-decoration:none;font-family:'Space Mono',monospace;font-size:12px;padding:6px 9px;border:2px solid transparent}
 nav a.nl:hover{border-color:var(--ink);background:var(--yellow)}
-#refreshBtn{background:var(--ink);color:var(--yellow);border:none;font-family:'Anton',sans-serif;font-size:15px;letter-spacing:.06em;
-  padding:9px 16px;display:flex;gap:8px;align-items:center;transform:rotate(-1.5deg);transition:transform .12s cubic-bezier(.5,2.2,.4,.8)}
-#refreshBtn:hover{transform:rotate(0deg) scale(1.05);background:var(--blue)}
-#refreshBtn .wheel{width:14px;height:14px;border-radius:50%;border:3px solid var(--yellow);border-top-color:transparent;display:inline-block}
-#refreshBtn.spinning .wheel{animation:spin .5s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-#refreshStatus{font-family:'Space Mono',monospace;font-size:11px;padding:4px 10px;display:none}
-#refreshStatus.show{display:block}
-#refreshStatus.err{color:var(--orange)}
 @media(max-width:700px){nav a.nl{display:none}}
 
 /* ============ HERO ============ */
@@ -164,11 +189,13 @@ section{padding:60px 20px;max-width:1200px;margin:0 auto}
 #worldMap .grat{stroke:var(--ink);stroke-width:.4;opacity:.12;fill:none}
 .map-note{position:absolute;bottom:8px;right:12px;font-family:'Space Mono',monospace;font-size:10px;opacity:.6;transform:rotate(-1deg)}
 .cluster{cursor:pointer}
+.cluster .pinVisual{transform-box:fill-box;transform-origin:center;transition:transform .12s cubic-bezier(.3,1.5,.5,1),filter .12s ease}
 .cluster .disc{fill:var(--yellow);stroke:var(--ink);stroke-width:3}
 .cluster .shadow{fill:rgba(20,20,20,.4)}
 .cluster text.cnt{font-family:'Anton',sans-serif;fill:var(--ink);text-anchor:middle;pointer-events:none}
 .cluster text.fl{text-anchor:middle;pointer-events:none}
-.cluster:hover .disc,.cluster.active .disc{fill:var(--orange)}
+.cluster:hover .pinVisual,.cluster.nearest .pinVisual,.cluster:focus-visible .pinVisual{transform:scale(1.13);filter:drop-shadow(0 4px 0 rgba(20,20,20,.25))}
+.cluster:hover .disc,.cluster.nearest .disc,.cluster.active .disc{fill:var(--orange)}
 .cluster.active .disc{fill:var(--blue)}
 .cluster.active text.cnt{fill:#fff}
 .cluster .tick{stroke:var(--ink);stroke-width:3}
@@ -188,6 +215,7 @@ section{padding:60px 20px;max-width:1200px;margin:0 auto}
 .chip{border:2px solid var(--ink);background:#fff;padding:7px 13px;font-family:'Space Mono',monospace;font-size:12px}
 .chip.active{background:var(--ink);color:var(--yellow)}
 .filters select{border:2px solid var(--ink);background:#fff;padding:8px 10px;font-family:'Space Mono',monospace;font-size:12px}
+#countrySel{min-width:180px}
 #rosterGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:34px 26px;padding:10px 4px}
 .sticker{background:#fff;border:none;text-align:left;position:relative;padding:10px 10px 14px;border-radius:14px;
   box-shadow:0 0 0 5px #fff, 0 0 0 7px rgba(20,20,20,.22), 5px 7px 12px rgba(20,20,20,.22);
@@ -437,7 +465,6 @@ footer .fine{opacity:.6}
   .tracker .rank{font-size:38px}
   #liveStrip{font-size:11px}
   nav{height:50px}
-  #refreshBtn{font-size:13px;padding:7px 12px}
   #mapWrap{box-shadow:5px 5px 0 var(--ink)}
   .vidgrid{grid-template-columns:repeat(2,1fr)}
 }
@@ -469,10 +496,6 @@ footer .fine{opacity:.6}
   <a class="nl" id="navRoster" href="#rosterSec">ROSTER</a>
   <a class="nl" id="navLa28" href="#la28">LA 2028</a>
   <a class="nl" id="navFootage" href="#videoSec">FOOTAGE</a>
-  <span id="refreshStatus"></span>
-  <button id="refreshBtn" title="Fetch the latest rankings, results and events from the web">
-    <span class="wheel" aria-hidden="true"></span> <span id="refreshLabel">REFRESH</span>
-  </button>
 </nav>
 
 <header class="hero" id="top">
@@ -485,7 +508,6 @@ footer .fine{opacity:.6}
   <div class="sub">
     <span class="tag yellow"><b id="riderCount">—</b> <span id="heroRiderLabel">CONTRACTED RIDERS</span></span>
     <span class="tag"><b id="countryCount">—</b> <span id="heroCountryLabel">COUNTRIES</span></span>
-    <span class="tag blue"><b id="jpCount">—</b> <span id="heroJapanLabel">BASED IN JAPAN</span></span>
   </div>
   <div class="barcode" aria-hidden="true"></div>
   <p class="stamp"><span id="heroStamp">INTERNAL MARKETING · NOT FOR EXTERNAL DISTRIBUTION</span> · <span id="heroUpdated"></span></p>
@@ -540,6 +562,9 @@ footer .fine{opacity:.6}
     <button class="chip disc active" data-disc="ALL">ALL</button>
     <button class="chip disc" data-disc="STREET">STREET</button>
     <button class="chip disc" data-disc="PARK">PARK</button>
+    <select id="countrySel" aria-label="Filter roster by country">
+      <option value="ALL">COUNTRY: ALL</option>
+    </select>
     <select id="sortSel" aria-label="Sort roster">
       <option value="rank">SORT: WORLD RANKING</option>
       <option value="name">SORT: NAME A–Z</option>
@@ -570,7 +595,7 @@ footer .fine{opacity:.6}
       <thead><tr><th>OWSR</th><th>Rider</th><th>Country</th><th>Disc.</th><th>Points</th><th>Move</th></tr></thead>
       <tbody id="boardBody"></tbody>
     </table></div>
-    <p class="quota-note" id="la28QuotaNote">※ Olympic qualification runs on the Olympic World Skateboarding Rankings with a per-country quota (max 3 per nation per event at Paris 2024 — LA 2028 rules TBC). Japan's depth means ASICS riders may be competing with each other for national slots. Ranks marked PLACEHOLDER are unverified — hit REFRESH to pull current numbers.</p>
+    <p class="quota-note" id="la28QuotaNote">※ Olympic qualification runs on the Olympic World Skateboarding Rankings with a per-country quota (max 3 per nation per event at Paris 2024 — LA 2028 rules TBC). Japan's depth means ASICS riders may be competing with each other for national slots. Ranks marked PLACEHOLDER are unverified — review them in AI UPDATE before publishing.</p>
     <p class="street-note" id="la28StreetNote">RIDERS SHOWN AS "—" LIVE OUTSIDE THE OLYMPIC CIRCUIT: video parts, core contests, culture. Different lane, same impact — that's most of this team, by design.</p>
   </div>
 </section>
@@ -612,7 +637,7 @@ footer .fine{opacity:.6}
 
 <script>
 /* ═══════════════ DECAP CMS CONTENT LOADER ═══════════════ */
-const DEFAULT_SITE_CONTENT={"siteTitle": "ASICS SKATEBOARDING — TEAM SHEET", "nav": {"logo": "TEAM SHEET", "map": "MAP", "calendar": "CALENDAR", "roster": "ROSTER", "la28": "LA 2028", "footage": "FOOTAGE", "refresh": "REFRESH"}, "hero": {"enabled": true, "line1": "ASICS", "line2": "SKATEBOARDING", "line3": "TEAM SHEET", "riderLabel": "CONTRACTED RIDERS", "countryLabel": "COUNTRIES", "japanLabel": "BASED IN JAPAN", "stamp": "INTERNAL MARKETING · NOT FOR EXTERNAL DISTRIBUTION"}, "map": {"enabled": true, "kicker": "01 / GLOBAL FOOTPRINT", "title": "Where They Roll", "note": "RIDER BASES BY COUNTRY — TAP A PIN TO FILTER"}, "calendar": {"enabled": true, "kicker": "02 / EVENT RADAR", "title": "Contest Calendar"}, "roster": {"enabled": true, "kicker": "03 / THE STICKER SHEET", "title": "The Roster", "empty": "No riders match. Peel back a filter and try again."}, "la28": {"enabled": true, "kicker": "04 / OLYMPIC TRACK", "title": "Road to LA 2028", "openingDate": "2028-07-14T00:00:00", "cutLine": 20, "quotaNote": "※ Olympic qualification runs on the Olympic World Skateboarding Rankings with a per-country quota (max 3 per nation per event at Paris 2024 — LA 2028 rules TBC). Japan's depth means ASICS riders may be competing with each other for national slots. Ranks marked PLACEHOLDER are unverified — hit REFRESH to pull current numbers.", "streetNote": "RIDERS SHOWN AS ‘—’ LIVE OUTSIDE THE OLYMPIC CIRCUIT: video parts, core contests, culture. Different lane, same impact — that's most of this team, by design."}, "footage": {"enabled": true, "kicker": "05 / VIDEO CLUB", "title": "Footage", "status": "YouTube or uploaded video · nothing plays until you press it", "idleTitle": "PICK A TAPE FROM THE SHELF ▼", "idleSubtitle": "ASICS SKATEBOARDING VIDEO ARCHIVE", "empty": "No tapes match — try another search."}, "footer": {"title": "ASICS SKATEBOARDING — INTERNAL TEAM SHEET", "note": "Content is editable from /admin/ · rankings may also sync automatically · photos and follower counts are managed in the CMS."}};
+const DEFAULT_SITE_CONTENT={"siteTitle": "ASICS SKATEBOARDING — TEAM SHEET", "nav": {"logo": "TEAM SHEET", "map": "MAP", "calendar": "CALENDAR", "roster": "ROSTER", "la28": "LA 2028", "footage": "FOOTAGE"}, "hero": {"enabled": true, "line1": "ASICS", "line2": "SKATEBOARDING", "line3": "TEAM SHEET", "riderLabel": "CONTRACTED RIDERS", "countryLabel": "COUNTRIES", "stamp": "INTERNAL MARKETING · NOT FOR EXTERNAL DISTRIBUTION"}, "map": {"enabled": true, "kicker": "01 / GLOBAL FOOTPRINT", "title": "Where They Roll", "note": "RIDER BASES BY COUNTRY — TAP A PIN TO FILTER"}, "calendar": {"enabled": true, "kicker": "02 / EVENT RADAR", "title": "Contest Calendar"}, "roster": {"enabled": true, "kicker": "03 / THE STICKER SHEET", "title": "The Roster", "empty": "No riders match. Peel back a filter and try again."}, "la28": {"enabled": true, "kicker": "04 / OLYMPIC TRACK", "title": "Road to LA 2028", "openingDate": "2028-07-14T00:00:00", "cutLine": 20, "quotaNote": "※ Olympic qualification runs on the Olympic World Skateboarding Rankings with a per-country quota (max 3 per nation per event at Paris 2024 — LA 2028 rules TBC). Japan's depth means ASICS riders may be competing with each other for national slots. Ranks marked PLACEHOLDER are unverified — review them in AI UPDATE before publishing.", "streetNote": "RIDERS SHOWN AS ‘—’ LIVE OUTSIDE THE OLYMPIC CIRCUIT: video parts, core contests, culture. Different lane, same impact — that's most of this team, by design."}, "footage": {"enabled": true, "kicker": "05 / VIDEO CLUB", "title": "Footage", "status": "YouTube or uploaded video · nothing plays until you press it", "idleTitle": "PICK A TAPE FROM THE SHELF ▼", "idleSubtitle": "ASICS SKATEBOARDING VIDEO ARCHIVE", "empty": "No tapes match — try another search."}, "footer": {"title": "ASICS SKATEBOARDING — INTERNAL TEAM SHEET", "note": "Content is editable from /admin/ · rankings may also sync automatically · photos and follower counts are managed in the CMS."}};
 let SITE_CONTENT=JSON.parse(JSON.stringify(DEFAULT_SITE_CONTENT));
 function youtubeIdFromUrl(value){
   const s=String(value||"").trim();
@@ -671,7 +696,7 @@ async function loadCMSContent(){
    ▸ igFollowers is MANUAL (no public API): update the number and
      igAsOf together.
    ▸ rank:null shows "—" (off Olympic circuit). rankPH:true shows
-     PLACEHOLDER until REFRESH verifies a real number.
+     PLACEHOLDER until AI UPDATE verifies a real number.
    ═══════════════════════════════════════════════════════════════ */
 const DATA_VERSION = 11;
 const COLORS=["#0F2AA8","#FF4D00","#141414","#7A1FA0","#0A7A2F"];
@@ -683,7 +708,7 @@ function R(id,name,country,flag,city,disc,gender,o={}){
     color:o.color||COLORS[_ci++%COLORS.length],nickname:o.nick||"",
     socials:{instagram:o.ig||"",igFollowers:o.igF??null,igAsOf:"2026-07-01"},
     ranking:{owsrRank:o.rank??null,points:o.pts??null,change:o.chg??0,rankPlaceholder:!!o.rankPH,updatedAt:"2026-07-25"},
-    results:o.results||[],videos:o.videos||[],timeline:o.timeline||[{year:o.joined||2023,title:"Joins ASICS Skateboarding",note:"TODO: add career milestones"}]};
+    results:o.results||[],videos:o.videos||[],timeline:o.timeline||[{year:o.joined||2023,title:"Joins ASICS Skateboarding",note:"Add career milestones"}]};
 }
 const V_TAC={title:"TOTAL ACTUAL COMFORT",youtubeId:"8EKtCKbm-L4",year:2023,type:"Team video"}; // verified
 const V_TID={title:"Tidbit",youtubeId:"50tu1iSo3DI",year:2025,type:"Japan team edit"}; // verified
@@ -703,7 +728,7 @@ const RIDERS=[
    timeline:[
     {year:2024,title:"SILVER — Paris 2024 Olympics, Women's Street",note:"257.99pts, behind teammate Coco Yoshizawa — a Japan 1-2"},
     {year:2024,title:"5 X Games medals and counting",note:"3 silver, 2 bronze"},
-    {year:2025,title:"Joins ASICS Skateboarding",note:"TODO: verify year"}]}),
+    {year:2025,title:"Joins ASICS Skateboarding",note:"Year to be confirmed"}]}),
  R("ibuki","Ibuki Matsumoto","Japan","🇯🇵","Kumamoto","STREET","W",{dob:"2012-01-01"/*TODO: ~14 in mid-2026, verify exact DOB*/,rank:1,pts:90000,chg:0,rankPH:true,igF:120000/*TODO*/,ig:"ibuki___matsumoto",videos:[V_TID],
    results:[
     {event:"World Skateboarding Championship (Street)",date:"2026-03-09",location:"São Paulo, Brazil",placement:1},
@@ -789,7 +814,7 @@ const RIDERS=[
  R("marca","Marca Barbier","France"/*TODO verify*/,"🇫🇷","Paris","STREET","W",{igF:12000}),
  R("victor","Victor Campillo","Spain","🇪🇸","Barcelona","STREET","M",{igF:60000,videos:[V_TAC]}),
  R("andrea","Andrea Benítez","Spain","🇪🇸","Madrid","STREET","W",{rank:22,pts:27500,chg:1,rankPH:true,igF:90000,
-   timeline:[{year:2021,title:"Tokyo 2020 Olympian — Women's Street",note:"TODO: verify"},{year:2023,title:"Joins ASICS",note:""}]}),
+   timeline:[{year:2021,title:"Tokyo 2020 Olympian — Women's Street",note:"To be confirmed"},{year:2023,title:"Joins ASICS",note:""}]}),
  R("jaakko","Jaakko Ojanen","Finland","🇫🇮","Helsinki","STREET","M",{joined:2024,igF:110000,videos:[V_AGT,V_WWV]}),
  R("unna","Unna Peltotalo","Finland","🇫🇮","Helsinki","STREET","W",{igF:14000}),
  R("heili","Heili Sirvilo","Finland"/*TODO verify*/,"🇫🇮","Helsinki","STREET","W",{igF:10000}),
@@ -802,17 +827,17 @@ const RIDERS=[
 
 /* ═══════════════ CONTEST CALENDAR — MARKETERS EDIT HERE ═══════════════
    riders: use ids from RIDERS above. qual:true = Olympic qualifier.
-   ALL EVENTS BELOW ARE PLACEHOLDERS (TODO) — REFRESH pulls real ones. */
+   ALL EVENTS BELOW ARE PLACEHOLDERS (TODO) — AI UPDATE can propose verified replacements. */
 let CALENDAR={
   updatedAt:"2026-07-25",
   events:[
-   {name:"TODO: World Skate Street World Cup",date:"2026-08-14",city:"TBC",country:"TBC",type:"Olympic qualifier",qual:true,link:"",riders:["liz","ibuki","kairi","monica","andrea","luca","kyonosuke"]},
-   {name:"TODO: X Games Park",date:"2026-08-29",city:"TBC",country:"USA",type:"Invitational",qual:false,riders:["kieran","brent"]},
-   {name:"TODO: SLS Tour Stop",date:"2026-09-12",city:"TBC",country:"USA",type:"Pro tour",qual:false,riders:["liz","kairi","monica"]},
-   {name:"TODO: JSF Japan National Championships",date:"2026-09-26",city:"Kasama",country:"Japan",type:"National championships",qual:true,riders:["ibuki","kairi","asahi","luca","sena","toa","niko"]},
-   {name:"TODO: ASICS team video premiere",date:"2026-10-09",city:"Tokyo",country:"Japan",type:"Brand event",qual:false,riders:["takuya","ichiro","ginpei","masamitsu","tatsuya"]},
-   {name:"TODO: World Skate Park World Cup",date:"2026-10-24",city:"TBC",country:"TBC",type:"Olympic qualifier",qual:true,riders:["kieran"]},
-   {name:"TODO: Tampa Am / Pro window",date:"2026-11-07",city:"Tampa",country:"USA",type:"Core contest",qual:false,riders:["zander","dougie","evan","dylan","kyonosuke"]},
+   {name:"World Skate Street World Cup",date:"2026-08-14",city:"TBC",country:"TBC",type:"Olympic qualifier",qual:true,link:"",riders:["liz","ibuki","kairi","monica","andrea","luca","kyonosuke"]},
+   {name:"X Games Park",date:"2026-08-29",city:"TBC",country:"USA",type:"Invitational",qual:false,riders:["kieran","brent"]},
+   {name:"SLS Tour Stop",date:"2026-09-12",city:"TBC",country:"USA",type:"Pro tour",qual:false,riders:["liz","kairi","monica"]},
+   {name:"JSF Japan National Championships",date:"2026-09-26",city:"Kasama",country:"Japan",type:"National championships",qual:true,riders:["ibuki","kairi","asahi","luca","sena","toa","niko"]},
+   {name:"ASICS team video premiere",date:"2026-10-09",city:"Tokyo",country:"Japan",type:"Brand event",qual:false,riders:["takuya","ichiro","ginpei","masamitsu","tatsuya"]},
+   {name:"World Skate Park World Cup",date:"2026-10-24",city:"TBC",country:"TBC",type:"Olympic qualifier",qual:true,riders:["kieran"]},
+   {name:"Tampa Am / Pro window",date:"2026-11-07",city:"Tampa",country:"USA",type:"Core contest",qual:false,riders:["zander","dougie","evan","dylan","kyonosuke"]},
   ]
 };
 let EVENTS_LIVE={updatedAt:"2026-07-25", live:null};
@@ -938,8 +963,8 @@ function watchCardHTML(v){
     <span class="watchnote">この環境では埋め込み再生がブロックされるため、新しいタブで開きます</span>
   </div>`;
 }
-let FOUND_IDS={}; // {title: youtubeId} — REFRESHで見つけたIDを保存
-let FOUND_CLIPS=[]; // REFRESHで発見したライダー個別クリップ(キャッシュされる)
+let FOUND_IDS={}; // {title: youtubeId} — AI UPDATEで見つけたIDを保存
+let FOUND_CLIPS=[]; // AI UPDATEで発見したライダー個別クリップ(キャッシュされる)
 function applyVidId(title,id){
   FOUND_IDS[title]=id;
   RIDERS.forEach(r=>r.videos.forEach(v=>{if(v.title===title&&!v.youtubeId)v.youtubeId=id;}));
@@ -992,7 +1017,7 @@ function portraitHTML(r,big){
 /* ═══════════════ CITY → MAP COORDS (precomputed, Natural Earth 1000×480) ═══════════════ */
 const CITY_XY={"Tokyo":[869,139],"Osaka":[859,143],"Kyoto":[859,142],"Yokohama":[869,140],"Chiba":[870,140],"Nagoya":[862,141],"Kobe":[858,143],"Kumamoto":[852,147],"Miyagi (b. Aomori)":[871,133],"Tokyo (Shinagawa)":[869,139],"Shimada, Shizuoka":[865,141],"Shizuoka →Tokyo":[866,141],
 "Los Angeles":[186,145],"New York":[309,123],"Long Island, NY":[312,123],"Portland":[190,108],"Seattle":[188,103],"Minneapolis":[264,109],
-"London":[500,89],"Paris":[506,97],"Helsinki":[557,62],"Barcelona":[506,121],"Madrid":[490,124],
+"London":[500,89],"Amsterdam":[514,84],"Paris":[506,97],"Helsinki":[557,62],"Barcelona":[506,121],"Madrid":[490,124],
 "São Paulo":[372,333],"Rio de Janeiro":[382,331],"Curitiba":[366,339],"Wollongong":[900,368],"Auckland":[959,376]};
 
 
@@ -1000,8 +1025,8 @@ function setText(id,value){const el=document.getElementById(id);if(el&&value!=nu
 function setSection(id,navId,enabled){const el=document.getElementById(id),nav=document.getElementById(navId);if(el)el.hidden=enabled===false;if(nav)nav.hidden=enabled===false;}
 function applySiteContent(){
   const s=SITE_CONTENT||DEFAULT_SITE_CONTENT;document.title=s.siteTitle||DEFAULT_SITE_CONTENT.siteTitle;
-  setText("navLogo",s.nav?.logo);setText("navMap",s.nav?.map);setText("navCalendar",s.nav?.calendar);setText("navRoster",s.nav?.roster);setText("navLa28",s.nav?.la28);setText("navFootage",s.nav?.footage);setText("refreshLabel",s.nav?.refresh);
-  setText("heroLine1",s.hero?.line1);setText("heroLine2",s.hero?.line2);setText("heroLine3",s.hero?.line3);setText("heroRiderLabel",s.hero?.riderLabel);setText("heroCountryLabel",s.hero?.countryLabel);setText("heroJapanLabel",s.hero?.japanLabel);setText("heroStamp",s.hero?.stamp);
+  setText("navLogo",s.nav?.logo);setText("navMap",s.nav?.map);setText("navCalendar",s.nav?.calendar);setText("navRoster",s.nav?.roster);setText("navLa28",s.nav?.la28);setText("navFootage",s.nav?.footage);
+  setText("heroLine1",s.hero?.line1);setText("heroLine2",s.hero?.line2);setText("heroLine3",s.hero?.line3);setText("heroRiderLabel",s.hero?.riderLabel);setText("heroCountryLabel",s.hero?.countryLabel);setText("heroStamp",s.hero?.stamp);
   setText("mapKicker",s.map?.kicker);setText("mapTitle",s.map?.title);setText("mapNote",s.map?.note);
   setText("calendarKicker",s.calendar?.kicker);setText("calendarTitle",s.calendar?.title);
   setText("rosterKicker",s.roster?.kicker);setText("rosterTitle",s.roster?.title);
@@ -1023,16 +1048,39 @@ function renderPlayerHTML(v,autoplay=false){
   if(v.videoFile)return `<video src="${esc(v.videoFile)}" controls playsinline ${autoplay?"autoplay":""} style="width:100%;height:100%;background:#000;object-fit:contain"></video>`;
   return "";
 }
+function scrollToRoster(){
+  const sec=document.getElementById("rosterSec");
+  if(!sec)return;
+  const nav=document.querySelector("nav");
+  const top=sec.getBoundingClientRect().top+window.scrollY-(nav?.offsetHeight||0)-12;
+  window.scrollTo({top:Math.max(0,top),behavior:"smooth"});
+}
 function selectCountryAndScroll(country){
-  state.country=(state.country===country?"ALL":country);renderMap();renderRoster();
-  requestAnimationFrame(()=>document.getElementById("rosterSec")?.scrollIntoView({behavior:"smooth",block:"start"}));
+  state.country=country||"ALL";
+  renderMap();
+  renderRoster();
+  // Wait until both the map and roster have finished rebuilding before scrolling.
+  setTimeout(scrollToRoster,80);
+}
+function syncCountryFilter(){
+  const sel=$("#countrySel");
+  if(!sel)return;
+  const counts={};
+  RIDERS.forEach(r=>counts[r.country]=(counts[r.country]||0)+1);
+  const current=state.country;
+  sel.innerHTML="";
+  sel.add(new Option(`COUNTRY: ALL (${RIDERS.length})`,"ALL"));
+  Object.keys(counts).sort((a,b)=>a.localeCompare(b)).forEach(country=>{
+    sel.add(new Option(`${country.toUpperCase()} (${counts[country]})`,country));
+  });
+  sel.value=(current==="ALL"||counts[current])?current:"ALL";
+  if(sel.value!==current)state.country=sel.value;
 }
 
 /* ═══════════════ HERO ═══════════════ */
 function renderHero(){
   $("#riderCount").textContent=RIDERS.length;
   $("#countryCount").textContent=new Set(RIDERS.map(r=>r.country)).size;
-  $("#jpCount").textContent=RIDERS.filter(r=>r.country==="Japan").length;
   $("#heroUpdated").textContent="SHEET GENERATED "+new Date().toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"}).toUpperCase();
 }
 
@@ -1044,7 +1092,7 @@ function renderMap(){
   Object.entries(byCountry).forEach(([country,rs])=>{
     // cluster position = average of member city coords
     let sx=0,sy=0,n=0;
-    rs.forEach(r=>{const c=(Number.isFinite(+r.mapX)&&Number.isFinite(+r.mapY))?[+r.mapX,+r.mapY]:(CITY_XY[r.city]||CITY_XY[r.city.split(",")[0]]);if(c){sx+=c[0];sy+=c[1];n++;}});
+    rs.forEach(r=>{const hasCustom=r.mapX!==null&&r.mapX!==undefined&&r.mapX!==""&&r.mapY!==null&&r.mapY!==undefined&&r.mapY!==""&&Number.isFinite(Number(r.mapX))&&Number.isFinite(Number(r.mapY));const c=hasCustom?[Number(r.mapX),Number(r.mapY)]:(CITY_XY[r.city]||CITY_XY[String(r.city||"").split(",")[0].trim()]);if(c){sx+=c[0];sy+=c[1];n++;}});
     if(!n)return;
     const x=sx/n,y=sy/n,big=rs.length>5,mobile=window.matchMedia("(max-width:620px)").matches,rad=mobile?(big?40:32):(big?26:19),hitRad=mobile?58:Math.max(rad+10,32);
     const g=document.createElementNS("http://www.w3.org/2000/svg","g");
@@ -1053,23 +1101,61 @@ function renderMap(){
     g.setAttribute("tabindex","0");
     g.setAttribute("role","button");
     g.setAttribute("aria-label",`${country}: ${rs.length} riders — filter roster`);
+    g.dataset.x=x;
+    g.dataset.y=y;
+    g.dataset.country=country;
     g.innerHTML=`
       <circle class="hit" r="${hitRad}"></circle>
-      <line class="tick" x1="0" y1="${rad}" x2="0" y2="${rad+10}"></line>
-      <circle class="shadow" r="${rad}" cx="3" cy="4"></circle>
-      <circle class="disc" r="${rad}"></circle>
-      <text class="fl" dy="${big?-4:-2}" font-size="${big?12:10}" font-family="'Space Mono',monospace" font-weight="700">${CC[country]||""}</text>
-      <text class="cnt" dy="${big?15:12}" font-size="${big?17:13}">${rs.length}</text>`;
+      <g class="pinVisual">
+        <line class="tick" x1="0" y1="${rad}" x2="0" y2="${rad+10}"></line>
+        <circle class="shadow" r="${rad}" cx="3" cy="4"></circle>
+        <circle class="disc" r="${rad}"></circle>
+        <text class="fl" dy="${big?-4:-2}" font-size="${big?12:10}" font-family="'Space Mono',monospace" font-weight="700">${CC[country]||""}</text>
+        <text class="cnt" dy="${big?15:12}" font-size="${big?17:13}">${rs.length}</text>
+      </g>`;
     const go=()=>selectCountryAndScroll(country);
-    g.addEventListener("click",go);
-    g.addEventListener("keydown",e=>{if(e.key==="Enter")go()});
+    g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go();}});
+    g.addEventListener("pointerenter",()=>{layer.appendChild(g);g.classList.add("nearest");});
+    g.addEventListener("pointerleave",()=>g.classList.remove("nearest"));
+    g.addEventListener("focus",()=>{layer.appendChild(g);g.classList.add("nearest");});
+    g.addEventListener("blur",()=>g.classList.remove("nearest"));
     layer.appendChild(g);
   });
+  const svg=$("#worldMap");
+  const nearestPin=e=>{
+    const matrix=svg.getScreenCTM();
+    if(!matrix)return {pin:null,distance:Infinity};
+    const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;
+    const local=pt.matrixTransform(matrix.inverse());
+    let pin=null,distance=Infinity;
+    layer.querySelectorAll(".cluster").forEach(candidate=>{
+      const dx=local.x-Number(candidate.dataset.x),dy=local.y-Number(candidate.dataset.y),d=dx*dx+dy*dy;
+      if(d<distance){distance=d;pin=candidate;}
+    });
+    return {pin,distance};
+  };
+  svg.onpointermove=e=>{
+    if(e.pointerType&&e.pointerType!=="mouse")return;
+    layer.querySelectorAll(".cluster.nearest").forEach(pin=>pin.classList.remove("nearest"));
+    const {pin,distance}=nearestPin(e);
+    if(pin&&distance<3600){layer.appendChild(pin);pin.classList.add("nearest");}
+  };
+  // Use pointerdown instead of click because reordering overlapping SVG pins can cancel a normal click event.
+  svg.onpointerdown=e=>{
+    if(e.pointerType==="mouse"&&e.button!==0)return;
+    if(!e.target.closest?.(".cluster"))return;
+    const {pin,distance}=nearestPin(e);
+    if(pin&&distance<3600){
+      e.preventDefault();
+      selectCountryAndScroll(pin.dataset.country);
+    }
+  };
+  svg.onpointerleave=()=>layer.querySelectorAll(".cluster.nearest").forEach(pin=>pin.classList.remove("nearest"));
   const tal=$("#countryTallies");tal.innerHTML="";
   const all=document.createElement("button");
   all.className="tally"+(state.country==="ALL"?" active":"");
   all.innerHTML=`<span class="flag">🌍</span> ALL <b>${RIDERS.length}</b>`;
-  all.onclick=()=>{state.country="ALL";renderMap();renderRoster();requestAnimationFrame(()=>document.getElementById("rosterSec")?.scrollIntoView({behavior:"smooth",block:"start"}));};
+  all.onclick=()=>selectCountryAndScroll("ALL");
   tal.appendChild(all);
   Object.entries(byCountry).sort((a,b)=>b[1].length-a[1].length).forEach(([c,rs])=>{
     const b=document.createElement("button");
@@ -1097,6 +1183,7 @@ function filteredRiders(){
   return list;
 }
 function renderRoster(){
+  syncCountryFilter();
   const g=$("#rosterGrid");g.innerHTML="";
   const list=filteredRiders();
   if(!list.length)g.innerHTML=`<p class="mono" style="grid-column:1/-1;padding:30px">${esc(SITE_CONTENT.roster?.empty||"No riders match. Peel back a filter and try again.")}</p>`;
@@ -1125,22 +1212,23 @@ function renderCalendar(){
   const el=$("#calList");el.innerHTML="";
   const evs=[...CALENDAR.events].filter(e=>daysUntil(e.date)>=0||new Date(e.date)>Date.now()-3*864e5)
     .sort((a,b)=>new Date(a.date)-new Date(b.date));
-  if(!evs.length){el.innerHTML=`<p class="mono">Nothing on the radar — hit REFRESH.</p>`;return;}
+  if(!evs.length){el.innerHTML=`<p class="mono">Nothing on the radar — check AI UPDATE or add an event in the Content Manager.</p>`;return;}
   let lastMonth="";
   evs.forEach(ev=>{
     const d=new Date(ev.date);
     const month=d.toLocaleDateString("en-GB",{month:"long",year:"numeric"}).toUpperCase();
     if(month!==lastMonth){el.insertAdjacentHTML("beforeend",`<div class="monthhead anton">${month}</div>`);lastMonth=month;}
     const chips=(ev.riders||[]).map(id=>{const r=byId(id);return r?`<button class="rc" data-id="${r.id}">${esc(r.name.split(" ").slice(-1)[0]==="Iannucci"?"Gino":r.name)}</button>`:""}).join("")
-      ||`<span class="none">Entry list TBC — REFRESH to check</span>`;
+      ||`<span class="none">Entry list TBC — review in AI UPDATE</span>`;
     const fullDate=d.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
     const riderNames=(ev.riders||[]).map(id=>byId(id)?.name).filter(Boolean);
-    const searchUrl=`https://www.google.com/search?q=${encodeURIComponent(ev.name.replace(/^TODO: /,"")+" skateboarding "+(ev.city||""))}`;
+    const cleanEventName=String(ev.name||"").replace(/^TODO:\s*/i,"").trim();
+    const searchUrl=`https://www.google.com/search?q=${encodeURIComponent(cleanEventName+" skateboarding "+(ev.city||""))}`;
     el.insertAdjacentHTML("beforeend",`
-      <div class="ticket ${ev.qual?"qual":""}" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for ${esc(ev.name)}">
+      <div class="ticket ${ev.qual?"qual":""}" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for ${esc(cleanEventName)}">
         <div class="stub"><span class="dd">${d.getDate()}</span><span class="mo">${d.toLocaleDateString("en-GB",{month:"short"}).toUpperCase()}</span></div>
         <div class="body">
-          <div class="evname">${esc(ev.name)}</div>
+          <div class="evname">${esc(cleanEventName)}</div>
           <div class="evmeta">${esc(ev.city)}, ${esc(ev.country)}</div>
           <span class="evtype">${esc(ev.type)}</span>
           <span class="hint">TAP FOR DETAILS ▾</span>
@@ -1149,7 +1237,7 @@ function renderCalendar(){
         <span class="days">${daysUntil(ev.date)}D OUT</span>
         <div class="tdetail">
           <b>${esc(fullDate)}</b> — ${daysUntil(ev.date)} days out · ${esc(ev.city)}, ${esc(ev.country)} · ${esc(ev.type)}${ev.qual?" · <b>OLYMPIC QUALIFIER</b>":""}<br>
-          ASICS riders entered (${riderNames.length}): ${esc(riderNames.join(", ")||"TBC — REFRESH to check")}
+          ASICS riders entered (${riderNames.length}): ${esc(riderNames.join(", ")||"TBC — review in AI UPDATE")}
           <div class="btns">
             ${ev.link?`<a class="evbtn" href="${esc(ev.link)}" target="_blank" rel="noopener">OFFICIAL SITE ↗</a>`:""}
             <a class="evbtn ghost" href="${searchUrl}" target="_blank" rel="noopener">SEARCH THIS EVENT ↗</a>
@@ -1226,7 +1314,7 @@ function openSpread(id){
         <div class="sched">${sched.length?sched.map(s=>`
           <div class="ev"><span class="days">${daysUntil(s.date)}d</span>
           <span><span class="evname">${esc(s.name)}</span><br>${esc(s.date)} · ${esc(s.city)}, ${esc(s.country)} · ${esc(s.type)}</span></div>`).join("")
-        :'<p class="mono" style="font-size:12px">Not on any confirmed entry list — REFRESH to check, or add them to an event in the CALENDAR data.</p>'}
+        :'<p class="mono" style="font-size:12px">Not on any confirmed entry list — review AI UPDATE, or add them to an event in the Content Manager.</p>'}
         </div>
       </div>
       <div class="zblock">
@@ -1235,7 +1323,7 @@ function openSpread(id){
           ${rk.owsrRank?`
             <div class="row1">
               <span class="rank">#${rk.owsrRank}</span>
-              <span>OWSR ${esc(r.discipline)}${rk.rankPlaceholder?' · <b style="color:var(--orange)">PLACEHOLDER — hit REFRESH to verify</b>':""}</span>
+              <span>OWSR ${esc(r.discipline)}${rk.rankPlaceholder?' · <b style="color:var(--orange)">PLACEHOLDER — review in AI UPDATE</b>':""}</span>
               <span>${rk.points?rk.points.toLocaleString()+" pts":""}</span>
               <span class="${rk.change>0?"up":rk.change<0?"down":""}">${rk.change>0?"▲"+rk.change:rk.change<0?"▼"+Math.abs(rk.change):"—"}</span>
             </div>
@@ -1249,7 +1337,7 @@ function openSpread(id){
         <h4>Recent Results</h4>
         ${results.length?`<table class="results"><thead><tr><th>Place</th><th>Event</th><th>Date</th><th>Location</th></tr></thead>
           <tbody>${results.map(x=>`<tr><td class="place">${x.placement}${["st","nd","rd"][x.placement-1]||"th"}</td><td>${esc(x.event)}</td><td>${esc(x.date)}</td><td>${esc(x.location)}</td></tr>`).join("")}</tbody></table>${spark}`
-        :`<p class="mono" style="font-size:12px">No contest results on file yet — hit REFRESH, or this rider lives in the streets (check the footage).</p>`}
+        :`<p class="mono" style="font-size:12px">No contest results on file yet — review AI UPDATE, or check the footage.</p>`}
       </div>
       <div class="zblock">
         <h4>Footage</h4>
@@ -1400,141 +1488,14 @@ function renderLiveStrip(){
     el.classList.remove("is-live");
     const next=[...CALENDAR.events].filter(e=>daysUntil(e.date)>=0).sort((a,b)=>new Date(a.date)-new Date(b.date))[0];
     t.innerHTML=next
-      ?`<strong>NEXT UP:</strong> ${esc(next.name)} · ${esc(next.city)}, ${esc(next.country)} · ${esc(next.date)} · <strong>${daysUntil(next.date)} days out</strong> — hit REFRESH for today's radar`
-      :`<strong>EVENT RADAR:</strong> nothing on the calendar — hit REFRESH to scan`;
+      ?`<strong>NEXT UP:</strong> ${esc(next.name)} · ${esc(next.city)}, ${esc(next.country)} · ${esc(next.date)} · <strong>${daysUntil(next.date)} days out</strong> — check AI UPDATE for the latest radar`
+      :`<strong>EVENT RADAR:</strong> nothing on the calendar — check AI UPDATE`;
   }
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   LIVE REFRESH — Anthropic API + web search
-   All network logic lives here. Works as-is inside a Claude
-   artifact. ⚠ IF DEPLOYING TO A REAL INTERNAL URL: route through
-   a server-side proxy (swap API_URL — one line).
-   ═══════════════════════════════════════════════════════════════ */
-const API_URL="https://api.anthropic.com/v1/messages";
-async function askClaude(prompt){
-  const res=await fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:1000,
-      messages:[{role:"user",content:prompt}],
-      tools:[{type:"web_search_20250305",name:"web_search"}]})});
-  if(!res.ok)throw new Error("API "+res.status);
-  const data=await res.json();
-  const text=(data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("\n");
-  const clean=text.replace(/```json|```/g,"").trim();
-  const start=clean.indexOf("{"),end=clean.lastIndexOf("}");
-  if(start<0)throw new Error("no JSON in response");
-  return JSON.parse(clean.slice(start,end+1));
-}
-async function refreshAll(manual){
-  const btn=$("#refreshBtn"),st=$("#refreshStatus");
-  btn.classList.add("spinning");
-  st.className="show";st.textContent=manual?"DROPPING IN…":"AUTO-REFRESH…";
-  const today=new Date().toISOString().slice(0,10);
-  const rosterNames=RIDERS.map(r=>r.name).join("; ");
-  let ok=0,fail=0;
-  /* 1) Event radar + calendar */
-  try{
-    st.textContent="SCANNING EVENT RADAR…";
-    const ev=await askClaude(
-`Today is ${today}. Search the web for professional skateboarding contests (World Skate street/park events, Olympic qualifiers, SLS, X Games, Tampa, national championships) that are (a) happening today or this week, and (b) confirmed upcoming over the next 3 months.
-Here is a roster of skateboarders — note any of them on entry lists or start lists: ${rosterNames}.
-Respond with STRICT JSON ONLY, no prose, no fences:
-{"live": null OR {"name":"","location":"","dates":"","riderNames":[],"link":""},
- "upcoming":[{"name":"","date":"YYYY-MM-DD","city":"","country":"","type":"","qual":true|false,"riderNames":[]}]}
-"riderNames" must only contain names from the roster I gave you, spelled the same. Use [] if unknown. Max 8 upcoming events. Do not invent events.`);
-    if(ev){
-      const nameToId=n=>RIDERS.find(r=>r.name.toLowerCase()===String(n).toLowerCase())?.id;
-      if(ev.live){EVENTS_LIVE={updatedAt:today,live:{...ev.live,riders:(ev.live.riderNames||[]).map(nameToId).filter(Boolean)}};}
-      else EVENTS_LIVE={updatedAt:today,live:null};
-      if(Array.isArray(ev.upcoming)&&ev.upcoming.length){
-        CALENDAR={updatedAt:today,events:ev.upcoming.map(e=>({name:e.name,date:e.date,city:e.city||"TBC",country:e.country||"TBC",
-          type:e.type||"Contest",qual:!!e.qual,riders:(e.riderNames||[]).map(nameToId).filter(Boolean)}))};}
-      ok++;}
-  }catch(e){console.warn("event radar failed",e);fail++;}
-  /* 2) Clip hunt — YouTube IDが未登録のタイトルをWeb検索で自動発見 */
-  try{
-    const missing=collectVideos().filter(v=>!v.youtubeId).map(v=>v.title).slice(0,10);
-    if(missing.length){
-      st.textContent="HUNTING CLIPS ON YOUTUBE…";
-      const j=await askClaude(
-`Search the web for the official YouTube uploads of these ASICS Skateboarding videos: ${missing.map(t=>`"${t}"`).join(", ")}.
-For each, find the 11-character YouTube video ID (from a youtube.com/watch?v=XXXXXXXXXXX or youtu.be/XXXXXXXXXXX link).
-Respond with STRICT JSON ONLY, no prose, no fences:
-{"found":[{"title":"","youtubeId":""}]}
-Only include entries where you located a real ID from an official or major channel (ASICS Skateboarding, Thrasher, Free Skate Mag). Titles must match my list exactly. Do not guess IDs.`);
-      if(j&&Array.isArray(j.found)){
-        j.found.forEach(f=>{
-          if(f.youtubeId&&/^[\w-]{11}$/.test(f.youtubeId))applyVidId(f.title,f.youtubeId);});
-        ok++;}
-    }
-  }catch(e){console.warn("clip hunt failed",e);fail++;}
-  /* 3) ライダー個別クリップ探索 — 写真の無い選手の本人クリップを探す(自動ポートレートにも使われる) */
-  try{
-    const noPic=RIDERS.filter(r=>!autoPhoto(r)).slice(0,8).map(r=>r.name);
-    if(noPic.length){
-      st.textContent="HUNTING RIDER CLIPS…";
-      const j=await askClaude(
-`Search the web for official YouTube clips (shorts or parts) from ASICS Skateboarding, Thrasher Magazine, or Free Skate Mag featuring these individual ASICS-sponsored skateboarders: ${noPic.map(n=>`"${n}"`).join(", ")}.
-Respond with STRICT JSON ONLY, no prose, no fences:
-{"found":[{"riderName":"","title":"","youtubeId":"","year":2025}]}
-Only include entries with a real 11-character YouTube ID you actually located. riderName must match my list exactly. Max one clip per rider. Do not guess IDs.`);
-      if(j&&Array.isArray(j.found)){
-        j.found.forEach(f=>{
-          const r=RIDERS.find(x=>x.name.toLowerCase()===String(f.riderName).toLowerCase());
-          if(r&&f.youtubeId&&/^[\w-]{11}$/.test(f.youtubeId)&&!EXTRA_VIDEOS.some(v=>v.youtubeId===f.youtubeId)){
-            const clip={title:f.title||`${r.name} — clip`,youtubeId:f.youtubeId,year:f.year||new Date().getFullYear(),type:"Short edit",riderIds:[r.id]};
-            EXTRA_VIDEOS.push(clip);FOUND_CLIPS.push(clip);}
-        });
-        ok++;}
-    }
-  }catch(e){console.warn("rider clip hunt failed",e);fail++;}
-  /* 4) YouTubeチャンネル自動同期(APIキー設定時のみ) */
-  try{const n=await syncYouTubeChannel();if(n)ok++;}catch(e){console.warn("yt sync failed",e);}
-  /* 4) Rankings — Olympic-track riders only, one focused call each */
-  const tracked=RIDERS.filter(r=>r.ranking.owsrRank!=null);
-  for(const r of tracked){
-    try{
-      st.textContent=`CHECKING RANKING: ${r.name.toUpperCase()}…`;
-      const j=await askClaude(
-`Search the web for the current Olympic World Skateboarding Ranking (OWSR / World Skate ranking) of skateboarder "${r.name}" (${r.country}, ${r.discipline.toLowerCase()}), plus their most recent contest result.
-Respond with STRICT JSON ONLY, no prose, no fences:
-{"rank": number or null, "points": number or null, "recentResult": null OR {"event":"","date":"YYYY-MM-DD","location":"","placement": number}}
-Use null for anything you cannot verify. Do not guess.`);
-      if(j){
-        if(typeof j.rank==="number"){r.ranking.change=(r.ranking.owsrRank??j.rank)-j.rank;r.ranking.owsrRank=j.rank;
-          r.ranking.points=j.points??r.ranking.points;r.ranking.rankPlaceholder=false;}
-        if(j.recentResult&&j.recentResult.event&&!r.results.some(x=>x.event===j.recentResult.event))r.results.unshift(j.recentResult);
-        r.ranking.updatedAt=today;ok++;}
-    }catch(e){console.warn("rank fetch failed",r.id,e);fail++;}
-  }
-  saveCache();renderAll();
-  btn.classList.remove("spinning");
-  if(fail&&!ok){st.className="show err";
-    st.textContent=IN_SANDBOX?"REFRESH BAILED — showing last good data"
-      :"LIVE REFRESH needs an API proxy on this host (see README) — showing saved data";}
-  else{st.textContent=`FRESH ✓ ${ok} updates${fail?` · ${fail} skipped`:""}`;setTimeout(()=>st.className="",4000);}
-  localStorage.setItem("asicsHubLastRefresh",String(Date.now()));
-}
-$("#refreshBtn").addEventListener("click",async()=>{
-  const btn=$("#refreshBtn"),st=$("#refreshStatus");
-  if(IN_SANDBOX){refreshAll(true);return;} // Claude内プレビューは従来どおりブラウザ内検索
-  // GitHub Pages等: 毎日自動更新される data.json を再取得するだけ(APIキー不要・安全)
-  btn.classList.add("spinning");st.className="show";st.textContent="CHECKING FOR LATEST SYNC…";
-  const ts=await loadDailyData(true);
-  saveCache();renderAll();
-  btn.classList.remove("spinning");
-  if(ts){st.textContent="SYNCED — data as of "+ts;setTimeout(()=>st.className="",4000);}
-  else{st.className="show err";st.textContent="data.json not found yet — check back after first Action run";}
-  localStorage.setItem("asicsHubLastRefresh",String(Date.now()));
-});
-function maybeAutoRefresh(){
-  const last=+localStorage.getItem("asicsHubLastRefresh")||0;
-  if(Date.now()-last>24*36e5)refreshAll(false);
 }
 
 /* ═══════════════ CUSTOM SKATE CURSOR / TRAIL / OLLIE ═══════════════ */
 const CURSOR_SVG=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 42" aria-hidden="true">
-  <g class="glow"><ellipse cx="32" cy="31" rx="20" ry="5" fill="rgba(15,42,168,.15)"/></g>
+  <g class="glow"><ellipse cx="32" cy="31" rx="20" ry="5" fill="rgba(122,31,53,.15)"/></g>
   <g class="board">
     <path class="deck" d="M6 14 Q9 17 14 17 L50 17 Q55 17 58 14"/>
     <path class="grip" d="M8 14.8 Q10.8 16.2 14.5 16.2 L49.5 16.2 Q53.2 16.2 56 14.8"/>
@@ -1558,6 +1519,7 @@ const reduceMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion
 const finePointer=window.matchMedia&&window.matchMedia("(pointer:fine)").matches;
 const CURSOR_INTERACTIVE='a,button,select,label,input,textarea,summary,[role="button"],[tabindex]:not([tabindex="-1"]),.sticker,.vhs,.ticket,.tally,.cluster,.chip,tr[tabindex]';
 const SPECIAL_TRICK_ODDS=15;
+const CLICK_TRICK_DURATIONS={ollie:420,shuvit:620,kickflip:680,trick:980};
 let skateCursor=null, cursorX=window.innerWidth/2, cursorY=window.innerHeight/2, targetX=cursorX, targetY=cursorY;
 let lastTrailX=targetX, lastTrailY=targetY, lastTrailTs=0, lastAngle=0;
 function isCursorInteractiveTarget(el){return !!(el&&el.closest&&el.closest(CURSOR_INTERACTIVE));}
@@ -1576,15 +1538,22 @@ function spawnTrail(x,y,angle){
   t.addEventListener("animationend",()=>t.remove());
   setTimeout(()=>t.remove(),700);
 }
-function spawnOllie(x,y,isSpecial=false){
+function chooseClickTrick(){
+  if(Math.floor(Math.random()*SPECIAL_TRICK_ODDS)===0)return "trick";
+  const r=Math.random();
+  if(r<.58)return "ollie";
+  if(r<.80)return "shuvit";
+  return "kickflip";
+}
+function spawnOllie(x,y,trickType="ollie"){
   const b=document.createElement("div");
-  b.className="flipfx"+(isSpecial?" trick":"");
+  b.className="flipfx"+(trickType==="ollie"?"":" "+trickType);
   b.innerHTML=OLLIE_SVG;
   b.style.left=x+"px";
   b.style.top=y+"px";
   document.body.appendChild(b);
   b.addEventListener("animationend",()=>b.remove());
-  setTimeout(()=>b.remove(),isSpecial?1200:700);
+  setTimeout(()=>b.remove(),(CLICK_TRICK_DURATIONS[trickType]||700)+300);
 }
 function animateCursor(){
   if(!skateCursor)return;
@@ -1621,15 +1590,15 @@ function initSkateCursor(){
   document.addEventListener("pointerover",e=>{if(!(e.pointerType&&e.pointerType!=="mouse"))setCursorMode(e.target);},true);
   document.addEventListener("pointerdown",e=>{
     if(e.pointerType&&e.pointerType!=="mouse")return;
-    const isSpecial=Math.floor(Math.random()*SPECIAL_TRICK_ODDS)===0;
+    const trickType=chooseClickTrick();
     setCursorMode(e.target,true);
     if(skateCursor){
-      skateCursor.classList.remove("ollie","trick");
+      skateCursor.classList.remove("ollie","shuvit","kickflip","trick");
       void skateCursor.offsetWidth;
-      skateCursor.classList.add(isSpecial?"trick":"ollie");
-      setTimeout(()=>skateCursor&&skateCursor.classList.remove("ollie","trick"),isSpecial?980:420);
+      skateCursor.classList.add(trickType);
+      setTimeout(()=>skateCursor&&skateCursor.classList.remove("ollie","shuvit","kickflip","trick"),CLICK_TRICK_DURATIONS[trickType]||700);
     }
-    if(!reduceMotion)spawnOllie(e.clientX,e.clientY,isSpecial);
+    if(!reduceMotion)spawnOllie(e.clientX,e.clientY,trickType);
   },{passive:true});
   document.addEventListener("pointerup",()=>{if(skateCursor)skateCursor.classList.remove("pressed");},{passive:true});
   window.addEventListener("blur",()=>{if(skateCursor)skateCursor.classList.add("hidden");});
@@ -1640,6 +1609,7 @@ initSkateCursor();
 let mapResizeTimer;window.addEventListener("resize",()=>{clearTimeout(mapResizeTimer);mapResizeTimer=setTimeout(()=>renderMap(),160);});
 /* ═══════════════ WIRING ═══════════════ */
 $("#q").addEventListener("input",e=>{state.q=e.target.value.toLowerCase();renderRoster();});
+$("#countrySel").addEventListener("change",e=>{state.country=e.target.value;renderMap();renderRoster();});
 $$(".chip.disc").forEach(c=>c.addEventListener("click",()=>{$$(".chip.disc").forEach(x=>x.classList.remove("active"));c.classList.add("active");state.disc=c.dataset.disc;renderRoster();}));
 $("#sortSel").addEventListener("change",e=>{state.sort=e.target.value;renderRoster();});
 $$(".chip.bf").forEach(c=>c.addEventListener("click",()=>{$$(".chip.bf").forEach(x=>x.classList.remove("active"));c.classList.add("active");state.boardFilter=c.dataset.bf;renderBoard();}));
@@ -1655,7 +1625,6 @@ function renderAll(){applySiteContent();renderHero();renderMap();renderRoster();
       if(ts)renderAll();
     }
   }catch(e){console.warn("daily data load skipped",e);}
-  try{if(IN_SANDBOX)maybeAutoRefresh();}catch(e){console.warn("auto refresh skipped",e);}
 })();
 /* 外部画像が読み込める環境かを1枚のテスト画像で診断し、
    ブロックされていれば案内バナーを表示する */
