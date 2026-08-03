@@ -1,8 +1,185 @@
 {
   "jobId": "wsr-1785773015850-9pv9ylr",
-  "status": "running",
+  "status": "completed",
   "startedAt": "2026-08-03T16:03:36.946Z",
-  "message": "Reading the four official Wyldata WSR tables directly...",
-  "proposals": [],
-  "citations": []
+  "completedAt": "2026-08-03T16:03:41.280Z",
+  "message": "Official WSR check complete. Matched 5/43 dashboard riders; 5 update candidate(s) found.",
+  "category": "rankings",
+  "summary": "Official WSR check complete. Matched 5/43 dashboard riders; 5 update candidate(s) found.",
+  "officialSource": "https://wyldata.com/iframes/wsr",
+  "proposals": [
+    {
+      "id": "wsr-kairi-2026-08-03",
+      "action": "update_rider_ranking",
+      "entityId": "kairi",
+      "title": "Kairi Netsuke: WSR #3 · 132,606 pts",
+      "reason": "Official MEN STREET Wyldata WSR differs from the dashboard (not set / not set pts).",
+      "confidence": "high",
+      "sourceTitle": "Official Wyldata WSR · MEN STREET",
+      "sourceUrl": "https://wyldata.com/iframes/wsr?discipline=2&gender=1",
+      "patch": {
+        "riderId": "kairi",
+        "owsrRank": 3,
+        "points": 132606,
+        "updatedAt": "2026-08-03"
+      }
+    },
+    {
+      "id": "wsr-liz-2026-08-03",
+      "action": "update_rider_ranking",
+      "entityId": "liz",
+      "title": "Liz Akama: WSR #16 · 34,180 pts",
+      "reason": "Official WOMEN STREET Wyldata WSR differs from the dashboard (not set / not set pts).",
+      "confidence": "high",
+      "sourceTitle": "Official Wyldata WSR · WOMEN STREET",
+      "sourceUrl": "https://wyldata.com/iframes/wsr?discipline=2&gender=0",
+      "patch": {
+        "riderId": "liz",
+        "owsrRank": 16,
+        "points": 34180,
+        "updatedAt": "2026-08-03"
+      }
+    },
+    {
+      "id": "wsr-ibuki-2026-08-03",
+      "action": "update_rider_ranking",
+      "entityId": "ibuki",
+      "title": "Ibuki Matsumoto: WSR #1 · 168,552 pts",
+      "reason": "Official WOMEN STREET Wyldata WSR differs from the dashboard (not set / not set pts).",
+      "confidence": "high",
+      "sourceTitle": "Official Wyldata WSR · WOMEN STREET",
+      "sourceUrl": "https://wyldata.com/iframes/wsr?discipline=2&gender=0",
+      "patch": {
+        "riderId": "ibuki",
+        "owsrRank": 1,
+        "points": 168552,
+        "updatedAt": "2026-08-03"
+      }
+    },
+    {
+      "id": "wsr-liv-2026-08-03",
+      "action": "update_rider_ranking",
+      "entityId": "liv",
+      "title": "Liv Nelemans: WSR #36 · 5,366 pts",
+      "reason": "Official WOMEN STREET Wyldata WSR differs from the dashboard (not set / not set pts).",
+      "confidence": "high",
+      "sourceTitle": "Official Wyldata WSR · WOMEN STREET",
+      "sourceUrl": "https://wyldata.com/iframes/wsr?discipline=2&gender=0",
+      "patch": {
+        "riderId": "liv",
+        "owsrRank": 36,
+        "points": 5366,
+        "updatedAt": "2026-08-03"
+      }
+    },
+    {
+      "id": "wsr-asahi-2026-08-03",
+      "action": "update_rider_ranking",
+      "entityId": "asahi",
+      "title": "Asahi Kaihara: WSR #18 · 14,302 pts",
+      "reason": "Official WOMEN PARK Wyldata WSR differs from the dashboard (not set / not set pts).",
+      "confidence": "high",
+      "sourceTitle": "Official Wyldata WSR · WOMEN PARK",
+      "sourceUrl": "https://wyldata.com/iframes/wsr?discipline=1&gender=0",
+      "patch": {
+        "riderId": "asahi",
+        "owsrRank": 18,
+        "points": 14302,
+        "updatedAt": "2026-08-03"
+      }
+    }
+  ],
+  "citations": [
+    {
+      "title": "Official Wyldata WSR · MEN STREET",
+      "url": "https://wyldata.com/iframes/wsr?discipline=2&gender=1"
+    },
+    {
+      "title": "Official Wyldata WSR · WOMEN STREET",
+      "url": "https://wyldata.com/iframes/wsr?discipline=2&gender=0"
+    },
+    {
+      "title": "Official Wyldata WSR · MEN PARK",
+      "url": "https://wyldata.com/iframes/wsr?discipline=1&gender=1"
+    },
+    {
+      "title": "Official Wyldata WSR · WOMEN PARK",
+      "url": "https://wyldata.com/iframes/wsr?discipline=1&gender=0"
+    }
+  ],
+  "diagnostics": [
+    {
+      "category": "MEN STREET",
+      "sourceUrl": "https://wyldata.com/iframes/wsr?discipline=2&gender=1",
+      "fetchMethod": "direct",
+      "ridersChecked": 29,
+      "ridersMatched": 1,
+      "ridersNotFound": [
+        "Kyonosuke Yamashita",
+        "Luca Hirata",
+        "Ginpei Saito",
+        "Toa Kanazawa",
+        "Niko Sugimoto",
+        "Masamitsu Akachi",
+        "Tatsuya Nogami",
+        "Takuya Ishizuka",
+        "Ichiro Tuzuki",
+        "Gino Iannucci",
+        "Alexander \"Zander\" Mitchell",
+        "Evan Wasser",
+        "Dougie George",
+        "Akwasi Owusu",
+        "Simon Bannerot",
+        "Mark Humienik",
+        "Trung Nguyen",
+        "Alan Bell",
+        "Dylan Clark",
+        "Nicholas Lourenço Dias Reis",
+        "Murilo Guimarães Romão",
+        "Edgard Junior de Lima",
+        "Shay Sandiford",
+        "Justin Dreyson",
+        "Emile Laurent",
+        "Victor Campillo",
+        "Jaakko Ojanen",
+        "Tai Wepa"
+      ]
+    },
+    {
+      "category": "WOMEN STREET",
+      "sourceUrl": "https://wyldata.com/iframes/wsr?discipline=2&gender=0",
+      "fetchMethod": "direct",
+      "ridersChecked": 11,
+      "ridersMatched": 3,
+      "ridersNotFound": [
+        "Sena Watanabe",
+        "Secret Lynn",
+        "Monica Torres",
+        "Kayna Regina Abel",
+        "Marca Barbier",
+        "Andrea Benítez",
+        "Unna Peltotalo",
+        "Heili Sirvilo"
+      ]
+    },
+    {
+      "category": "MEN PARK",
+      "sourceUrl": "https://wyldata.com/iframes/wsr?discipline=1&gender=1",
+      "fetchMethod": "direct",
+      "ridersChecked": 2,
+      "ridersMatched": 0,
+      "ridersNotFound": [
+        "Brent Atchley",
+        "Kieran Woolley"
+      ]
+    },
+    {
+      "category": "WOMEN PARK",
+      "sourceUrl": "https://wyldata.com/iframes/wsr?discipline=1&gender=0",
+      "fetchMethod": "direct",
+      "ridersChecked": 1,
+      "ridersMatched": 1,
+      "ridersNotFound": []
+    }
+  ]
 }
