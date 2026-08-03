@@ -1,12 +1,8 @@
 {
-  "jobId": "wsr-1785772504170-xi3hjqd",
-  "status": "completed",
-  "startedAt": "2026-08-03T15:55:05.585Z",
-  "completedAt": "2026-08-03T15:55:35.887Z",
-  "message": "Official WSR check complete. 0 candidate(s) found.",
-  "officialSource": "https://wyldata.com/iframes/wsr",
-  "category": "rankings",
-  "summary": "Unable to reliably extract WOMEN STREET rankings from the live WSR iframe for the specified athletes using text-only access; no updates proposed. | Unable to safely access the live MEN STREET WSR iframe on Wyldata, so no verified updates can be proposed for any listed rider as of 2026-08-03. | Unable to reliably filter the official WSR iframe to WOMEN PARK, so no verified ranking data can be returned for Asahi Kaihara. No updates proposed. | Unable to verify current MEN PARK WSR rank or points for the specified riders in the official World Skateboarding Ranking data, so no updates are proposed.",
+  "jobId": "wsr-1785773015850-9pv9ylr",
+  "status": "running",
+  "startedAt": "2026-08-03T16:03:36.946Z",
+  "message": "Reading the four official Wyldata WSR tables directly...",
   "proposals": [],
   "citations": []
 }
