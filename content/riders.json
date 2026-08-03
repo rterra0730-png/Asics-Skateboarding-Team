@@ -31,11 +31,11 @@
         "igAsOf": "2026-07-01"
       },
       "ranking": {
-        "owsrRank": null,
-        "points": null,
+        "owsrRank": 16,
+        "points": 34180,
         "change": 0,
-        "rankPlaceholder": true,
-        "updatedAt": "2026-07-25"
+        "rankPlaceholder": false,
+        "updatedAt": "2026-08-03"
       },
       "results": [
         {
@@ -102,11 +102,11 @@
         "igAsOf": "2026-07-01"
       },
       "ranking": {
-        "owsrRank": null,
-        "points": null,
+        "owsrRank": 1,
+        "points": 168552,
         "change": 0,
-        "rankPlaceholder": true,
-        "updatedAt": "2026-07-25"
+        "rankPlaceholder": false,
+        "updatedAt": "2026-08-03"
       },
       "results": [
         {
@@ -179,11 +179,11 @@
         "igAsOf": "2026-07-01"
       },
       "ranking": {
-        "owsrRank": null,
-        "points": null,
+        "owsrRank": 3,
+        "points": 132606,
         "change": 0,
-        "rankPlaceholder": true,
-        "updatedAt": "2026-07-25"
+        "rankPlaceholder": false,
+        "updatedAt": "2026-08-03"
       },
       "results": [
         {
@@ -323,11 +323,11 @@
         "igAsOf": "2026-07-01"
       },
       "ranking": {
-        "owsrRank": null,
-        "points": null,
+        "owsrRank": 18,
+        "points": 14302,
         "change": 0,
         "rankPlaceholder": false,
-        "updatedAt": "2026-07-25"
+        "updatedAt": "2026-08-03"
       },
       "results": [
         {
@@ -1919,11 +1919,11 @@
         "igAsOf": "2026-07-01"
       },
       "ranking": {
-        "owsrRank": null,
-        "points": null,
+        "owsrRank": 36,
+        "points": 5366,
         "change": 0,
         "rankPlaceholder": false,
-        "updatedAt": "2026-07-25"
+        "updatedAt": "2026-08-03"
       },
       "results": [],
       "videos": [],
